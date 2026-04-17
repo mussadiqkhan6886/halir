@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import Header from "@/sections/Header";
-import Footer from "@/sections/Footer";
-
 
 export const metadata: Metadata = {
   title: "Halir",
@@ -13,11 +10,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <Header />
-       {children}
-      <Footer />
-    </>
-  );
+  return <>
+    {children}
+  </>
 }
