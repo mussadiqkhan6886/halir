@@ -6,7 +6,7 @@ export const inter = Inter({
     style: ["italic", "normal"],
     subsets: ["latin"]
 })
-export const porcelain = localFont({
+export const magda = localFont({
   src: "../public/Magda Text Regular.otf",
   variable: "--font-magda",
 });
