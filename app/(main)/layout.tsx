@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/sections/Header";
+import Footer from "@/sections/Footer";
 
 
 export const metadata: Metadata = {
@@ -14,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
+      <Header />
        {children}
+      <Footer />
     </>
   );
 }
