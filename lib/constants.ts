@@ -4,3 +4,12 @@ export const upperheader = [
     "Free delivery across pakistan.",
     "Get a free gift with your perfume."
 ]
+
+export const menu = [
+    {name: "Fine Fragrance", link: "/"},
+    {name: "Hot Sellers", link: "/"},
+    {name: "Men", link: "/"},
+    {name: "Women", link: "/"},
+    {name: "Collections", link: "/"},
+    {name: "About Us", link: "/"},
+]

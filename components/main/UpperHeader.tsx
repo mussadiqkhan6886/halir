@@ -15,7 +15,7 @@ const UpperHeader = () => {
     loop={true}
     autoplay={{delay: 3000}}
     slidesPerView={1}
-    className={`${magdaLig.className} tracking-wide bg-zinc-600 text-white text-[12px] sm:text-sm text-center`}
+    className={`${magdaLig.className} tracking-wide bg-zinc-600 text-white text-[12px] sm:text-[13px] text-center`}
     >
     {upperheader.map((item, i) => (
         <SwiperSlide key={i}>
