@@ -76,7 +76,7 @@ const Header = () => {
         </div>
 
         {/* cart */}
-        <div className='flex border-zinc-200 lg:border-l items-center justify-center gap-1 p-2 px-7'>
+        <div className='flex border-zinc-200 lg:border-l items-center justify-center gap-1 p-2 px-5 md:px-7'>
             <HiOutlineShoppingBag size={26} />
             <p className='font-light text-sm'>(0)</p>
         </div>
