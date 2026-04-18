@@ -8,8 +8,8 @@ const Story = () => {
       <Image src={"/story2.jpg"} alt='story image' width={300} height={400} className='object-cover object-left lg:h-[300px] w-full lg:w-[250px] lg:absolute lg:left-0 lg:top-[70%] lg:-translate-y-1/2' />
       <Image src={"/story3.jpg"} alt='perfume image' width={200} height={300} className='object-cover object-center hidden lg:block absolute top-0 right-0' />
 
-      <div>
-        <h3 className='text-3xl md:text-5xl px-2 lg:ml-60 pt-20 relative leading-10 tracking-tight'> 
+      <div className='flex justify-center'>
+        <h3 className='text-3xl md:text-5xl px-2 pt-20 relative leading-10 tracking-tight'> 
           <span className='inline-block ml-30'>WE <span className={`${ekate.className} md:text-8xl text-5xl`}>Create</span> NOT JUST </span>
           <br />
           A PERFUME,  <span className='inline-block ml-28 md:ml-36'>BUT A</span> <br />
