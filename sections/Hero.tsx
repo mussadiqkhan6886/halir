@@ -69,7 +69,7 @@ const Hero = () => {
         </motion.h1>
 
         {/* The CTA (Integrated) */}
-        <motion.div variants={itemVariants} className="flex gap-4 my-10 mb-15 items-center">
+        <motion.div variants={itemVariants} className="flex gap-4 lg:my-3 mb-35 lg:mb-15 items-center">
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
@@ -80,7 +80,7 @@ const Hero = () => {
                 <HiOutlineArrowNarrowRight size={18} className="text-black/60 group-hover:text-black group-hover:translate-x-1 transition-transform" />
               </motion.div>
             </motion.button>
-            <Link href="/brand" className={`${magdaLig.className} text-sm text-white/70 border-b border-white/20 pb-1 hover:text-white hover:border-white transition-colors`}>
+            <Link href="/brand" className={`${magdaLig.className} text-sm text-white/70 border-b border-white/20 pb-1 hover:text-white hover:border-white transition-colors hidden lg:block`}>
               OUR STORY
             </Link>
         </motion.div>
@@ -95,9 +95,9 @@ const Hero = () => {
             duration: 0.8, 
             ease: [0.16, 1, 0.3, 1] // A smooth "out-expo" curve for a premium feel
           }}
-          className='text-white absolute bottom-8 left-1/2 -translate-x-1/2 w-full text-center px-4'
+          className='text-white absolute bottom-5 sm:bottom-4 lg:bottom-8 left-1/2 -translate-x-1/2 w-full text-center px-4'
         >
-          <h2 className='font-semibold text-3xl md:text-4xl mb-4 tracking-tight uppercase'>
+          <h2 className='font-semibold text-xl sm:text-3xl md:text-4xl mb-4 tracking-tight uppercase'>
             A perfume that reflects your aesthetic of feelings
           </h2>
           <p className={`${magdaLig.className} text-zinc-400 text-sm tracking-[0.1em] uppercase`}>
