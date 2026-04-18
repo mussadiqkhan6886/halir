@@ -1,11 +1,18 @@
+import UpperHeader from '@/components/main/UpperHeader'
+import Image from 'next/image'
 import React from 'react'
 
 const Header = () => {
   return (
-    <header>
+    <header className=''>
 
+        {/* upper header */}
+        <UpperHeader />
+
+      {/* lower header */}
+      
         {/* mobile size menu */}
-        <div>
+        <div className='flex md:hidden'>
             {/* menu mobile */}
             <div></div>
             {/* search */}
@@ -14,11 +21,11 @@ const Header = () => {
 
       {/* logo */}
       <div>
-
+        <Image src={"/halirLogo.png"} alt='halir logo image in header' width={100} height={100} />
       </div>
 
       {/* nav bigger screen */}
-      <div>
+      <div className='hidden md:flex'>
         {/* search bar */}
         <div>
             {/* search */}
@@ -27,7 +34,7 @@ const Header = () => {
             </div>
             {/* icons */}
             <div>
-                
+
             </div>
         </div>
         {/* menu */}
