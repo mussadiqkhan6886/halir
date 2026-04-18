@@ -14,3 +14,7 @@ export const magdaLig = localFont({
   src: "../public/Magda Light Regular.otf",
   variable: "--font-magda-lig",
 });
+export const ekate = localFont({
+  src: "../public/ekaterinavelikayaone.ttf",
+  variable: "--font-ekate",
+});
