@@ -3,7 +3,7 @@
 import { menu } from '@/lib/constants'
 import Link from 'next/link'
 import React from 'react'
-import { AnimatePresence, motion, Variants } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 
 const Menu = () => {
   // Animation Variants

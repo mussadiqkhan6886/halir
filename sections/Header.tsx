@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { magdaLig } from '@/lib/font'
 import Menu from '@/components/main/Menu';
 import { AnimatePresence } from 'framer-motion';
+import SearchSide from '@/components/main/SearchSide';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -23,12 +24,11 @@ const Header = () => {
         <UpperHeader />
 
         {/* lower header */}
-      
       <div className='flex border-zinc-200 justify-between items-center px-3 lg:border-b'>
         {/* mobile size menu */}
         <div className='flex lg:hidden relative gap-6 items-center'>
             {/* menu mobile */}
-            <div className=''>
+            <div>
                 {isMenuOpen ? <button className='cursor-pointer' onClick={() => setIsMenuOpen(false)} >
                     <HiX size={23} />
                 </button> : <button className='cursor-pointer' onClick={() => setIsMenuOpen(true)}>
@@ -40,9 +40,12 @@ const Header = () => {
             </div>
             {/* search */}
             <div>
-                <button onClick={() => setIsSearchOpen(true)} >
+                <button className='cursor-pointer' onClick={() => setIsSearchOpen(true)} >
                     <HiOutlineSearch size={20} />
                 </button>
+                <AnimatePresence>
+                    {isSearchOpen && <SearchSide setIsSearchOpen={setIsSearchOpen} />}
+                </AnimatePresence>
             </div>
         </div>
 
