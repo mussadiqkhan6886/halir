@@ -1,15 +1,23 @@
+'use client';
+
 import UpperHeader from '@/components/main/UpperHeader'
 import Image from 'next/image'
-import React from 'react'
-import {HiOutlineMenu, HiOutlineSearch, HiOutlineShoppingBag} from "react-icons/hi"
+import React, { useState } from 'react'
+import {HiOutlineMenu, HiOutlineSearch, HiOutlineShoppingBag, HiX} from "react-icons/hi"
 import {FaInstagram} from "react-icons/fa"
 import { menu } from '@/lib/constants'
 import Link from 'next/link'
 import { magdaLig } from '@/lib/font'
+import Menu from '@/components/main/Menu';
+import { AnimatePresence } from 'framer-motion';
 
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isSearchOpen, setIsSearchOpen] = useState(false)
+
+
   return (
-    <header className=''>
+    <header className='shadow-md z-40'>
 
         {/* upper header */}
         <UpperHeader />
@@ -18,14 +26,23 @@ const Header = () => {
       
       <div className='flex border-zinc-200 justify-between items-center px-3 lg:border-b'>
         {/* mobile size menu */}
-        <div className='flex lg:hidden gap-6 items-center'>
+        <div className='flex lg:hidden relative gap-6 items-center'>
             {/* menu mobile */}
-            <div>
-                <HiOutlineMenu size={23} />
+            <div className=''>
+                {isMenuOpen ? <button className='cursor-pointer' onClick={() => setIsMenuOpen(false)} >
+                    <HiX size={23} />
+                </button> : <button className='cursor-pointer' onClick={() => setIsMenuOpen(true)}>
+                    <HiOutlineMenu  size={23} />
+                </button> }
+                <AnimatePresence>
+                    {isMenuOpen && <Menu />}
+                </AnimatePresence>
             </div>
             {/* search */}
             <div>
-                <HiOutlineSearch size={20} />
+                <button onClick={() => setIsSearchOpen(true)} >
+                    <HiOutlineSearch size={20} />
+                </button>
             </div>
         </div>
 
