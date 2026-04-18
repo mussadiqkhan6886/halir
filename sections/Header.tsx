@@ -1,7 +1,7 @@
 import UpperHeader from '@/components/main/UpperHeader'
 import Image from 'next/image'
 import React from 'react'
-import {HiOutlineSearch, HiOutlineShoppingBag} from "react-icons/hi"
+import {HiOutlineMenu, HiOutlineSearch, HiOutlineShoppingBag} from "react-icons/hi"
 import {FaInstagram} from "react-icons/fa"
 import { menu } from '@/lib/constants'
 import Link from 'next/link'
@@ -16,27 +16,31 @@ const Header = () => {
 
         {/* lower header */}
       
-      <div className='flex border-zinc-200 border-b'>
+      <div className='flex border-zinc-200 justify-between items-center px-3 lg:border-b'>
         {/* mobile size menu */}
-        <div className='flex md:hidden'>
+        <div className='flex lg:hidden gap-6 items-center'>
             {/* menu mobile */}
-            <div></div>
+            <div>
+                <HiOutlineMenu size={23} />
+            </div>
             {/* search */}
-            <div></div>
+            <div>
+                <HiOutlineSearch size={20} />
+            </div>
         </div>
 
         {/* logo */}
-        <div className='border-zinc-200 border-r p-4 flex justify-center items-center'>
+        <div className='border-zinc-200 lg:border-r p-4 flex justify-center items-center'>
             <Image src={"/halirLogo.png"} alt='halir logo image in header' width={120} height={120} />
         </div>
 
         {/* nav bigger screen */}
-        <div className='hidden md:flex flex-col flex-2'>
+        <div className='hidden lg:flex flex-col flex-2'>
             {/* search bar */}
-            <div className='flex border-zinc-200 border-b'>
+            <div className='flex border-zinc-200 lg:border-b'>
                 {/* search */}
                 <div className='flex pl-5 w-full gap-4 items-center p-3 '>
-                    <HiOutlineSearch />
+                    <HiOutlineSearch /> 
                     <input type='text' placeholder='Search for products' className={`placeholder:${magdaLig.className} ${magdaLig.className} text-sm w-full outline-none `} />
                 </div>
                 {/* icons */}
@@ -55,7 +59,7 @@ const Header = () => {
         </div>
 
         {/* cart */}
-        <div className='flex border-zinc-200 border-l items-center justify-center gap-1 p-2 px-7'>
+        <div className='flex border-zinc-200 lg:border-l items-center justify-center gap-1 p-2 px-7'>
             <HiOutlineShoppingBag size={26} />
             <p className='font-light text-sm'>(0)</p>
         </div>
