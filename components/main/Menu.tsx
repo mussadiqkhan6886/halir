@@ -46,9 +46,9 @@ const Menu = () => {
         <motion.li 
           variants={itemVariants}
           key={i} 
-          className='text-lg font-semibold border-b border-zinc-200 pb-3'
+          className='font-black border-b border-zinc-200 pb-3'
         >
-          <Link href={item.link} className="block w-full">
+          <Link href={item.link} className="block uppercase w-full">
             {item.name}
           </Link>
         </motion.li>

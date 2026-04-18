@@ -50,12 +50,12 @@ const Header = () => {
         </div>
 
         {/* logo */}
-        <div className='border-zinc-200 lg:border-r p-4 flex justify-center items-center'>
+        <div className=' p-4 flex justify-center items-center'>
             <Image src={"/halirLogo.png"} alt='halir logo image in header' width={120} height={120} />
         </div>
 
         {/* nav bigger screen */}
-        <div className='hidden lg:flex flex-col flex-2'>
+        <div className='border-l border-r border-zinc-200  hidden lg:flex flex-col flex-2'>
             {/* search bar */}
             <div className='flex border-zinc-200 lg:border-b'>
                 {/* search */}
@@ -79,7 +79,7 @@ const Header = () => {
         </div>
 
         {/* cart */}
-        <div className='flex border-zinc-200 lg:border-l items-center justify-center gap-1 p-2 px-5 md:px-7'>
+        <div className='flex items-center justify-center gap-1 p-2 px-5 md:px-7'>
             <HiOutlineShoppingBag size={26} />
             <p className='font-light text-sm'>(0)</p>
         </div>
