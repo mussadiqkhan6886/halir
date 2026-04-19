@@ -4,7 +4,7 @@ import React from 'react'
 
 const Story = () => {
   return (
-    <section className='bg-light relative'>
+    <section className='bg-light relative max-w-8xl mx-auto'>
       <Image src={"/story2.jpg"} alt='story image' width={300} height={400} className='object-cover object-left lg:h-[300px] w-full lg:w-[250px] lg:absolute lg:left-0 lg:top-[70%] lg:-translate-y-1/2' />
       <Image src={"/story3.jpg"} alt='perfume image' width={200} height={300} className='object-cover object-center hidden lg:block absolute top-0 right-0' />
 

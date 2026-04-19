@@ -73,7 +73,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-white text-black px-8 py-4 uppercase text-[10px] tracking-[0.2em] flex items-center gap-3 font-semibold group rounded-full"  
+              className="bg-white text-black px-6 py-3 md:px-8 md:py-4 uppercase text-[10px] tracking-[0.2em] flex items-center gap-3 font-semibold group rounded-full"  
             >
               EXPLORE COLLECTIONS
               <motion.div animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
