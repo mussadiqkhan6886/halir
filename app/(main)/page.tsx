@@ -12,7 +12,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <main>
+    <main className='overflow-x-hidden'>
       <Hero />
       <Story />
       <Collections />
