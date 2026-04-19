@@ -3,7 +3,6 @@ import FAQ from '@/sections/FAQ'
 import Gallery from '@/sections/Gallery'
 import Hero from '@/sections/Hero'
 import HotSellers from '@/sections/HotSellers'
-import Inspiration from '@/sections/Inspiration'
 import NewArrival from '@/sections/NewArrival'
 import Reviews from '@/sections/Reviews'
 import Story from '@/sections/Story'
@@ -19,7 +18,6 @@ const Home = () => {
       <NewArrival />
       <HotSellers />
       <WhyUs />
-      <Inspiration />
       <Gallery />
       <Reviews />
       <FAQ />
