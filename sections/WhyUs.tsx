@@ -41,7 +41,6 @@ const WhyUs = () => {
           </p>
         </div>
 
-        {/* The Trust Grid */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-200 border border-zinc-200'>
           {trustPoints.map((point, i) => (
             <div 
@@ -60,7 +59,6 @@ const WhyUs = () => {
                 </p>
               </div>
               
-              {/* Decorative corner element */}
               <div className='flex justify-end mt-8'>
                 <div className='w-2 h-2 bg-zinc-100 group-hover:bg-red-600 transition-colors' />
               </div>
