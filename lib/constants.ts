@@ -13,3 +13,16 @@ export const menu = [
     {name: "Collections", link: "/"},
     {name: "About Us", link: "/"},
 ]
+
+export const newArrivals = [
+    {name: "Mi Amor", image: "/p.png"},
+    {name: "Farenheit", image: "/p2.jpg"},
+    {name: "Tom Ford", image: "/p.png"},
+    {name: "Creed", image: "/p.png"},
+]
+export const hotSellers = [
+    {name: "Inspiration", image: "/p2.jpg"},
+    {name: "Imagination", image: "/p.png"},
+    {name: "Ambassador", image: "/p.png"},
+    {name: "Air", image: "/p2.jpg"},
+]
