@@ -35,7 +35,7 @@ const NewArrival = () => {
               <motion.h4 
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
                 className={`text-white text-3xl sm:text-6xl md:text-8xl font-bold tracking-[ -0.05em] uppercase pointer-events-none drop-shadow-2xl`}
               >
                 <span className={`${ekate.className} lowercase text-3xl sm:text-4xl md:text-5xl block text-center -mb-1 md:mb-[-2rem] opacity-80`}>
@@ -43,11 +43,6 @@ const NewArrival = () => {
                 </span>
                 {item.name}
               </motion.h4>
-            </div>
-            
-            {/* Bottom-right index indicator (Luxury Detail) */}
-            <div className='absolute bottom-10 right-10 text-white/50 text-[10px] tracking-widest font-mono'>
-              [ 0{index + 1} / 0{newArrivals.length} ]
             </div>
           </motion.div>
         ))}
