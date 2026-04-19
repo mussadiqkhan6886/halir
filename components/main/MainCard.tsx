@@ -18,7 +18,7 @@ const MainCard = ({name, image, index}: Props) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className='relative w-full h-[40vh] md:h-[50vh] lg:h-[80vh] xl:h-screen group overflow-hidden bg-zinc-100'
+        className='relative w-full h-[30vh] md:h-[50vh] lg:h-[80vh] xl:h-screen group overflow-hidden bg-zinc-100'
     >
         <Image 
             src={image} 
@@ -38,9 +38,9 @@ const MainCard = ({name, image, index}: Props) => {
                 whileInView={{ y: 0, opacity: 1 }}
                
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-white text-4xl sm:text-5xl md:text-8xl font-bold tracking-tighter uppercase text-center drop-shadow-2xl"
+                className="text-white text-3xl sm:text-5xl md:text-8xl font-bold tracking-tighter uppercase text-center drop-shadow-2xl"
             >
-                <span className={`${ekate.className} lowercase text-3xl md:text-5xl block -mb-2 md:-mb-6 opacity-90`}>
+                <span className={`${ekate.className} lowercase text-2xl sm:text-3xl md:text-5xl block -mb-2 md:-mb-6 opacity-90`}>
                     the
                 </span>
                 {name}

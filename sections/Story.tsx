@@ -10,15 +10,16 @@ const Story = () => {
 
       <div className='flex justify-center'>
         <h3 className='text-3xl md:text-5xl px-2 pt-20 relative leading-10 tracking-tight'> 
-          <span className='inline-block ml-30'>WE <span className={`${ekate.className} md:text-8xl text-5xl`}>Create</span> NOT JUST </span>
+          <span className='inline-block md:ml-30'>WE <span className={`${ekate.className} md:text-8xl text-5xl`}>Create </span> NOT JUST </span>
           <br />
-          A PERFUME,  <span className='inline-block ml-28 md:ml-36'>BUT A</span> <br />
-           <span className={`${ekate.className} inline-block ml-40 md:ml-60 md:text-8xl text-5xl`}>Story</span> THAT SOUNDS ON <br className='hidden md:block' /> <span className='md:inline-block right-45 -bottom-3 md:absolute'>
-            YOUR SKIN
+          A PERFUME, <span className='inline md:hidden'>BUT A</span> <span className='hidden md:inline-block ml-28 md:ml-36'>BUT A</span> <br />
+           <span className='inline md:hidden'>STORY</span> <span className={`${ekate.className} hidden md:inline-block ml-40 md:ml-60 md:text-8xl text-5xl`}>Story</span> THAT <br className='block md:hidden' /> SOUNDS ON <br className='hidden md:block' /> <span className='md:inline-block right-45 -bottom-3 md:absolute'>
+            <span className={`${ekate.className} capitalize md:hidden inline-block mx-2`}>Your</span>
+            <span className='hidden md:inline'>YOUR</span> SKIN
            </span>
          </h3>
       </div>
-      <div className='grid p-2 text-zinc-700 grid-cols-2  gap-10 text-sm max-w-3xl mx-auto mt-10 text-justify'>
+      <div className='grid p-3 text-zinc-700 grid-cols-2  gap-10 text-sm max-w-3xl mx-auto mt-10 text-justify'>
         <div>
           <p>Halir was born from a deep passion for refined, premium fragrances a passion to create scents that do more than just smell good. We believe a fragrance is a personal signature, an invisible expression of identity that leaves a lasting impression.
 
@@ -32,9 +33,9 @@ We believe that premium should be felt before it is even experienced in the way 
 </p>
         </div>
         <div className='col-span-2'>
-          Today, Halir offers a growing range of fragrances for both men and women, each created to complement individuality and confidence. As we continue to evolve, our vision extends beyond perfumes — into a complete world of fragrance.
+          Today, Halir offers a growing range of fragrances for both men and women, each created to complement individuality and confidence. As we continue to evolve, our vision extends beyond perfumes into a complete world of fragrance.
 
-Our goal is to redefine how fragrance is experienced across Pakistan — making luxury more accessible, more refined, and more personal.
+Our goal is to redefine how fragrance is experienced across Pakistan making luxury more accessible, more refined, and more personal.
 
 At Halir, we are not just creating perfumes.
 We are creating identity.

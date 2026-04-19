@@ -10,13 +10,13 @@ const HotSellers = () => {
     <section className='bg-black py-32 px-6 overflow-hidden relative'>
       
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none opacity-[0.03] select-none">
-        <h2 className="text-[20rem] font-black uppercase text-white leading-none">HALIR</h2>
+        <h2 className="text-9xl lg:text-[20rem] font-black uppercase text-white leading-none">HALIR</h2>
       </div>
 
       <div className='relative z-10 max-w-7xl mx-auto mb-20 md:mb-32'>
         <h3 className='text-6xl text-center tracking-tighter text-white'>
-          <span className={`${ekate.className} capitalize text-6xl md:text-7xl leading-0 `}>Favourites</span>
-          <span className={`ml-10 block uppercase text-4xl sm:text-5xl lg:text-6xl`}>popular fragrance.</span>
+          <span className={`${ekate.className} mr-5 block capitalize text-5xl sm:text-6xl md:text-7xl leading-0 `}>Favourites</span>
+          <span className={` block uppercase text-3xl sm:text-5xl lg:text-6xl`}>popular fragrance.</span>
         </h3>
       </div>
 
@@ -29,7 +29,6 @@ const HotSellers = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            // We use absolute positioning on desktop to create the "Stack" effect
             className={`relative w-full md:w-[650px] group transition-all duration-700 ${
               index % 2 === 0 ? 'self-start' : 'self-end md:-mt-40'
             }`}
@@ -43,7 +42,7 @@ const HotSellers = () => {
                 alt={item.name}
                 fill
                 sizes="(max-width: 768px) 100vw, 800px"
-                className='object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s] ease-out'
+                className='object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s] ease-out'
               />
               
               {/* Red Scanline Overlay Effect */}
@@ -54,7 +53,7 @@ const HotSellers = () => {
             <div className={`absolute top-1/2 -translate-y-1/2 z-20 pointer-events-none ${
                 index % 2 === 0 ? '-right-4 md:-right-0 text-right' : '-left-4 md:-left-0 text-left'
             }`}>
-                <h4 className='text-white text-4xl md:text-6xl font-bold uppercase tracking-tighter drop-shadow-2xl'>
+                <h4 className='text-white text-2xl sm:text-4xl md:text-6xl font-bold uppercase tracking-tighter drop-shadow-2xl'>
                     {item.name}
                 </h4>
                
