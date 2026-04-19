@@ -18,9 +18,9 @@ const Story = () => {
            </span>
          </h3>
       </div>
-      <div className='grid text-zinc-700 grid-cols-2 justify-center items-center gap-10 text-sm max-w-3xl mx-auto mt-10 text-justify'>
+      <div className='grid p-2 text-zinc-700 grid-cols-2  gap-10 text-sm max-w-3xl mx-auto mt-10 text-justify'>
         <div>
-          <p>Halir was born from a deep passion for refined, premium fragrances — a passion to create scents that do more than just smell good. We believe a fragrance is a personal signature, an invisible expression of identity that leaves a lasting impression.
+          <p>Halir was born from a deep passion for refined, premium fragrances a passion to create scents that do more than just smell good. We believe a fragrance is a personal signature, an invisible expression of identity that leaves a lasting impression.
 
 From the beginning, our vision has been clear:
 to craft fragrances that embody luxury in every detail.</p>
@@ -28,7 +28,7 @@ to craft fragrances that embody luxury in every detail.</p>
         <div>
           <p>At Halir, we focus not only on the scent itself, but on the complete experience. Each fragrance is carefully developed to deliver depth, character, and longevity, while every bottle and box is designed with a modern, aesthetic touch that reflects true elegance.
 
-We believe that premium should be felt before it is even experienced — in the way it looks, the way it is held, and the way it becomes part of your lifestyle.
+We believe that premium should be felt before it is even experienced in the way it looks, the way it is held, and the way it becomes part of your lifestyle.
 </p>
         </div>
         <div className='col-span-2'>
