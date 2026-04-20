@@ -32,17 +32,15 @@ const FAQ = () => {
   const [activeIdx, setActiveIdx] = useState<number | null>(0);
 
   return (
-    <section className='bg-white py-24 md:py-40 px-6 border-t border-zinc-100'>
+    <section className='bg-white py-10 md:py-20 px-6 border-t border-zinc-100'>
       <div className='max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16'>
         
         {/* Left Side: Sticky Header */}
         <div className='lg:col-span-4 lg:sticky lg:top-32 h-fit'>
-          <span className='text-[10px] tracking-[0.6em] uppercase text-zinc-400 font-bold block mb-4'>
-            Support
-          </span>
-          <h2 className='text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-[0.9] mb-8'>
-            Common <br /> 
-            <span className={`${ekate.className} text-zinc-300 lowercase font-light`}>Inquiries.</span>
+          
+          <h2 className='text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-[0.9] mb-6'>
+            Common <br className='hidden md:block' /> 
+            Inquiries.
           </h2>
           <p className={`${magdaLig.className} text-zinc-500 text-sm max-w-xs leading-relaxed`}>
             Can't find what you're looking for? Reach out to our olfactory experts via WhatsApp or Email.
@@ -55,9 +53,9 @@ const FAQ = () => {
             <div key={index} className='border-b border-zinc-100'>
               <button
                 onClick={() => setActiveIdx(activeIdx === index ? null : index)}
-                className='w-full py-8 flex justify-between items-center text-left group'
+                className='w-full py-7 flex justify-between items-center text-left group'
               >
-                <span className='text-xl md:text-2xl font-bold uppercase tracking-tight group-hover:pl-2 transition-all duration-300'>
+                <span className='text-xl font-bold uppercase tracking-tight group-hover:pl-2 transition-all duration-300'>
                   {faq.question}
                 </span>
                 <div className='ml-4 flex-shrink-0'>
@@ -74,7 +72,7 @@ const FAQ = () => {
                     transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                     className='overflow-hidden'
                   >
-                    <p className={`${magdaLig.className} text-zinc-500 text-lg pb-10 max-w-2xl leading-relaxed`}>
+                    <p className={`${magdaLig.className} text-zinc-500 text-md pb-7 max-w-2xl leading-relaxed`}>
                       {faq.answer}
                     </p>
                   </motion.div>
