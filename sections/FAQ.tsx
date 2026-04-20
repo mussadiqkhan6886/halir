@@ -55,10 +55,10 @@ const FAQ = () => {
                 onClick={() => setActiveIdx(activeIdx === index ? null : index)}
                 className='w-full py-7 flex justify-between items-center text-left group'
               >
-                <span className='text-xl font-bold uppercase tracking-tight group-hover:pl-2 transition-all duration-300'>
+                <span className='text-md sm:text-lg md:text-xl font-bold uppercase tracking-tight group-hover:pl-2 transition-all duration-300'>
                   {faq.question}
                 </span>
-                <div className='ml-4 flex-shrink-0'>
+                <div className='ml-3 flex-shrink-0'>
                   {activeIdx === index ? <HiMinus size={20} /> : <HiPlus size={20} />}
                 </div>
               </button>
@@ -72,7 +72,7 @@ const FAQ = () => {
                     transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                     className='overflow-hidden'
                   >
-                    <p className={`${magdaLig.className} text-zinc-500 text-md pb-7 max-w-2xl leading-relaxed`}>
+                    <p className={`${magdaLig.className} text-zinc-500 text-sm md:text-md pb-7 max-w-2xl md:leading-relaxed`}>
                       {faq.answer}
                     </p>
                   </motion.div>
