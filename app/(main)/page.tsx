@@ -1,4 +1,5 @@
 import Collections from '@/sections/Collections'
+import CTA from '@/sections/CTA'
 import FAQ from '@/sections/FAQ'
 import Gallery from '@/sections/Gallery'
 import Hero from '@/sections/Hero'
@@ -21,6 +22,7 @@ const Home = () => {
       {/* <Gallery /> */}
       <Reviews />
       <FAQ />
+      <CTA />
     </main>
   )
 }

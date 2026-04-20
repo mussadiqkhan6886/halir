@@ -51,9 +51,9 @@ const Header = () => {
         </div>
 
         {/* logo */}
-        <div className=' p-4 flex justify-center items-center'>
+        <Link href={"/"} className=' p-4 flex justify-center items-center'>
             <Image src={"/halirLogo.png"} alt='halir logo image in header' width={120} height={120} />
-        </div>
+        </Link>
 
         {/* nav bigger screen */}
         <div className='border-l border-r border-zinc-200  hidden lg:flex flex-col flex-2'>
