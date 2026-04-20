@@ -7,10 +7,8 @@ const Footer = () => {
   return (
     <footer className='flex flex-col gap-10 px-6 md:px-10 border-t bg-zinc-100 border-zinc-300 pt-12 overflow-hidden'>
       
-      {/* Upper Footer Links Section */}
       <div className='flex flex-col md:flex-row gap-12 md:gap-10 justify-between'>
         
-        {/* 1. Client Care */}
         <div className='flex-1'>
           <h5 className='font-bold mb-6 uppercase text-sm tracking-[0.2em]'>Client Care</h5>
           <ul className='flex flex-col gap-2 text-sm text-stone-900'>
@@ -53,7 +51,7 @@ const Footer = () => {
                 <Image src={"/hot.jpg"} alt='hot' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
               </div>
             </div>
-            <p className='font-bold text-sm tracking-tighter md:text-right'>@halirperfumery</p>
+            <Link href={"https://www.instagram.com/halirperfumery/?__pwa=1"} className='font-bold text-sm tracking-tighter md:text-right block'>@halirperfumery</Link>
           </div>
         </div>
       </div>
@@ -69,7 +67,7 @@ const Footer = () => {
       </div>
 
       <div className='py-4 text-center border-t border-zinc-200 text-[10px] tracking-[0.3em] text-stone-500 uppercase'>
-        <p>All rights reserved &copy; {new Date().getFullYear()} — Halir Perfumery Pakistan</p>
+        <p>All rights reserved &copy; {new Date().getFullYear()} — <Link href={"/"}>Halir Perfumery</Link>  Pakistan</p>
       </div>
     </footer>
   )
