@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AiFillStar } from "react-icons/ai";
-import { ekate } from '@/lib/font';
+import { ekate, magdaLig } from '@/lib/font';
 
 const allReviews = [
   { name: "Ayesha Khan", city: "Lahore", review: "The fountain pen script was breathtaking. It felt so personal.", stars: 5 },
@@ -65,12 +65,12 @@ const Reviews = () => {
          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className={`${ekate.className} text-6xl text-stone-900`}
+            className={`${ekate.className} text-4xl sm:text-5xl md:text-6xl text-stone-900`}
           >
-            Letters of <span className="italic text-[#800000]">Love</span>
+            Letters of <span className="italic text-[#800000]"> Love</span>
           </motion.h2>
-          <p className="text-stone-500 mt-6 text-lg">
-            A few kind words from those who have experienced the magic of handwritten connection.
+          <p className={`${magdaLig.className} text-stone-500 mt-6 text-sm sm:text-lg`}>
+            A few kind words from those who have experienced the magic of HALIR Perfumery.
           </p>
         </div>
 
