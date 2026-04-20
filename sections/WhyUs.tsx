@@ -26,7 +26,7 @@ const trustPoints = [
 
 const WhyUs = () => {
   return (
-    <section className='bg-zinc-100 py-24 px-6 border-t border-zinc-100'>
+    <section className='bg-zinc-100 py-24 px-5 md:px-6 border-t border-zinc-100'>
       <div className='max-w-7xl mx-auto'>
         
         <div className='flex flex-col md:flex-row justify-between items-end mb-20 gap-6'>
@@ -45,7 +45,7 @@ const WhyUs = () => {
           {trustPoints.map((point, i) => (
             <div 
               key={i}
-              className='bg-white p-10 md:p-16 flex flex-col justify-between hover:bg-zinc-50 transition-colors duration-500 min-h-[300px]'
+              className='bg-white p-8 sm:p-10 md:p-16 flex flex-col justify-between hover:bg-zinc-50 transition-colors duration-500 min-h-[300px]'
             >
               <div>
                 <span className='text-[9px] font-bold tracking-[0.4em] text-red-600 uppercase block mb-6'>
@@ -67,10 +67,10 @@ const WhyUs = () => {
         </div>
 
         <div 
-          className='mt-12 bg-black text-white p-8 md:p-12 flex flex-col md:flex-row items-center justify-between rounded-sm'
+          className='mt-12 bg-black text-white p-6 sm:p-8 md:p-12 flex flex-col md:flex-row items-center justify-between rounded-sm'
         >
           <div className='flex items-center gap-6 mb-6 md:mb-0'>
-            <div className='w-12 h-12 rounded-full border border-white/20 flex items-center justify-center italic text-xl'>+</div>
+            <div className='hidden w-12 h-12 rounded-full border border-white/20 lg:flex items-center justify-center italic text-xl'>+</div>
             <p className='text-lg md:text-xl font-bold tracking-tight uppercase'>
                 A surprise gift awaits in every order
             </p>
