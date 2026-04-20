@@ -42,7 +42,7 @@ We are creating identity.
         </div> */}
       </div>
       <div className='flex justify-center gap-3 flex-col items-center my-15'>
-        <h3 className={`${ekate.className} text-4xl`}>
+        <h3 className={`${ekate.className} mb-10 sm:mb-0 text-4xl`}>
           Halir
         </h3>
         <p className='font-semibold text-sm'>Where scent becomes identity</p>
