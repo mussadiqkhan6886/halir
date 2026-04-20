@@ -85,7 +85,7 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
                     </div>
 
                     {/* Footer Section */}
-                    <div className='p-6 bg-zinc-50 mt-auto'>
+                    <div className='p-6 pb-10 bg-zinc-50 mt-auto'>
                         <div className='flex justify-between items-center mb-6'>
                             <p className='text-xs uppercase tracking-widest'>Sub total</p>
                             <p className={`${magdaReg.className} text-xl tracking-tighter`}>PKR 2,500</p>
