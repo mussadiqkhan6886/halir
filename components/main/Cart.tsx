@@ -4,15 +4,23 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import { FiX } from 'react-icons/fi';
 
-const Cart = () => {
-    const [cart, setCart] = useState(false)
+const Cart = ({setIsCartOpen}: {setIsCartOpen: (b: boolean) => void}) => {
+    const [cart, setCart] = useState(0)
   return (
-    <div>
+    <div className='absolute'>
       <div className='flex justify-between items-center'>
         <h5>My cart</h5>
-        <FiX />
+        <button onClick={() => setIsCartOpen(false)}>
+            <FiX  />
+        </button>
       </div>
-      <div>
+     {cart == 0 ?
+        <div>
+            <h6>CART IS EMPTY</h6>
+        </div>
+     : (
+        <>
+             <div>
         <div>
             <Image src={"/men.jpg"} alt='cart' width={200} height={200} />
         </div>
@@ -37,6 +45,8 @@ const Cart = () => {
             <button>CHECKOUT</button>
         </div>
       </div>
+        </>
+     )}
     </div>
   )
 }

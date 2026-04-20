@@ -11,11 +11,12 @@ import { magdaLig } from '@/lib/font'
 import Menu from '@/components/main/Menu';
 import { AnimatePresence } from 'framer-motion';
 import SearchSide from '@/components/main/SearchSide';
+import Cart from '@/components/main/Cart';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isSearchOpen, setIsSearchOpen] = useState(false)
-
+    const [isCartOpen, setIsCartOpen] = useState(false)
 
   return (
     <header className='shadow-md z-40'>
@@ -80,7 +81,8 @@ const Header = () => {
 
         {/* cart */}
         <div className='flex items-center justify-center gap-1 p-2 px-5 md:px-7'>
-            <HiOutlineShoppingBag size={26} />
+            <HiOutlineShoppingBag onClick={() => setIsCartOpen(true)} size={26} />
+                {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
             <p className='font-light text-sm'>(0)</p>
         </div>
       </div>
