@@ -39,8 +39,8 @@ const Menu = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      exit="hidden" // Works if wrapped in AnimatePresence in the parent
-      className='fixed top-20 left-0 w-full flex flex-col bg-white z-50 overflow-hidden pt-10 px-10 gap-5'
+      exit="hidden" 
+      className='fixed top-26 min-[483px]:top-20 left-0 w-full flex flex-col bg-white z-50 overflow-hidden pt-10 px-10 gap-5'
     >
       {menu.map((item, i) => (
         <motion.li 
