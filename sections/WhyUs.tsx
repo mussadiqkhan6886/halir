@@ -1,5 +1,6 @@
 import React from 'react'
 import { ekate, magdaLig } from '@/lib/font'
+import Link from 'next/link'
 
 const trustPoints = [
   {
@@ -75,9 +76,9 @@ const WhyUs = () => {
                 A surprise gift awaits in every order
             </p>
           </div>
-          <button className={`${magdaLig.className} text-[10px] tracking-[0.4em] uppercase border border-white/20 px-8 py-4 bg-white text-black`}>
+          <Link href={"/collections/all"} className={`${magdaLig.className} text-[10px] tracking-[0.4em] uppercase border border-white/20 px-8 py-4 bg-white text-black`}>
             Order Now
-          </button>
+          </Link>
         </div>
 
       </div>

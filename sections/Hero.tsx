@@ -73,14 +73,14 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-white text-black px-6 py-3 md:px-8 md:py-4 uppercase text-[10px] tracking-[0.2em] flex items-center gap-3 font-semibold group rounded-full"  
+              className="bg-white text-black uppercase text-[10px]  font-semibold group rounded-full"  
             >
-              EXPLORE COLLECTIONS
+              <Link className='px-6 py-3 md:px-8 md:py-4 tracking-[0.2em] flex items-center gap-3' href={"/collections/hot-sellers"}>EXPLORE HOT SELLERS
               <motion.div animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
                 <HiOutlineArrowNarrowRight size={18} className="text-black/60 group-hover:text-black group-hover:translate-x-1 transition-transform" />
-              </motion.div>
+              </motion.div></Link>
             </motion.button>
-            <Link href="/brand" className={`${magdaLig.className} text-sm text-white/70 border-b border-white/20 pb-1 hover:text-white hover:border-white transition-colors hidden lg:block`}>
+            <Link href="/about-us" className={`${magdaLig.className} text-sm text-white/70 border-b border-white/20 pb-1 hover:text-white hover:border-white transition-colors hidden lg:block`}>
               OUR STORY
             </Link>
         </motion.div>

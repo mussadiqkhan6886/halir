@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ekate } from '@/lib/font'
 import React from 'react'
+import Link from 'next/link';
 
 interface Props {
     name: string
@@ -13,6 +14,7 @@ interface Props {
 
 const MainCard = ({name, image, index}: Props) => {
   return (
+    <Link href={"/collections/"}>
     <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -47,6 +49,7 @@ const MainCard = ({name, image, index}: Props) => {
             </motion.h4>
         </div>
     </motion.div>
+    </Link>
   )
 }
 

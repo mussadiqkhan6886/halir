@@ -5,6 +5,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { ekate, magdaLig } from '@/lib/font'
 import { HiOutlineArrowRight } from "react-icons/hi"
+import Link from 'next/link';
 
 const categories = [
   { title: 'Hot Sellers', src: '/hot.jpg', subtitle: 'The Icons' },
@@ -70,9 +71,9 @@ const Collections = () => {
 
       {/* Visual Section Footer */}
       <div className='mt-15 flex flex-col items-center gap-4'>
-          <button className={`${magdaLig.className} text-[11px] uppercase tracking-[0.4em] text-zinc-400 hover:text-black transition-colors`}>
+          <Link href={"/collections"} className={`${magdaLig.className} text-[11px] uppercase tracking-[0.4em] text-zinc-500 hover:text-black transition-colors`}>
              View Collections
-          </button>
+          </Link>
       </div>
     </section>
   )

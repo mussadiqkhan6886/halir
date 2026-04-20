@@ -3,7 +3,8 @@
 import { hotSellers } from '@/lib/constants'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ekate, magdaLig } from '@/lib/font'
+import { ekate } from '@/lib/font'
+import Link from 'next/link';
 
 const HotSellers = () => {
   return (
@@ -33,8 +34,7 @@ const HotSellers = () => {
               index % 2 === 0 ? 'self-start' : 'self-end md:-mt-40'
             }`}
           >
-            {/* The Image Wrapper with a Tilt Effect */}
-            <div className={`relative aspect-[16/10] overflow-hidden rounded-sm border border-white/5 group-hover:border-red-600/40 transition-all duration-700 shadow-2xl ${
+            <Link href={"/collections/"} className={`relative block aspect-[16/10] overflow-hidden rounded-sm border border-white/5 group-hover:border-red-600/40 transition-all duration-700 shadow-2xl ${
                 index % 2 === 0 ? 'md:rotate-[-2deg] group-hover:rotate-0' : 'md:rotate-[2deg] group-hover:rotate-0'
             }`}>
               <Image 
@@ -47,9 +47,8 @@ const HotSellers = () => {
               
               {/* Red Scanline Overlay Effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            </div>
+            </Link>
 
-            {/* Float-over Text Labels */}
             <div className={`absolute top-1/2 -translate-y-1/2 z-20 pointer-events-none ${
                 index % 2 === 0 ? '-right-4 md:-right-0 text-right' : '-left-4 md:-left-0 text-left'
             }`}>
@@ -62,7 +61,6 @@ const HotSellers = () => {
         ))}
       </div>
 
-      {/* 4. FIREY DECORATION */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-red-600/5 blur-[150px] rounded-full" />
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-red-900/10 blur-[150px] rounded-full" />
 
