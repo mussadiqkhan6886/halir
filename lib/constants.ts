@@ -26,3 +26,17 @@ export const hotSellers = [
     {name: "Ambassador", image: "/p.png"},
     {name: "Air", image: "/p2.jpg"},
 ]
+
+export const clientCare = [
+    {name: "TERMS & CONDITION", link: "/"},
+    {name: "PRIVACY POLICY", link: "/"},
+    {name: "SHIPPING & RETURNS", link: "/"},
+    {name: "CONTACT US", link: "/"},
+]
+
+export const pages = [
+    {name: "ABOUT US", link: "/"},
+    {name: "COLLECTIONS", link: "/"},
+    {name: "MEN", link: "/"},
+    {name: "WOMEN", link: "/"},
+]
