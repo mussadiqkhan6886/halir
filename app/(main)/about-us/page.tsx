@@ -28,7 +28,7 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <main className="bg-white px-10 py-2">
+    <main className="bg-white md:px-10 py-2">
       {/* Schema.org */}
       <script
         type="application/ld+json"
@@ -42,7 +42,7 @@ export default function Page() {
 
         <h1
           id="about-hero"
-          style={{background: `URL(${"/story.jpg"})`}}
+          style={{background: `URL(${"/story.jpg"})`, backgroundPosition: "center"}}
           className="text-3xl md:text-5xl pb-26 p-5 font-bold uppercase leading-[1.1] tracking-tighter text-light"
         >
           We create not just a perfume,{' '}
