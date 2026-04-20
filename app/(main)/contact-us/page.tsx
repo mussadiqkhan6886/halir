@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ekate, magdaLig } from '@/lib/font'
 import { HiOutlineArrowLongRight, HiOutlinePhone } from 'react-icons/hi2'
@@ -10,6 +10,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 const Page = () => {
     const [response, setResponse] = useState<null | 'yes' | 'no'>(null);
     const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
+    const [clicked, setClicked] = useState(false)
 
     const handleNoHover = () => {
         if (response === 'yes') return; // Don't move if they already said yes
@@ -20,10 +21,21 @@ const Page = () => {
         setNoButtonPosition({ x: randomX, y: randomY });
     };
 
+
+    useEffect(() => {
+      if (!clicked) return;
+
+      const timer = setTimeout(() => {
+        setClicked(false);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }, [clicked]);
+
     return (
         <main className='grid grid-cols-1 md:grid-cols-2 bg-black text-white min-h-screen overflow-hidden'>
             
-            <section className='relative flex items-center justify-center p-6 md:p-12 overflow-hidden border-r border-zinc-900'>
+            <section className='relative flex items-center justify-center p-6 md:p-12 overflow-hidden border-r border-zinc-900 h-[90vh] md:h-full'>
                 
                 <Image 
                     src="/contact.jpg" 
@@ -63,14 +75,19 @@ const Page = () => {
                                         Yes, I do.
                                     </motion.button>
 
-                                    <motion.button 
+                                    {!clicked && <motion.button 
                                         animate={noButtonPosition}
                                         onMouseEnter={handleNoHover}
+                                        onClick={() => setClicked(true)}
                                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                         className='text-white/50 border-b border-white/20 pb-2 text-[10px] font-bold tracking-[0.3em] uppercase hover:text-white hover:border-white transition-colors cursor-crosshair'
                                     >
                                         No
-                                    </motion.button>
+                                    </motion.button>}
+
+                                    {clicked && <div className='bg-light shadow-xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 text-black p-20'>
+                                        <p className="text-center font-semibold text-4xl">Wrong Answer</p>
+                                      </div>}
                                 </div>
                             </motion.div>
                         )}
