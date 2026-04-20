@@ -30,7 +30,7 @@ const WhyUs = () => {
     <section className='bg-zinc-100 py-24 px-5 md:px-6 border-t border-zinc-100'>
       <div className='max-w-7xl mx-auto'>
         
-        <div className='flex flex-col md:flex-row justify-between items-end mb-20 gap-6'>
+        <div className='flex flex-col md:flex-row justify-between md:items-end mb-20 gap-6'>
           <div className='max-w-xl'>
             <h3 className='text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-none'>
               THE HALIR <br className='hidden sm:block' /> 

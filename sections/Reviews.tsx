@@ -57,7 +57,7 @@ const ReviewColumn = ({ reviews, duration, delay = 0 }: { reviews: typeof allRev
 
 const Reviews = () => {
   return (
-    <section className="py-24 bg-[#FDFCFB] overflow-hidden relative">
+    <section className="py-18 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         
         <div className="text-center mb-16 relative z-20">
