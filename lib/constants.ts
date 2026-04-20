@@ -7,11 +7,11 @@ export const upperheader = [
 
 export const menu = [
     {name: "Fine Fragrance", link: "/"},
-    {name: "Hot Sellers", link: "/"},
-    {name: "Men", link: "/"},
-    {name: "Women", link: "/"},
-    {name: "Collections", link: "/"},
-    {name: "About Us", link: "/"},
+    {name: "Hot Sellers", link: "/collections/hot-sellers"},
+    {name: "Men", link: "/collections/men"},
+    {name: "Women", link: "/collections/women"},
+    {name: "Collections", link: "/collections"},
+    {name: "About Us", link: "/about-us"},
 ]
 
 export const newArrivals = [
@@ -28,16 +28,16 @@ export const hotSellers = [
 ]
 
 export const clientCare = [
-    {name: "TERMS & CONDITION", link: "/"},
-    {name: "PRIVACY POLICY", link: "/"},
-    {name: "SHIPPING & RETURNS", link: "/"},
-    {name: "CONTACT US", link: "/"},
+    {name: "TERMS & CONDITION", link: "/terms-and-condition"},
+    {name: "PRIVACY POLICY", link: "/privacy-policy"},
+    {name: "SHIPPING & RETURNS", link: "/shipping-and-returns"},
+    {name: "CONTACT US", link: "/contact-us"},
 ]
 
 export const pages = [
-    {name: "ABOUT US", link: "/"},
-    {name: "COLLECTIONS", link: "/"},
-    {name: "MEN", link: "/"},
-    {name: "WOMEN", link: "/"},
-    {name: "HOT SELLERS", link: "/"},
+    {name: "ABOUT US", link: "/about-us"},
+    {name: "COLLECTIONS", link: "/collections"},
+    {name: "MEN", link: "/collections/men"},
+    {name: "WOMEN", link: "/collections/women"},
+    {name: "HOT SELLERS", link: "/collections/hot-sellers"},
 ]
