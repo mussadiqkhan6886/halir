@@ -32,9 +32,9 @@ const WhyUs = () => {
         
         <div className='flex flex-col md:flex-row justify-between items-end mb-20 gap-6'>
           <div className='max-w-xl'>
-            <h3 className='text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-none'>
-              THE HALIR <br /> 
-              <span className={`${ekate.className} text-zinc-700 capitalize mb-3 md:mb-0 font-light`}>standard.</span>
+            <h3 className='text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-none'>
+              THE HALIR <br className='hidden sm:block' /> 
+              <span className={`${ekate.className} text-zinc-700 capitalize font-light`}>standard.</span>
             </h3>
           </div>
           <p className={`${magdaLig.className} text-zinc-500 text-[10px] uppercase tracking-[0.2em]`}>

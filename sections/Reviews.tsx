@@ -60,7 +60,6 @@ const Reviews = () => {
     <section className="py-24 bg-[#FDFCFB] overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Header */}
         <div className="text-center mb-16 relative z-20">
          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -74,27 +73,21 @@ const Reviews = () => {
           </p>
         </div>
 
-        {/* The Scrolling Container */}
         <div className="relative h-[700px] overflow-hidden">
           
-          {/* Top & Bottom Blur Masks (This creates the "Appearing/Disappearing" effect) */}
           <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#FDFCFB] via-[#FDFCFB]/80 to-transparent z-10 backdrop-blur-[2px]" />
           <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#FDFCFB] via-[#FDFCFB]/80 to-transparent z-10 backdrop-blur-[2px]" />
 
-          {/* Three Columns of Floating Reviews */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full">
             
-            {/* Column 1 */}
             <div className="relative">
               <ReviewColumn reviews={duplicatedReviews} duration={30} />
             </div>
 
-            {/* Column 2 - Starts slightly offset */}
             <div className="relative hidden md:block">
               <ReviewColumn reviews={duplicatedReviews} duration={40} delay={-5} />
             </div>
 
-            {/* Column 3 - Faster */}
             <div className="relative hidden lg:block">
               <ReviewColumn reviews={duplicatedReviews} duration={25} delay={-2} />
             </div>
