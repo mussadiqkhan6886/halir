@@ -5,46 +5,71 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='flex flex-col gap-5 px-10 border-t bg-zinc-100 border-zinc-300 pt-4'>
-      <div className='flex gap-10  justify-between'>
-        <div>
-          <h5 className='font-semibold mb-3 uppercase'>Client Care</h5>
-          <div>
-            <ul className='flex flex-col gap-2 text-sm text-stone-900'>
-              {clientCare.map(item => (
-                <li><Link href={item.link}>{item.name}</Link></li>
-              ))}
-              <li className='mt-4 text-stone-500'>Design & Developed: <Link className='underline text-stone-600 italic' href={"https://scrupulous.vercel.app"}>Scrupulous</Link></li>
-            </ul>
-          </div>
+    <footer className='flex flex-col gap-10 px-6 md:px-10 border-t bg-zinc-100 border-zinc-300 pt-12 overflow-hidden'>
+      
+      {/* Upper Footer Links Section */}
+      <div className='flex flex-col md:flex-row gap-12 md:gap-10 justify-between'>
+        
+        {/* 1. Client Care */}
+        <div className='flex-1'>
+          <h5 className='font-bold mb-6 uppercase text-sm tracking-[0.2em]'>Client Care</h5>
+          <ul className='flex flex-col gap-2 text-sm text-stone-900'>
+            {clientCare.map((item, idx) => (
+              <li key={idx} className='hover:text-stone-500 transition-colors'>
+                <Link href={item.link}>{item.name}</Link>
+              </li>
+            ))}
+            <li className='mt-6 text-[11px] text-stone-500 uppercase tracking-widest'>
+              Design & Developed:  
+              <Link className='underline text-stone-800 italic font-medium' href={"https://scrupulous.vercel.app"}>
+                Scrupulous
+              </Link>
+            </li>
+          </ul>
         </div>
-        <div>
-          <h5 className='font-semibold mb-3 uppercase'>Pages</h5>
-          <div>
-            <ul className='flex flex-col gap-2 text-sm text-stone-900'>
-              {pages.map(item => (
-                <li><Link href={item.link}>{item.name}</Link></li>
-              ))}
-            </ul>
-          </div>
+
+        <div className='flex-1'>
+          <h5 className='font-bold mb-6 uppercase text-sm tracking-[0.2em]'>Navigation</h5>
+          <ul className='flex flex-col gap-2 text-sm text-stone-900'>
+            {pages.map((item, idx) => (
+              <li key={idx} className='hover:text-stone-500 transition-colors'>
+                <Link href={item.link}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className='flex gap-5'>
-          <h5 className='font-semibold uppercase'>Instagram</h5>
-          <div>
-            <div className='flex'>
-              <Image className='w-42 h-50' src={"/men.jpg"} alt='men in footer instagram image' width={300} height={400}  />
-              <Image className='w-42 h-50' src={"/women.jpg"} alt='women in footer instagram image' width={300} height={400}  />
-              <Image className='w-42 h-50' src={"/hot.jpg"} alt='hot in footer instagram image' width={300} height={400}  />
+
+        <div className='flex-[2] flex flex-col md:items-end'>
+          <div className='w-full md:max-w-sm'>
+            <h5 className='font-bold mb-5 uppercase text-xs tracking-[0.2em] md:text-right'>Instagram</h5>
+            <div className='flex mb-2'>
+              <div className='relative w-full aspect-[3/4] overflow-hidden'>
+                <Image src={"/men.jpg"} alt='men' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
+              </div>
+              <div className='relative w-full aspect-[3/4] overflow-hidden'>
+                <Image src={"/women.jpg"} alt='women' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
+              </div>
+              <div className='relative w-full aspect-[3/4] overflow-hidden'>
+                <Image src={"/hot.jpg"} alt='hot' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
+              </div>
             </div>
-            <p className='font-semibold text-sm mt-1'>@halirperfumery</p>
+            <p className='font-bold text-sm tracking-tighter md:text-right'>@halirperfumery</p>
           </div>
         </div>
       </div>
-      <div className='-mb-10'>
-        <Image src={"/halirLogo.png"} alt='halir logo in footer' width={1000} height={400} className='w-full h-full object-center object-cover' />
+
+      <div className='relative w-full mt-6 -mb-10 lg:-mb-16 select-none pointer-events-none'>
+        <Image 
+          src={"/halirLogo.png"} 
+          alt='halir logo' 
+          width={1800} 
+          height={600} 
+          className='w-full h-auto opacity-90' 
+        />
       </div>
-      <div className='p-2 text-center border-t border-zinc-300 text-sm text-stone-600 capitalize'>
-        <p>All rights reserved &copy; {new Date().getFullYear()}</p>
+
+      <div className='py-4 text-center border-t border-zinc-200 text-[10px] tracking-[0.3em] text-stone-500 uppercase'>
+        <p>All rights reserved &copy; {new Date().getFullYear()} — Halir Perfumery Pakistan</p>
       </div>
     </footer>
   )
