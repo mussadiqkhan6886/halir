@@ -35,7 +35,7 @@ const Page = () => {
     return (
         <main className='grid grid-cols-1 md:grid-cols-2 bg-black text-white min-h-screen overflow-hidden'>
             
-            <section className='relative flex items-center justify-center p-6 md:p-12 overflow-hidden border-r border-zinc-900 h-[90vh] md:h-full'>
+            <section className='relative flex items-center justify-center p-6 md:p-12 overflow-hidden border-r border-zinc-900 h-[85vh] md:h-full'>
                 
                 <Image 
                     src="/contact.jpg" 
@@ -58,8 +58,8 @@ const Page = () => {
                                 transition={{ duration: 0.8 }}
                                 className='space-y-6'
                             >
-                                <span className={`${ekate.className} text-5xl text-red-700 block -mb-4`}>Quick question</span>
-                                <h1 className='text-6xl font-bold uppercase tracking-tighter leading-none'>
+                                <span className={`${ekate.className} text-4xl sm:text-5xl text-red-700 block -mb-4`}>Quick question</span>
+                                <h1 className='text-4xl sm:text-6xl font-bold uppercase tracking-tighter leading-none'>
                                     DO YOU
                                     LOVE <br />
                                     COFFEE?
@@ -70,7 +70,7 @@ const Page = () => {
                                     <motion.button 
                                         whileHover={{ scale: 1.1 }}
                                         onClick={() => setResponse('yes')}
-                                        className='bg-white text-black px-12 py-5 text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-black cursor-pointer hover:text-white transition-all duration-500 rounded-sm'
+                                        className='bg-white text-black px-8 sm:px-12 py-4 sm:py-5 text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-black cursor-pointer hover:text-white transition-all duration-500 rounded-sm'
                                     >
                                         Yes, I do.
                                     </motion.button>
@@ -112,7 +112,7 @@ const Page = () => {
             <section className='p-8 md:p-16 lg:p-24 flex flex-col bg-black relative'>
                 
                 <div className='mb-16'>
-                    <h2 className='text-5xl md:text-6xl font-bold uppercase tracking-tighter'>
+                    <h2 className='text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tighter'>
                         Connect with <br />
                         <span className={`${ekate.className} text-zinc-200 capitalize font-light mt-4 text-center block`}>Halir.</span>
                     </h2>
