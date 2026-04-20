@@ -84,7 +84,9 @@ const Header = () => {
             <button className='cursor-pointer' onClick={() => setIsCartOpen(true)}>
                 <HiOutlineShoppingBag  size={26} />
             </button>
+            <AnimatePresence>
                 {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
+            </AnimatePresence>
             <p className='font-light text-sm'>(0)</p>
         </div>
       </div>
