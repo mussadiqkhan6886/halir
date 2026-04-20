@@ -17,7 +17,7 @@ const Collections = () => {
     <section className='max-w-[1500px] mx-auto py-20 px-6 min-h-screen flex flex-col'>
       
       <div className='flex justify-between items-end mb-10 border-b border-zinc-100 pb-10'>
-        <h3 className='text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase'>Collections</h3>
+        <h3 className='text-[39px] min-[440px]:text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase'>Collections</h3>
         <p className={`${magdaLig.className} hidden lg:block text-zinc-400 max-w-[240px] text-[11px] uppercase tracking-widest leading-relaxed text-right`}>
             A journey through scent, identity, and the aesthetics of presence.
         </p>

@@ -41,11 +41,11 @@ At Halir, we are not just creating perfumes.
 We are creating identity.
         </div>
       </div>
-      <div className='flex justify-center flex-col items-center my-15'>
+      <div className='flex justify-center gap-3 flex-col items-center my-15'>
         <h3 className={`${ekate.className} text-4xl`}>
           Halir
         </h3>
-          <p className='font-semibold text-sm'>Where scent becomes identity</p>
+        <p className='font-semibold text-sm'>Where scent becomes identity</p>
       </div>
     </section>
   )
