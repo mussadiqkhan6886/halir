@@ -40,7 +40,7 @@ const MainCard = ({name, image, index}: Props) => {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="text-white text-3xl sm:text-5xl md:text-8xl font-bold tracking-tighter uppercase text-center drop-shadow-2xl"
             >
-                <span className={`${ekate.className} lowercase text-2xl sm:text-3xl md:text-5xl block -mb-2 md:-mb-6 opacity-90`}>
+                <span className={`${ekate.className} lowercase text-2xl sm:text-3xl md:text-5xl block md:-mb-6 opacity-90`}>
                     the
                 </span>
                 {name}

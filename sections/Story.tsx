@@ -19,7 +19,7 @@ const Story = () => {
            </span>
          </h3>
       </div>
-      <div className='grid p-3 text-zinc-700 grid-cols-2  gap-10 text-sm max-w-3xl mx-auto mt-10 text-justify'>
+      <div className='grid p-3 text-zinc-700 grid-cols-2  gap-10 text-sm max-w-3xl mx-auto my-10 text-justify'>
         <div>
           <p>Halir was born from a deep passion for refined, premium fragrances a passion to create scents that do more than just smell good. We believe a fragrance is a personal signature, an invisible expression of identity that leaves a lasting impression.
 
@@ -32,14 +32,14 @@ to craft fragrances that embody luxury in every detail.</p>
 We believe that premium should be felt before it is even experienced in the way it looks, the way it is held, and the way it becomes part of your lifestyle.
 </p>
         </div>
-        <div className='col-span-2'>
+        {/* <div className='col-span-2'>
           Today, Halir offers a growing range of fragrances for both men and women, each created to complement individuality and confidence. As we continue to evolve, our vision extends beyond perfumes into a complete world of fragrance.
 
 Our goal is to redefine how fragrance is experienced across Pakistan making luxury more accessible, more refined, and more personal.
 
 At Halir, we are not just creating perfumes.
 We are creating identity.
-        </div>
+        </div> */}
       </div>
       <div className='flex justify-center gap-3 flex-col items-center my-15'>
         <h3 className={`${ekate.className} text-4xl`}>
