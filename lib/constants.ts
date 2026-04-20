@@ -39,4 +39,5 @@ export const pages = [
     {name: "COLLECTIONS", link: "/"},
     {name: "MEN", link: "/"},
     {name: "WOMEN", link: "/"},
+    {name: "HOT SELLERS", link: "/"},
 ]
