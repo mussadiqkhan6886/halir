@@ -65,7 +65,7 @@ const Reviews = () => {
          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className={`${ekate.className} text-4xl sm:text-5xl md:text-6xl text-stone-900`}
+            className={`${ekate.className} text-4xl sm:text-5xl md:text-6xl text-stone-900 mb-3 md:mb-0`}
           >
             Letters of <span className="italic text-[#800000]"> Love</span>
           </motion.h2>

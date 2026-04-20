@@ -52,11 +52,11 @@ const Collections = () => {
             <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700' />
 
             <div className='absolute inset-0 p-8  flex flex-col justify-end text-white gap-2'>
-                <span className={`${ekate.className} block text-3xl md:text-4xl text-zinc-300 md:mb-2 transition-all duration-700 transform translate-y-0 md:translate-y-8 md:opacity-0 group-hover:translate-y-0 group-hover:opacity-100`}>
+                <span className={`${ekate.className} block text-3xl mb-3 md:text-4xl text-zinc-300 md:mb-2 transition-all duration-700 transform translate-y-0 md:translate-y-8 md:opacity-0 group-hover:translate-y-0 group-hover:opacity-100`}>
                     {cat.subtitle}
                 </span>
 
-                <div className='flex justify-between items-center border-t border-white/20 pt-5'>
+                <div className='flex justify-between items-center md:border-t border-white/20 pt-5'>
                     <h4 className='text-3xl font-bold tracking-tighter uppercase'>
                         {cat.title}
                     </h4>
