@@ -6,7 +6,7 @@ export const upperheader = [
 ]
 
 export const menu = [
-    {name: "Fine Fragrance", link: "/"},
+    {name: "Fine Fragrance", link: "/collections/all"},
     {name: "Hot Sellers", link: "/collections/hot-sellers"},
     {name: "Men", link: "/collections/men"},
     {name: "Women", link: "/collections/women"},
