@@ -1,23 +1,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { ekate, magdaLig } from '@/lib/font'
+import { ekate } from '@/lib/font'
 
 const CTA = () => {
   return (
     <section className='grid grid-cols-1 md:grid-cols-2 min-h-[80vh] border-t border-zinc-200'>
       
-      <div className='flex flex-col items-center justify-center bg-light p-10 md:p-20 relative overflow-hidden'>
-        <h4 className='uppercase text-6xl px-10 font-medium tracking-tight  text-center'>Want to be unique?</h4>
+      <div className='flex flex-col items-center justify-center bg-light p-10 lg:p-20 relative overflow-hidden'>
+        <h4 className='uppercase text-5xl sm:text-6xl px-5 lg:px-10 font-medium tracking-tight text-center'>Want to be unique?</h4>
       </div>
 
-      <div className='relative overflow-hidden'>
+      <div className='relative h-[80vh]'>
         <Image 
           src="/unique.jpg" 
           alt='Halir unique collection' 
           fill 
           sizes="(max-width: 768px) 100vw, 50vw"
-          className='object-cover object-center grayscale-[0.2]' 
+          className='object-cover object-center h-full grayscale-[0.2]' 
         />
         
         <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent' />
