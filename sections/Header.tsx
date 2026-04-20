@@ -80,8 +80,10 @@ const Header = () => {
         </div>
 
         {/* cart */}
-        <div className='flex items-center justify-center gap-1 p-2 px-5 md:px-7'>
-            <HiOutlineShoppingBag onClick={() => setIsCartOpen(true)} size={26} />
+        <div className='flex items-center justify-center gap-1 p-2 px-5 md:px-7 relative'>
+            <button className='cursor-pointer' onClick={() => setIsCartOpen(true)}>
+                <HiOutlineShoppingBag  size={26} />
+            </button>
                 {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
             <p className='font-light text-sm'>(0)</p>
         </div>
