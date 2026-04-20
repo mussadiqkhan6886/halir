@@ -8,9 +8,9 @@ import { HiOutlineArrowRight } from "react-icons/hi"
 import Link from 'next/link';
 
 const categories = [
-  { title: 'Hot Sellers', src: '/hot.jpg', subtitle: 'The Icons' },
-  { title: 'For Him', src: '/men.jpg', subtitle: 'Raw & Bold' },
-  { title: 'For Her', src: '/women.jpg', subtitle: 'Pure Elegance' },
+  {link: "/collections/hot-sellers" , title: 'Hot Sellers', src: '/hot.jpg', subtitle: 'The Icons' },
+  {link: "/collections/men" , title: 'For Him', src: '/men.jpg', subtitle: 'Raw & Bold' },
+  {link: "/collections/women" , title: 'For Her', src: '/women.jpg', subtitle: 'Pure Elegance' },
 ]
 
 const Collections = () => {
@@ -38,8 +38,8 @@ const Collections = () => {
             }}
             className='relative group cursor-pointer overflow-hidden aspect-[4/5] md:aspect-auto md:h-[80vh]'
           >
-            
-            <Image 
+            <Link href={cat.link}>
+                <Image 
               src={cat.src} 
               alt={cat.title} 
               fill
@@ -65,6 +65,8 @@ const Collections = () => {
                     </div>
                 </div>
             </div>
+            </Link>
+          
           </motion.div>
         ))}
       </div>
