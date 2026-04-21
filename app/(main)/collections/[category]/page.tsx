@@ -9,7 +9,7 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
   const currentCollection = COLLECTIONS.find(item => item.slug === category)
   const currentProducts = category === "all" ? perfumes : perfumes.filter(item => item.categories.includes(category))
   return (
-    <main className='max-w-6xl mx-auto py-4 w-full'>
+    <main className='max-w-6xl mx-auto py-4 w-full bg-light'>
       {/* breadcrumps */}
       <section className='px-5 mb-3'>
         <div className={`${magdaLig.className} flex gap-1 items-center text-sm`}>
