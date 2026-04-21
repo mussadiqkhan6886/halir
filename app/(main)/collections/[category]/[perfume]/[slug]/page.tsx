@@ -14,17 +14,17 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
   const sizeData = currentProduct.sizes.find(item => item.slug === slug)!
 
   return (
-    <main className='bg-white min-h-screen border-x border-zinc-200 max-w-[1440px] mx-auto'>
-      <div className='grid grid-cols-1 lg:grid-cols-12'>
-        
-        {/* Left: Visuals (7 Columns) */}
-        <section className='lg:col-span-7 border-r border-zinc-200 p-6 md:p-12'>
-          <nav className={`${magdaLig.className} flex gap-2 mb-12 items-center text-[10px] uppercase tracking-[0.2em] text-zinc-400`}>
-            <Link href="/" className='hover:text-black transition-colors'>Atelier</Link>
+    <main className='bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto'>
+      <div className='grid grid-cols-1 lg:grid-cols-12'>       
+        <section className='lg:col-span-7 border-r border-zinc-200 p-6 px-12'>
+          <nav className={`${magdaLig.className} flex gap-2 mb-12 items-center text-[10px] uppercase tracking-[0.2em] text-zinc-500`}>
+             <Link href={"/"}>Home</Link>
             <span>/</span>
-            <Link href={`/${category}`} className='hover:text-black transition-colors'>{category.replace("-", " ")}</Link>
+            <Link className='capitalize hover:text-black hover:underline' href={`collections/${category}`}>{category.replace("-", " ")}</Link>
             <span>/</span>
-            <span className='text-zinc-900'>{currentProduct.name}</span>
+            <Link className='capitalize hover:text-black hover:underline' href={`collections/${category}/${perfume}`}>{perfume.replace("-", " ")}</Link>
+            <span>/</span>
+            <Link className='capitalize hover:text-black hover:underline' href={`collections/${category}/${perfume}/${slug}`}>{slug.replaceAll("-", " ")}</Link>
           </nav>
 
           <ImageGallery images={sizeData.images} alt={currentProduct.name} />
@@ -89,9 +89,8 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
         </section>
       </div>
 
-      {/* Cross-Sell Section */}
       <section className='border-t border-zinc-200 p-12'>
-         <h4 className={`${ekate.className} text-4xl mb-10`}>You may also find interest in</h4>
+         <h4 className={`${ekate.className} text-center text-4xl mb-10`}>You may Like</h4>
          {/* Insert a simple horizontal product scroll here */}
       </section>
     </main>
