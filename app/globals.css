@@ -5,3 +5,8 @@
     --color-dark: #000000;
     --color-white: #ffffff;
 }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
