@@ -15,9 +15,9 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
 
   return (
     <main className='bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto'>
-      <div className='grid grid-cols-1  lg:grid-cols-12'>       
-        <section className='lg:col-span-7 pt-5 border-r border-zinc-200 pl-12'>
-          <nav className={`${magdaLig.className} flex gap-2 mb-5 items-center text-sm uppercase text-zinc-500`}>
+      <section className='grid mx-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border border-zinc-200'>       
+        <section className='xl:col-span-2 pt-5 md:border-r border-zinc-200 md:pl-3 lg:pl-12'>
+          <nav className={`${magdaLig.className} pl-3 md:pl-0 flex gap-2 mb-5 items-center text-sm uppercase text-zinc-500`}>
              <Link href={"/"}>Home</Link>
             <span>/</span>
             <Link className='capitalize hover:text-black hover:underline' href={`collections/${category}`}>{category.replace("-", " ")}</Link>
@@ -30,7 +30,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
           <ImageGallery images={sizeData.images} alt={currentProduct.name} />
         </section>
 
-        <section className='lg:col-span-4 p-5 pt-14 border-r border-zinc-200 flex flex-col'>
+        <section className='p-5 pt-14 md:border-r border-zinc-200 flex flex-col'>
           <div className=''>
             <div className='flex justify-between items-center'>
               <h1 className='text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none '>
@@ -87,7 +87,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
             </div>
           </div>
         </section>
-      </div>
+      </section>
 
       <section className='border-t border-zinc-200 p-12'>
          <h4 className={`${ekate.className} text-center text-4xl mb-10`}>You may Like</h4>
