@@ -1,4 +1,5 @@
 import { clientCare, pages } from '@/lib/constants'
+import { magdaLig } from '@/lib/font'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -11,13 +12,13 @@ const Footer = () => {
         
         <div className='flex-1'>
           <h5 className='font-bold mb-6 uppercase text-sm tracking-[0.2em]'>Client Care</h5>
-          <ul className='flex flex-col gap-2 text-sm text-stone-900'>
+          <ul className={`${magdaLig.className} flex flex-col gap-2 text-sm text-stone-900`}>
             {clientCare.map((item, idx) => (
               <li key={idx} className='hover:text-stone-500 transition-colors'>
                 <Link href={item.link}>{item.name}</Link>
               </li>
             ))}
-            <li className='mt-6 text-[11px] text-stone-500 uppercase tracking-widest'>
+            <li className='mt-10 text-[11px] text-stone-500 uppercase tracking-widest'>
               Design & Developed:  
               <Link className='underline text-stone-800 italic font-medium' href={"https://scrupulous.vercel.app"}>
                 Scrupulous
@@ -28,7 +29,7 @@ const Footer = () => {
 
         <div className='flex-1'>
           <h5 className='font-bold mb-6 uppercase text-sm tracking-[0.2em]'>Navigation</h5>
-          <ul className='flex flex-col gap-2 text-sm text-stone-900'>
+          <ul className={`${magdaLig.className} flex flex-col gap-2 text-sm text-stone-900`}>
             {pages.map((item, idx) => (
               <li key={idx} className='hover:text-stone-500 transition-colors'>
                 <Link href={item.link}>{item.name}</Link>
