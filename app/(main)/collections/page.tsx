@@ -1,40 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { ekate, magdaLig } from '@/lib/font'
+import { magdaLig } from '@/lib/font'
+import { COLLECTIONS } from '@/lib/constants'
 
-const COLLECTIONS = [
-  {
-    title: 'The Men',
-    slug: 'men',
-    desc: 'Power, depth, and the scent of refined masculinity.',
-    image: '/men.jpg',
-  },
-  {
-    title: 'The Women',
-    slug: 'women',
-    desc: 'Ethereal florals and seductive ambers for her.',
-    image: '/women.jpg',
-  },
-  {
-    title: 'New Arrivals',
-    slug: 'new-arrivals',
-    desc: 'The latest olfactory signatures from our atelier.',
-    image: '/unique.jpg',
-  },
-  {
-    title: 'Hot Sellers',
-    slug: 'best-sellers',
-    desc: 'The most coveted identities in Pakistan.',
-    image: '/hot.jpg',
-  },
-  {
-    title: 'All',
-    slug: 'all',
-    desc: 'Explore all premium perfumes with long lasting.',
-    image: '/p.png',
-  },
-]
 
 const CollectionsPage = () => {
   return (
