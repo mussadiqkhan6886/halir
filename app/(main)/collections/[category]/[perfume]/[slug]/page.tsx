@@ -99,7 +99,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
       </section>
 
       <section className='border-t border-zinc-200 p-12'>
-         <h4 className={`${ekate.className} text-center text-4xl mb-10`}>You may Like</h4>
+         <h4 className={`${ekate.className} text-center text-4xl mb-13 z-20 md:mb-10`}>You may Like</h4>
          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
           {currentProduct.sizes.slice(0,3).map(item => (
             <PerfumeCard key={item.sku} {...item} name={currentProduct.name} category={category} perfume={perfume} />
