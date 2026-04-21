@@ -46,10 +46,6 @@ export default function GlobalNotFound() {
         </Link>
       </div>
  
-      {/* Footer note */}
-      <p className="absolute bottom-10 text-[10px] uppercase tracking-[0.2em] text-neutral-300 font-light">
-        Halir — Fine Fragrances
-      </p>
     </main>
       </body>
     </html>
