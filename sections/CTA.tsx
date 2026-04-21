@@ -8,7 +8,7 @@ const CTA = () => {
     <section className='grid grid-cols-1 md:grid-cols-2 min-h-[80vh] border-t border-zinc-200'>
       
       <div className='flex flex-col items-center justify-center bg-light p-10 lg:p-20 relative overflow-hidden'>
-        <h4 className='uppercase text-5xl sm:text-6xl px-5 lg:px-10 font-medium tracking-tight text-center'>Want to be unique?</h4>
+        <h4 className='uppercase text-[44px] sm:text-6xl lg:px-10 font-medium leading-tight tracking-tight text-center'>Want to be unique?</h4>
       </div>
 
       <div className='relative h-[80vh]'>
@@ -22,7 +22,7 @@ const CTA = () => {
         
         <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent' />
 
-        <div className='absolute flex flex-col justify-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-sm'>
+        <div className='absolute flex flex-col justify-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-sm px-3'>
 
             <h5 className={` text-white text-6xl -mb-1 text-center`}>Order</h5>
             <p className='text-zinc-200 text-sm text-justify max-w-sm mx-auto uppercase leading-relaxed mb-8 tracking-tight'>
