@@ -43,9 +43,9 @@ const MainCard = ({name, image, index}: Props) => {
                 className="text-white text-3xl sm:text-5xl md:text-8xl font-bold tracking-tighter uppercase text-center drop-shadow-2xl"
             >
                 <span className={`${ekate.className} lowercase text-2xl sm:text-3xl md:text-5xl block mb-5 md:-mb-6 opacity-90`}>
-                    the
+                    the 
                 </span>
-                {name}
+                 { name}
             </motion.h4>
         </div>
     </motion.div>
