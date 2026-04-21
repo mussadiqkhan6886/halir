@@ -116,7 +116,7 @@ export const perfumes = [
         in_stock: true,
         stock: 2,
         
-        images:   ["mi-amor-50ml-front.jpg", "mi-amor-50ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "mi-amor-100ml",
@@ -127,7 +127,7 @@ export const perfumes = [
         sku:      "HA-MIA-100",
         in_stock: true,
         stock: 2,
-        images:   ["mi-amor-100ml-front.jpg", "mi-amor-100ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "mi-amor-tester",
@@ -138,7 +138,7 @@ export const perfumes = [
         sku:      "HA-MIA-TEST",
         in_stock: true,
         stock: 2,
-        images:   ["mi-amor-tester-front.jpg"],
+        images:   ["perf.jpg"],
       },
     ],
   },
@@ -183,7 +183,7 @@ export const perfumes = [
         in_stock: true,
         stock: 2,
         
-        images:   ["farenheit-100ml-front.jpg", "farenheit-100ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "farenheit-tester",
@@ -194,7 +194,7 @@ export const perfumes = [
         sku:      "HA-FAR-TEST",
         in_stock: false,
         stock: 2,
-        images:   ["farenheit-tester-front.jpg"],
+        images:   ["perf.jpg"],
       },
     ],
   },
@@ -239,7 +239,7 @@ export const perfumes = [
         in_stock: true,
         stock: 2,
         
-        images:   ["noir-rose-50ml-front.jpg", "noir-rose-50ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "noir-rose-100ml",
@@ -250,7 +250,7 @@ export const perfumes = [
         sku:      "HA-NR-100",
         in_stock: true,
         stock: 2,
-        images:   ["noir-rose-100ml-front.jpg", "noir-rose-100ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "noir-rose-tester",
@@ -261,7 +261,7 @@ export const perfumes = [
         sku:      "HA-NR-TEST",
         in_stock: true,
         stock: 2,
-        images:   ["noir-rose-tester-front.jpg"],
+        images:   ["perf.jpg"],
       },
     ],
   },
@@ -305,7 +305,7 @@ export const perfumes = [
         sku:      "HA-AB-50",
         in_stock: true,
         stock: 2,
-        images:   ["aqua-bleu-50ml-front.jpg", "aqua-bleu-50ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "aqua-bleu-100ml",
@@ -317,7 +317,7 @@ export const perfumes = [
         in_stock: true,
         stock: 2,
         
-        images:   ["aqua-bleu-100ml-front.jpg", "aqua-bleu-100ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "aqua-bleu-tester",
@@ -328,7 +328,7 @@ export const perfumes = [
         sku:      "HA-AB-TEST",
         in_stock: true,
         stock: 2,
-        images:   ["aqua-bleu-tester-front.jpg"],
+        images:   ["perf.jpg"],
       },
     ],
   },
@@ -373,7 +373,7 @@ export const perfumes = [
         in_stock: true,
         stock: 2,
         
-        images:   ["velvet-oud-50ml-front.jpg", "velvet-oud-50ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "velvet-oud-100ml",
@@ -384,7 +384,7 @@ export const perfumes = [
         sku:      "HA-VO-100",
         in_stock: true,
         stock: 2,
-        images:   ["velvet-oud-100ml-front.jpg", "velvet-oud-100ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
     ],
   },
@@ -428,7 +428,7 @@ export const perfumes = [
         sku:      "HA-CB-50",
         in_stock: true,
         stock: 2,
-        images:   ["citrus-bloom-50ml-front.jpg", "citrus-bloom-50ml-side.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "citrus-bloom-100ml",
@@ -440,7 +440,7 @@ export const perfumes = [
         in_stock: false,
         stock: 2,
         
-        images:   ["citrus-bloom-100ml-front.jpg"],
+        images:   ["perf.jpg"],
       },
       {
         slug:     "citrus-bloom-tester",
@@ -451,7 +451,7 @@ export const perfumes = [
         sku:      "HA-CB-TEST",
         in_stock: true,
         stock: 2,
-        images:   ["citrus-bloom-tester-front.jpg"],
+        images:   ["perf.jpg"],
       },
     ],
   },
