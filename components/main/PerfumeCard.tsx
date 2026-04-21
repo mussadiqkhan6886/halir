@@ -23,8 +23,8 @@ const PerfumeCard = ({name, label, slug, price, images, category, perfume, ml }:
         <h2 className='font-black text-lg uppercase'>{name}</h2>
       </div>
       <div  className={`${magdaLig.className} p-1.5`}>
-        <h3>{label}</h3>
-        <h3>{ml > 10 ? "eau de perfum" : "Tester"}</h3>
+        <h3 className='text-xs sm:text-sm'>{label}</h3>
+        <h3 className='text-xs sm:text-sm'>{ml > 10 ? "eau de perfum" : "Tester"}</h3>
       </div>
       <div  className={`font-light tracking-tight text-zinc-700 border-t border-zinc-200 p-1.5 flex justify-between text-center`}>
         <button aria-label={`Add ${name} to cart`} className='hover:underline cursor-pointer'>Add to Cart</button>
