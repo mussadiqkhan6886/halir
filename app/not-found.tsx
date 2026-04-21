@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import { ekate, inter, magdaLig } from '@/lib/font';
-import "./globals.css"
+import { magdaLig } from '@/lib/font';
 
-export default function GlobalNotFound() {
+export default function NotFound() {
   return (
-    <html className={magdaLig.className}>
-      <body>
-           <main className="relative min-h-screen bg-white text-black flex flex-col items-center justify-center overflow-hidden px-6">
+    <main className={magdaLig.className}>
+      <section>
+           <div className="relative min-h-screen bg-white text-black flex flex-col items-center justify-center overflow-hidden px-6">
  
       {/* Corner decorations */}
       <span className="absolute top-8 left-8 w-14 h-14 border-t border-l border-black" />
@@ -46,9 +45,9 @@ export default function GlobalNotFound() {
         </Link>
       </div>
  
+    </div>
+      </section>
     </main>
-      </body>
-    </html>
    
   );
 }

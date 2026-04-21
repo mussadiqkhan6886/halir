@@ -15,7 +15,7 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
         <div className={`${magdaLig.className} flex gap-1 items-center text-sm`}>
           <Link href={"/"}>Home</Link>
           <span>/</span>
-          <Link className='capitalize' href={`/${category}`}>{currentCollection?.title}</Link>
+          <Link className='capitalize' href={`/${category}`}>{currentCollection?.title ?? "Not Found"}</Link>
         </div>
       </section>
       {/* title */}
@@ -31,7 +31,7 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
         ))} </section>)
          : 
          (<section className='flex items-center border-t border-zinc-300 pt-8 justify-center my-10 flex-col'>
-            <h2 className='font-semibold uppercase text-lg'>No Perfumes Found</h2>
+            <h2 className='font-semibold uppercase text-lg'>No Collection Found</h2>
             <div className='flex gap-3 my-4'>
               <Link className={`${magdaLig.className} border border-zinc-300 text-sm px-6 py-2`} href='/collections/men'>Explore Men</Link>
               <Link className={`${magdaLig.className} border border-zinc-300 text-sm px-6 py-2`} href='/collections/women'>Explore Women</Link>
