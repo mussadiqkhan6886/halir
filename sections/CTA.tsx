@@ -24,7 +24,7 @@ const CTA = () => {
 
         <div className='absolute flex flex-col justify-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-sm'>
 
-            <h5 className={`${ekate.className} text-white text-6xl -mb-1 text-center`}>Order</h5>
+            <h5 className={` text-white text-6xl -mb-1 text-center`}>Order</h5>
             <p className='text-zinc-200 text-sm text-justify max-w-sm mx-auto uppercase leading-relaxed mb-8 tracking-tight'>
                 Experience premium, 20hr+ long-lasting scents delivered to your doorstep within 3 days.
             </p>

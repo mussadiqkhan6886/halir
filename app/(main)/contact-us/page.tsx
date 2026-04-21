@@ -58,7 +58,7 @@ const Page = () => {
                                 transition={{ duration: 0.8 }}
                                 className='space-y-6'
                             >
-                                <span className={`${ekate.className} text-4xl sm:text-5xl text-red-700 block -mb-4`}>Quick question</span>
+                                <span className={`${ekate.className} text-4xl sm:text-5xl text-red-700 block mb-4 md:-mb-4`}>Quick question</span>
                                 <h1 className='text-4xl sm:text-6xl font-bold uppercase tracking-tighter leading-none'>
                                     DO YOU
                                     LOVE <br />

@@ -85,14 +85,6 @@ const ServiceProtocol = () => {
           </section>
 
         </article>
-
-        {/* Brand Sign-off */}
-        <footer className="mt-24 pt-10 border-t border-zinc-100 text-center">
-            <p className={`${ekate.className} text-4xl text-black mb-2`}>Halir</p>
-            <p className="text-[10px] tracking-[0.4em] uppercase text-zinc-400">
-              Identity through scent
-            </p>
-        </footer>
       </div>
     </main>
   )
