@@ -15,10 +15,10 @@ export const menu = [
 ]
 
 export const newArrivals = [
-    {name: "Mi Amor", image: "/p.png"},
-    {name: "Farenheit", image: "/p2.jpg"},
-    {name: "Tom Ford", image: "/p.png"},
-    {name: "Creed", image: "/p.png"},
+    {slug: "nothing" ,name: "Mi Amor", image: "/p.png"},
+    {slug: "nothing" ,name: "Farenheit", image: "/p2.jpg"},
+    {slug: "nothing" ,name: "Tom Ford", image: "/p.png"},
+    {slug: "nothing" ,name: "Creed", image: "/p.png"},
 ]
 export const hotSellers = [
     {name: "Inspiration", image: "/p2.jpg"},
@@ -63,7 +63,7 @@ export const COLLECTIONS = [
   },
   {
     title: 'Hot Sellers',
-    slug: 'best-sellers',
+    slug: 'hot-sellers',
     desc: 'The most coveted identities in Pakistan.',
     image: '/hot.jpg',
   },
@@ -84,7 +84,7 @@ export const perfumes = [
     tagline: "Warm woods meet seductive musk",
     description:
       "A bold oriental fragrance opening with bergamot and cardamom, settling into a heart of oud and rose, anchored by white musk and sandalwood.",
-    mainImage: "mi-amor-ingredients.jpg",
+    mainImage: "/p2.jpg",
     gender: "men",
     longevity: "8–12 hours",
     season: ["Fall", "Winter"],
@@ -114,6 +114,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-MIA-50",
         in_stock: true,
+        stock: 2,
         
         images:   ["mi-amor-50ml-front.jpg", "mi-amor-50ml-side.jpg"],
       },
@@ -125,6 +126,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-MIA-100",
         in_stock: true,
+        stock: 2,
         images:   ["mi-amor-100ml-front.jpg", "mi-amor-100ml-side.jpg"],
       },
       {
@@ -135,6 +137,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-MIA-TEST",
         in_stock: true,
+        stock: 2,
         images:   ["mi-amor-tester-front.jpg"],
       },
     ],
@@ -148,7 +151,7 @@ export const perfumes = [
     tagline: "The scent of raw masculinity",
     description:
       "A timeless classic reimagined — hawthorn and violet leaf open into a leather-violet heart, resting on a base of cedarwood and vetiver.",
-    mainImage: "farenheit-ingredients.jpg",
+    mainImage: "/p.png",
     gender: "men",
     longevity: "6–10 hours",
     season: ["Spring", "Fall"],
@@ -178,6 +181,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-FAR-100",
         in_stock: true,
+        stock: 2,
         
         images:   ["farenheit-100ml-front.jpg", "farenheit-100ml-side.jpg"],
       },
@@ -189,6 +193,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-FAR-TEST",
         in_stock: false,
+        stock: 2,
         images:   ["farenheit-tester-front.jpg"],
       },
     ],
@@ -202,7 +207,7 @@ export const perfumes = [
     tagline: "Dark. Feminine. Unforgettable.",
     description:
       "Turkish rose and saffron bloom into a powdery iris heart, deepened by patchouli and vanilla — a fragrance for evenings that never end.",
-    mainImage: "noir-rose-ingredients.jpg",
+    mainImage: "/p.png",
     gender: "women",
     longevity: "10–14 hours",
     season: ["Fall", "Winter"],
@@ -232,6 +237,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-NR-50",
         in_stock: true,
+        stock: 2,
         
         images:   ["noir-rose-50ml-front.jpg", "noir-rose-50ml-side.jpg"],
       },
@@ -243,6 +249,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-NR-100",
         in_stock: true,
+        stock: 2,
         images:   ["noir-rose-100ml-front.jpg", "noir-rose-100ml-side.jpg"],
       },
       {
@@ -253,6 +260,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-NR-TEST",
         in_stock: true,
+        stock: 2,
         images:   ["noir-rose-tester-front.jpg"],
       },
     ],
@@ -266,7 +274,7 @@ export const perfumes = [
     tagline: "Ocean air and crisp citrus",
     description:
       "A fresh aquatic built for daytime — sea notes and lemon over a clean driftwood heart, finishing with a whisper of musk.",
-    mainImage: "aqua-bleu-ingredients.jpg",
+    mainImage: "/p2.jpg",
     gender: "unisex",
     longevity: "4–6 hours",
     season: ["Spring", "Summer"],
@@ -296,6 +304,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-AB-50",
         in_stock: true,
+        stock: 2,
         images:   ["aqua-bleu-50ml-front.jpg", "aqua-bleu-50ml-side.jpg"],
       },
       {
@@ -306,6 +315,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-AB-100",
         in_stock: true,
+        stock: 2,
         
         images:   ["aqua-bleu-100ml-front.jpg", "aqua-bleu-100ml-side.jpg"],
       },
@@ -317,6 +327,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-AB-TEST",
         in_stock: true,
+        stock: 2,
         images:   ["aqua-bleu-tester-front.jpg"],
       },
     ],
@@ -330,7 +341,7 @@ export const perfumes = [
     tagline: "Smoke, silk, and dark florals",
     description:
       "A smoky oud wrapped in dark rose and incense, softened by a creamy base of tonka bean and sandalwood. Rich, meditative, unforgettable.",
-    mainImage: "velvet-oud-ingredients.jpg",
+    mainImage: "/p2.jpg",
     gender: "unisex",
     longevity: "12–16 hours",
     season: ["Fall", "Winter"],
@@ -360,6 +371,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-VO-50",
         in_stock: true,
+        stock: 2,
         
         images:   ["velvet-oud-50ml-front.jpg", "velvet-oud-50ml-side.jpg"],
       },
@@ -371,6 +383,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-VO-100",
         in_stock: true,
+        stock: 2,
         images:   ["velvet-oud-100ml-front.jpg", "velvet-oud-100ml-side.jpg"],
       },
     ],
@@ -384,7 +397,7 @@ export const perfumes = [
     tagline: "Sunshine in a bottle",
     description:
       "A joyful burst of neroli and mandarin over a soft floral heart of white tea and freesia, finishing clean with musk and cedar.",
-    mainImage: "citrus-bloom-ingredients.jpg",
+    mainImage: "/p.png",
     gender: "women",
     longevity: "4–7 hours",
     season: ["Spring", "Summer"],
@@ -414,6 +427,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-CB-50",
         in_stock: true,
+        stock: 2,
         images:   ["citrus-bloom-50ml-front.jpg", "citrus-bloom-50ml-side.jpg"],
       },
       {
@@ -424,6 +438,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-CB-100",
         in_stock: false,
+        stock: 2,
         
         images:   ["citrus-bloom-100ml-front.jpg"],
       },
@@ -435,6 +450,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-CB-TEST",
         in_stock: true,
+        stock: 2,
         images:   ["citrus-bloom-tester-front.jpg"],
       },
     ],

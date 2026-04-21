@@ -10,11 +10,12 @@ interface Props {
     name: string
     image: string
     index: number
+    slug: string
 }
 
-const MainCard = ({name, image, index}: Props) => {
+const MainCard = ({name, image, index, slug}: Props) => {
   return (
-    <Link href={"/collections/"}>
+    <Link href={`/collections/${slug}`}>
     <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
