@@ -142,17 +142,17 @@ export default function Page() {
         </div>
       </section>
 
-      <div className="flex flex-col justify-center items-center gap-2 py-20 bg-white select-none">
+      <div className="flex flex-col justify-center items-center  pt-20 pb-10 bg-white select-none">
         <h2
           className={`${ekate.className} text-7xl text-zinc-400 leading-none`}
           aria-hidden="true"
         >
           Halir
         </h2>
-        <p className="font-bold text-[10px] uppercase tracking-[0.5em] text-zinc-600">
+      </div>
+        <p className="font-bold text-[10px] text-center uppercase tracking-[0.5em] text-zinc-600">
           Where scent becomes identity
         </p>
-      </div>
     </main>
   );
 }

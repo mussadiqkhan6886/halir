@@ -58,7 +58,7 @@ const Page = () => {
                                 transition={{ duration: 0.8 }}
                                 className='space-y-6'
                             >
-                                <span className={`${ekate.className} text-4xl sm:text-5xl text-red-700 block mb-4 md:-mb-4`}>Quick question</span>
+                                <span className={`${ekate.className} text-4xl sm:text-5xl text-red-700 block mb-10 md:-mb-4`}>Quick question</span>
                                 <h1 className='text-4xl sm:text-6xl font-bold uppercase tracking-tighter leading-none'>
                                     DO YOU
                                     LOVE <br />
@@ -114,7 +114,7 @@ const Page = () => {
                 <div className='mb-16'>
                     <h2 className='text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tighter'>
                         Connect with <br />
-                        <span className={`${ekate.className} text-zinc-200 capitalize font-light mt-4 text-center block`}>Halir.</span>
+                        <span className={`${ekate.className} text-zinc-200 capitalize font-light md:mt-4 text-center block`}>Halir.</span>
                     </h2>
                 </div>
 
