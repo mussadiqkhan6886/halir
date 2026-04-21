@@ -237,7 +237,7 @@ export const perfumes = [
         currency: "PKR",
         sku:      "HA-NR-50",
         in_stock: true,
-        stock: 2,
+        stock: 0,
         
         images:   ["/perf.jpg"],
       },
