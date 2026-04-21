@@ -36,7 +36,7 @@ const Header = () => {
                     <HiOutlineMenu  size={23} />
                 </button> }
                 <AnimatePresence>
-                    {isMenuOpen && <Menu />}
+                    {isMenuOpen && <Menu setIsMenuOpen={setIsMenuOpen} />}
                 </AnimatePresence>
             </div>
             {/* search */}

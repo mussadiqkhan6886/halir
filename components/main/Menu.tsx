@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import { motion, Variants } from "framer-motion"
 
-const Menu = () => {
+const Menu = ({setIsMenuOpen}: {setIsMenuOpen: (b: boolean) => void}) => {
   // Animation Variants
   const containerVariants: Variants = {
     hidden: { 
@@ -46,6 +46,7 @@ const Menu = () => {
         <motion.li 
           variants={itemVariants}
           key={i} 
+          onClick={() => setIsMenuOpen(false)}
           className='font-black border-b border-zinc-200 pb-3'
         >
           <Link href={item.link} className="block uppercase w-full">
