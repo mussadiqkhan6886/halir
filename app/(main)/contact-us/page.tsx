@@ -114,7 +114,7 @@ const Page = () => {
                 <div className='mb-16'>
                     <h2 className='text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tighter'>
                         Connect with <br />
-                        <span className={`${ekate.className} text-zinc-200 capitalize font-light md:mt-4 text-center block`}>Halir.</span>
+                        <span className={`${ekate.className} text-zinc-200 capitalize font-light mb-2 md:mt-4 text-center block`}>Halir.</span>
                     </h2>
                 </div>
 

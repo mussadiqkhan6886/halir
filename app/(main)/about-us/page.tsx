@@ -142,7 +142,7 @@ export default function Page() {
         </div>
       </section>
 
-      <div className="flex flex-col justify-center items-center  pt-20 pb-10 bg-white select-none">
+      <div className="flex flex-col justify-center items-center py-20 md:pt-20 md:pb-0 bg-white select-none">
         <h2
           className={`${ekate.className} text-7xl text-zinc-400 leading-none`}
           aria-hidden="true"
