@@ -20,7 +20,7 @@ const PerfumeCard = ({name, label, slug, price, images, category, perfume, ml }:
         <Image src={images[0]} alt={name + "Perfume Card"} fill className='object-cover object-bottom'  />
       </div>
       <div className='p-1.5 border-b border-zinc-200'>
-        <h2 className='font-black text-lg uppercase'>{name}</h2>
+        <h2 className='font-black text-lg uppercase  hover:underline'>{name}</h2>
       </div>
       <div  className={`${magdaLig.className} p-1.5`}>
         <h3 className='text-xs sm:text-sm'>{label}</h3>
