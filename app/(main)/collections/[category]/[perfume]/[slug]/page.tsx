@@ -26,13 +26,21 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
             <span>/</span>
             <Link className='capitalize hover:text-black hover:underline' href={`collections/${category}/${perfume}/${slug}`}>{slug.replaceAll("-", " ")}</Link>
           </nav>
-
+          <div className='flex md:hidden px-3 justify-between items-center'>
+              <h1 className='text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none '>
+                {currentProduct.name}
+              </h1>
+              <p className={`font-light text-md text-stone-700`}>
+                PKR. {sizeData.price.toLocaleString()}
+              </p>
+          </div>
+              <p className={`${magdaLig.className} block md:hidden px-3 mb-3 text-xs mt-1`}>{sizeData.ml > 10 ? "Eau de perfum" : "Tester"}</p>
           <ImageGallery images={sizeData.images} alt={currentProduct.name} />
         </section>
 
-        <section className='p-5 pt-14 md:border-r border-zinc-200 flex flex-col'>
+        <section className='p-5 pt-8 md:pt-14  flex flex-col'>
           <div className=''>
-            <div className='flex justify-between items-center'>
+            <div className='hidden md:flex justify-between items-center'>
               <h1 className='text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none '>
                 {currentProduct.name}
               </h1>
@@ -41,7 +49,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
               </p>
             </div>
 
-            <p className={`${magdaLig.className} mb-8 text-sm mt-2`}>{sizeData.ml > 10 ? "Eau de perfum" : "Tester"}</p>
+            <p className={`${magdaLig.className} mb-8 hidden md:block text-sm mt-2`}>{sizeData.ml > 10 ? "Eau de perfum" : "Tester"}</p>
 
             <ProductActions currentProduct={currentProduct} currentSlug={slug} category={category} perfume={perfume} />
 
