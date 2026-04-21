@@ -1,10 +1,12 @@
 import React from 'react'
 
-const page = () => {
+const page = async ({params}: {params: Promise<{category: string, perfume: string, slug: string}>}) => {
+  const {category, perfume, slug} = await params
+
   return (
-    <div>
+    <main className='bg-light'>
       
-    </div>
+    </main>
   )
 }
 
