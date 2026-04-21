@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ProductActions from '@/components/main/ProductAction'
 import ImageGallery from '@/components/main/ImageGallery'
+import PerfumeCard from '@/components/main/PerfumeCard'
 
 const Page = async ({params}: {params: Promise<{category: string, perfume: string, slug: string}>}) => {
   const {category, perfume, slug} = await params
@@ -99,7 +100,11 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
 
       <section className='border-t border-zinc-200 p-12'>
          <h4 className={`${ekate.className} text-center text-4xl mb-10`}>You may Like</h4>
-         {/* Insert a simple horizontal product scroll here */}
+         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+          {currentProduct.sizes.slice(0,3).map(item => (
+            <PerfumeCard key={item.sku} {...item} name={currentProduct.name} category={category} perfume={perfume} />
+          ))}
+         </div>
       </section>
     </main>
   )
