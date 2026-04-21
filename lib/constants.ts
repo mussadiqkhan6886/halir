@@ -15,10 +15,10 @@ export const menu = [
 ]
 
 export const newArrivals = [
-    {slug: "nothing" ,name: "Mi Amor", image: "/p.png"},
-    {slug: "nothing" ,name: "Farenheit", image: "/p2.jpg"},
-    {slug: "nothing" ,name: "Tom Ford", image: "/p.png"},
-    {slug: "nothing" ,name: "Creed", image: "/p.png"},
+    {category: "men" ,slug: "nothing" ,name: "Mi Amor", image: "/p.png"},
+    {category: "women" ,slug: "nothing" ,name: "Farenheit", image: "/p2.jpg"},
+    {category: "men" ,slug: "nothing" ,name: "Tom Ford", image: "/p.png"},
+    {category: "men" ,slug: "nothing" ,name: "Creed", image: "/p.png"},
 ]
 export const hotSellers = [
     {name: "Inspiration", image: "/p2.jpg"},

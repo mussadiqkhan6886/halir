@@ -20,14 +20,14 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
       </section>
       {/* title */}
       <section className='px-5 mb-3'>
-        <h1 className='uppercase font-black tracking-wide text-xl'>{currentCollection?.title}</h1>
+        <h1 className='uppercase font-black tracking-wide text-2xl md:text-xl'>{currentCollection?.title}</h1>
         <p className={`${magdaLig.className} text-stone-600 text-sm`}>{currentCollection?.desc}</p>
       </section>
       {/* products */}
       {currentProducts.length > 0 ? 
       (<section className='flex flex-col p-3 md:p-5 gap-3'>
         {currentProducts.map((item, index) => (
-          <MainCard key={index} index={index} name={item.name} image={item.mainImage} slug={item.slug}  />
+          <MainCard key={index} index={index} name={item.name} image={item.mainImage} slug={item.slug} category={category}  />
         ))} </section>)
          : 
          (<section className='flex items-center border-t border-zinc-300 pt-8 justify-center my-10 flex-col'>

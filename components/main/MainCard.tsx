@@ -11,17 +11,18 @@ interface Props {
     image: string
     index: number
     slug: string
+    category: string
 }
 
-const MainCard = ({name, image, index, slug}: Props) => {
+const MainCard = ({name, image, index, slug, category}: Props) => {
   return (
-    <Link href={`/collections/${slug}`}>
+    <Link href={`/collections/${category}/${slug}`}>
     <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className='relative w-full h-[30vh] md:h-[50vh] lg:h-[80vh] xl:h-screen group overflow-hidden bg-zinc-100'
+        className='relative w-full h-[30vh] min-[480]:h-[40vh] min-[560]:h-[50vh] md:h-[66vh] lg:h-[80vh] xl:h-[90vh] group overflow-hidden bg-zinc-100'
     >
         <Image 
             src={image} 
