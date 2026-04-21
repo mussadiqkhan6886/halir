@@ -9,7 +9,7 @@ const page = async ({params}: {params: Promise<{perfume: string, category: strin
   const {perfume, category} = await params
   const currentPerfume = perfumes.find(item => item.slug === perfume)
   return (
-    <main>
+    <main className='max-w-6xl mx-auto'>
       <section className='bg-zinc-200 max-w-8xl mx-auto'>
         {/* breadcrumps */}
        <div className={`${magdaLig.className} flex gap-1 items-center text-sm`}>
@@ -27,7 +27,7 @@ const page = async ({params}: {params: Promise<{perfume: string, category: strin
       <section className='relative max-w-6xl mx-auto w-full h-[350px]'>
         <Image src={currentPerfume?.mainImage as string} alt={currentPerfume?.name as string} fill className='object-center object-cover' />
       </section>
-      <section>
+      <section className='grid py-24 grid-cols-4 gap-5'>
         {currentPerfume?.sizes.map(item => (
           <PerfumeCard key={item.sku} category={category} perfume={perfume} name={currentPerfume.name} {...item} />
         ))}
