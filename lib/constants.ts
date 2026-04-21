@@ -132,7 +132,7 @@ export const perfumes = [
       {
         slug:     "mi-amor-tester",
         label:    "Tester",
-        ml:       100,
+        ml:       10,
         price:    5500,
         currency: "PKR",
         sku:      "HA-MIA-TEST",
@@ -188,7 +188,7 @@ export const perfumes = [
       {
         slug:     "farenheit-tester",
         label:    "Tester",
-        ml:       100,
+        ml:       10,
         price:    4900,
         currency: "PKR",
         sku:      "HA-FAR-TEST",
@@ -255,7 +255,7 @@ export const perfumes = [
       {
         slug:     "noir-rose-tester",
         label:    "Tester",
-        ml:       100,
+        ml:       0,
         price:    6000,
         currency: "PKR",
         sku:      "HA-NR-TEST",
@@ -322,7 +322,7 @@ export const perfumes = [
       {
         slug:     "aqua-bleu-tester",
         label:    "Tester",
-        ml:       100,
+        ml:       10,
         price:    4500,
         currency: "PKR",
         sku:      "HA-AB-TEST",
