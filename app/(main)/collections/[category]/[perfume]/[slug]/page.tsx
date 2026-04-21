@@ -15,9 +15,9 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
 
   return (
     <main className='bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto'>
-      <div className='grid grid-cols-1 lg:grid-cols-12'>       
-        <section className='lg:col-span-7 border-r border-zinc-200 p-6 px-12'>
-          <nav className={`${magdaLig.className} flex gap-2 mb-12 items-center text-[10px] uppercase tracking-[0.2em] text-zinc-500`}>
+      <div className='grid grid-cols-1  lg:grid-cols-12'>       
+        <section className='lg:col-span-7 pt-5 border-r border-zinc-200 pl-12'>
+          <nav className={`${magdaLig.className} flex gap-2 mb-5 items-center text-sm uppercase text-zinc-500`}>
              <Link href={"/"}>Home</Link>
             <span>/</span>
             <Link className='capitalize hover:text-black hover:underline' href={`collections/${category}`}>{category.replace("-", " ")}</Link>
@@ -30,30 +30,30 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
           <ImageGallery images={sizeData.images} alt={currentProduct.name} />
         </section>
 
-        {/* Right: Details (5 Columns) */}
-        <section className='lg:col-span-5 p-6 md:p-12 flex flex-col'>
-          <div className='sticky top-32'>
-            <header className='mb-10'>
-              <h1 className='text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-4'>
+        <section className='lg:col-span-4 p-5 pt-14 border-r border-zinc-200 flex flex-col'>
+          <div className=''>
+            <div className='flex justify-between items-center'>
+              <h1 className='text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none '>
                 {currentProduct.name}
               </h1>
-              <p className={`${ekate.className} text-2xl text-red-600`}>
-                Rs. {sizeData.price.toLocaleString()}
+              <p className={`font-light text-xl text-stone-700`}>
+                PKR. {sizeData.price.toLocaleString()}
               </p>
-            </header>
+            </div>
+
+            <p className={`${magdaLig.className} mb-8 text-sm mt-2`}>{sizeData.ml > 10 ? "Eau de perfum" : "Tester"}</p>
 
             <ProductActions currentProduct={currentProduct} currentSlug={slug} category={category} perfume={perfume} />
 
             {/* Technical Specifications */}
-            <div className='mt-12 space-y-10 border-t border-zinc-100 pt-10'>
+            <div className='mt-6 space-y-6 border-t border-zinc-200 pt-8'>
               <div>
-                <h6 className='text-[10px] font-bold uppercase tracking-[0.3em] mb-4 text-zinc-400'>The Scent Profile</h6>
-                <p className={`${magdaLig.className} text-zinc-600 leading-relaxed`}>
+                <p className={`${magdaLig.className} text-black text-sm`}>
                   {currentProduct.description}
                 </p>
               </div>
 
-              <div className='grid grid-cols-3 gap-4'>
+              <div className='grid grid-cols-3 gap-4 border-t border-zinc-200 pt-8'>
                 {currentProduct.notes.top.map((note, i) => (
                   <div key={i} className='space-y-4'>
                     <div>
@@ -80,9 +80,9 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
                 ))}
               </div>
 
-              <div className='bg-zinc-50 p-6 flex items-center justify-between group cursor-pointer'>
-                <span className='text-[10px] font-bold uppercase tracking-widest'>Need Expert Guidance?</span>
-                <Link href="/contact" className='text-xs border-b border-black pb-1'>Contact Concierge</Link>
+              <div className='border-t border-zinc-200 pt-4 flex items-center justify-between '>
+                <span className='text-[10px] font-bold uppercase tracking-widest'>Need Help?</span>
+                <Link href="/contact-us" className='text-xs border-b border-black pb-1'>Contact Us</Link>
               </div>
             </div>
           </div>

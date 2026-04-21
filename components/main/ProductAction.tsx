@@ -9,16 +9,15 @@ export default function ProductActions({ currentProduct, currentSlug, category, 
   const router = useRouter();
 
   return (
-    <div className='space-y-8'>
-      {/* Size Selection - Custom buttons instead of select for luxury feel */}
+    <div className='space-y-5'>
       <div>
-        <p className='text-[10px] font-bold uppercase tracking-widest mb-4'>Select Volume</p>
+        <p className='text-[10px] font-bold uppercase tracking-widest mb-3'>Select Volume</p>
         <div className='flex gap-3'>
           {currentProduct.sizes.map((s: any) => (
             <button
               key={s.slug}
               onClick={() => router.push(`/collections/${category}/${perfume}/${s.slug}`)}
-              className={`px-6 py-3 text-xs font-bold border transition-all ${
+              className={`px-6 py-3 text-xs font-bold cursor-pointer border transition-all ${
                 currentSlug === s.slug ? 'border-black bg-black text-white' : 'border-zinc-200 hover:border-zinc-400'
               }`}
             >
@@ -28,33 +27,31 @@ export default function ProductActions({ currentProduct, currentSlug, category, 
         </div>
       </div>
 
-      {/* Personalization & Quantity Grid */}
-      <div className='grid grid-cols-2 gap-4'>
-        <div className='border border-zinc-200 p-4'>
-            <p className='text-[9px] uppercase tracking-widest text-zinc-400 mb-2'>Quantity</p>
+      <div className='grid grid-cols-3 w-full gap-3'>
+        <div className='border grid-cols-1 border-zinc-200 p-3'>
+            <p className='text-[9px] uppercase tracking-widest text-zinc-600 mb-1'>Quantity</p>
             <div className='flex items-center justify-between'>
-                <button onClick={() => setQty(Math.max(1, qty - 1))} className='hover:text-red-600'>—</button>
+                <button onClick={() => setQty(Math.max(1, qty - 1))} className='hover:text-red-600'>-</button>
                 <span className='font-bold text-sm'>{qty}</span>
                 <button onClick={() => setQty(qty + 1)} className='hover:text-red-600'>+</button>
             </div>
         </div>
-        <div className='border border-zinc-200 p-4'>
-            <p className='text-[9px] uppercase tracking-widest text-zinc-400 mb-2'>Engraving / For</p>
+        <div className='border col-span-2 w-full border-zinc-200 p-3'>
+            <p className='text-[9px] uppercase tracking-widest text-zinc-600 mb-1'>Engraving / For</p>
             <input 
               type="text" 
-              placeholder='Add Name' 
-              className='w-full bg-transparent text-xs uppercase font-bold focus:outline-none placeholder:text-zinc-300'
+              placeholder='Add Name ( max word 23 )' 
+              className={`${magdaLig.className} w-full bg-transparent text-xs uppercase font-bold focus:outline-none placeholder:text-zinc-400`}
               maxLength={23} 
             />
         </div>
       </div>
 
-      {/* CTA */}
-      <button className='w-full bg-black text-white py-6 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-red-700 transition-colors duration-500'>
-        Acquire – Add to Collection
+      <button className='w-full bg-stone-700 text-white py-4 text-md font-black uppercase cursor-pointer'>
+        add to cart
       </button>
-      <p className={`${magdaLig.className} text-center text-[10px] text-zinc-400 italic uppercase`}>
-        A complimentary sample is included with your order
+      <p className={`${magdaLig.className} text-center text-xs text-zinc-500 italic uppercase`}>
+        A complimentary Gift is included with your order
       </p>
     </div>
   );
