@@ -29,7 +29,7 @@ const Header = () => {
         {/* mobile size menu */}
         <div className='flex lg:hidden relative gap-6 items-center'>
             {/* menu mobile */}
-            <div>
+            <nav>
                 {isMenuOpen ? <button className='cursor-pointer' onClick={() => setIsMenuOpen(false)} >
                     <HiX size={23} />
                 </button> : <button className='cursor-pointer' onClick={() => setIsMenuOpen(true)}>
@@ -38,7 +38,7 @@ const Header = () => {
                 <AnimatePresence>
                     {isMenuOpen && <Menu setIsMenuOpen={setIsMenuOpen} />}
                 </AnimatePresence>
-            </div>
+            </nav>
             {/* search */}
             <div>
                 <button className='cursor-pointer' onClick={() => setIsSearchOpen(true)} >
@@ -70,13 +70,13 @@ const Header = () => {
                 </div>  
             </div>
             {/* menu */}
-            <div className='text-center p-2'>
+            <nav className='text-center p-2'>
                 <ul className='flex justify-center items-center gap-7'>
                 {menu.map((item, ind) => (
                     <li className='font-[700] hover:border-b-2 border-b-2 transition-all duration-300 border-transparent hover:border-black text-[12px] uppercase' key={ind}><Link href={item.link}>{item.name}</Link></li>
                 ))}
                 </ul>
-            </div>
+            </nav>
         </div>
 
         {/* cart */}

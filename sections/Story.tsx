@@ -9,7 +9,7 @@ const Story = () => {
       <Image src={"/story3.jpg"} alt='perfume image' width={200} height={300} className='object-cover object-center hidden lg:block absolute top-0 right-0' />
 
       <div className='flex justify-center'>
-        <h3 className='text-3xl md:text-5xl px-2 pt-10 md:pt-20 relative leading-10 tracking-tight'> 
+        <h3 className='text-3xl md:text-5xl px-2 pt-7 sm:pt-10 md:pt-20 relative leading-10 tracking-tight'> 
           <span className='inline-block md:ml-30'>WE <span className={`${ekate.className} md:text-8xl text-5xl`}>Create </span> NOT JUST </span>
           <br />
           A PERFUME, <span className='inline md:hidden'>BUT A</span> <span className='hidden md:inline-block ml-28 md:ml-36'>BUT A</span> <br />

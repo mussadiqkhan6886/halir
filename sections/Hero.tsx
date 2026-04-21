@@ -69,7 +69,7 @@ const Hero = () => {
         </motion.h1>
 
         {/* The CTA (Integrated) */}
-        <motion.div variants={itemVariants} className="flex gap-4 lg:my-3 mb-35 lg:mb-15 items-center">
+        <motion.div variants={itemVariants} className="flex gap-4 lg:my-3 mb-38 lg:mb-15 items-center">
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}

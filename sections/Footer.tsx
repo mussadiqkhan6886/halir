@@ -10,7 +10,7 @@ const Footer = () => {
       
       <div className='flex flex-col md:flex-row gap-12 md:gap-10 justify-between'>
         
-        <div className='flex-1'>
+        <nav className='flex-1'>
           <h5 className='font-bold mb-6 uppercase text-sm tracking-[0.2em]'>Client Care</h5>
           <ul className={`${magdaLig.className} flex flex-col gap-2 text-sm text-stone-900`}>
             {clientCare.map((item, idx) => (
@@ -25,9 +25,9 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <div className='flex-1'>
+        <nav className='flex-1'>
           <h5 className='font-bold mb-6 uppercase text-sm tracking-[0.2em]'>Navigation</h5>
           <ul className={`${magdaLig.className} flex flex-col gap-2 text-sm text-stone-900`}>
             {pages.map((item, idx) => (
@@ -36,7 +36,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         <div className='flex-[2] flex flex-col md:items-end'>
           <div className='w-full md:max-w-sm'>

@@ -33,7 +33,7 @@ export default function ProductActions({ currentProduct, currentSlug, category, 
                 key={s.slug}
                 disabled={isPending}
                 onClick={() => handleRoute(s)}
-                className={`relative px-6 py-3 text-xs font-bold transition-all min-w-[100px] flex items-center justify-center border ${
+                className={`relative px-3 sm:px-4 md:px-6 py-3 text-xs font-bold transition-all min-w-[75px] flex items-center justify-center border ${
                   isActive 
                     ? 'border-black bg-black text-white' 
                     : 'border-zinc-200 hover:border-zinc-400 text-zinc-900'

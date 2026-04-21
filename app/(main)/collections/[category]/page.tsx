@@ -12,11 +12,11 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
     <main className='max-w-6xl mx-auto py-4 w-full bg-light'>
       {/* breadcrumps */}
       <section className='px-5 mb-3'>
-        <div className={`${magdaLig.className} flex gap-1 items-center text-sm`}>
+        <nav className={`${magdaLig.className} flex gap-1 items-center text-sm`}>
           <Link href={"/"}>Home</Link>
           <span>/</span>
           <Link className='capitalize' href={`/${category}`}>{currentCollection?.title ?? "Not Found"}</Link>
-        </div>
+        </nav>
       </section>
       {/* title */}
       <section className='px-5 mb-3'>

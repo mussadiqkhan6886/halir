@@ -16,13 +16,13 @@ const page = async ({params}: {params: Promise<{perfume: string, category: strin
     <main className='max-w-6xl pb-3 mx-auto'>
       <section className='bg-light px-4 lg:px-0'>
         {/* breadcrumps */}
-       <div className={`${magdaLig.className}  pt-3 flex gap-1 items-center text-sm`}>
+       <nav className={`${magdaLig.className}  pt-3 flex gap-1 items-center text-sm`}>
           <Link href={"/"}>Home</Link>
           <span>/</span>
           <Link className='capitalize hover:underline' href={`/${category}`}>{category.replace("-", " ")}</Link>
           <span>/</span>
           <Link className='capitalize hover:underline' href={`/${category}/${perfume}`}>{perfume.replace("-", " ")}</Link>
-        </div>
+        </nav>
         <div className='py-3'>
           <h1 className='uppercase font-black tracking-wide text-2xl md:text-xl'>{currentPerfume?.name}</h1>
           <p className={`${magdaLig.className} text-stone-600 text-sm`}>{currentPerfume?.description}</p>
@@ -32,7 +32,7 @@ const page = async ({params}: {params: Promise<{perfume: string, category: strin
         <Image src={currentPerfume?.mainImage as string} alt={currentPerfume?.name as string} fill className='object-center object-cover' />
         <h2 className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-black uppercase text-xl md:text-2xl'>{currentPerfume?.name}</h2>
       </section>
-      <section className='grid py-24 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5'>
+      <section className='grid py-24 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-5'>
         {currentPerfume?.sizes.map(item => (
           <PerfumeCard key={item.sku} category={category} perfume={perfume} name={currentPerfume.name} {...item} />
         ))}
