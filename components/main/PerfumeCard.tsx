@@ -50,7 +50,7 @@ const Card = ({name, label, price, images, ml, stock, onSale, salePrice, sku}: P
           <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={1} image={images[0]} selectedSize={ml} stock={stock} sku={sku} />
         </>
         :
-          <button aria-label={`Out of stock ${name}`} className=' cursor-not-allowed'>Out of stock</button>
+          <button aria-label={`Out of stock ${name}`} className='whitespace-nowrap cursor-not-allowed'>Out of stock</button>
         }
        <h4 className={`${magdaReg.className} w-full col-span-3 text-right`}>
           {onSale ? (
