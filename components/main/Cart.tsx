@@ -39,59 +39,60 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
                     </button>
                 </div>
             ) : (
-                <div className='flex flex-col h-full'>
+                <div className='flex flex-col'>
                     <button onClick={() => clearCart()} className={`${magdaLig.className} text-right text-xs underline pr-4 cursor-pointer text-stone-700`}>Clear All</button>
-                    {cart.map(item => (
-                        <div  key={item.sku} className='p-6 flex-grow overflow-y-auto max-h-[60vh] md:max-h-[450px]'>
-                            <div className='flex gap-5 border-b border-zinc-50 pb-6 mb-6'>
-                                <div className='relative w-24 h-25 flex-shrink-0 bg-zinc-50 overflow-hidden'>
-                                    <Image 
-                                        src={item.image} 
-                                        alt={item.name} 
-                                        fill 
-                                        className='object-cover object-bottom' 
-                                    />
-                                </div>
-                                
-                                <div className='flex flex-col justify-between flex-grow'>
-                                    <div>
-                                        <div className='flex justify-between items-start'>
-                                            <h6 className='font-bold text-md tracking-tight uppercase'>{item.name}</h6>
-                                            <button className='text-zinc-400 hover:text-red-500 transition-colors'>
-                                                <FiTrash2 onClick={() => removeFromCart(item.sku)} size={14} />
-                                            </button>
-                                        </div>
-                                        <p className={`${magdaLig.className} text-xs text-zinc-500  tracking-widest `}>{item.selectedSize > 10 ? "Perfum" : "Tester"}</p>
+                    
+                    <div className='overflow-y-auto max-h-[60vh]  bg-white'>
+                        {cart.map(item => (
+                            <div key={item.sku} className='p-6 pb-3'>
+                                <div className='flex gap-5 border-b border-zinc-50'>
+                                    <div className='relative w-24 h-25 flex-shrink-0 bg-zinc-50 overflow-hidden'>
+                                        <Image 
+                                            src={item.image} 
+                                            alt={item.name} 
+                                            fill 
+                                            className='object-cover object-bottom' 
+                                        />
                                     </div>
-
-                                    <div className='space-y-1 pr-10 mt-4'>
-                                        <div className='flex justify-between text-sm'>
-                                            <span className='text-zinc-600'>Size:</span>
-                                            <span className={`${magdaLig.className} text-stone-500`}>{item.selectedSize}ml</span>
+                                    
+                                    <div className='flex flex-col justify-between flex-grow'>
+                                        <div>
+                                            <div className='flex justify-between items-start'>
+                                                <h6 className='font-bold text-md tracking-tight uppercase'>{item.name}</h6>
+                                                <button className='text-zinc-400 hover:text-red-500 transition-colors'>
+                                                    <FiTrash2 onClick={() => removeFromCart(item.sku)} size={14} />
+                                                </button>
+                                            </div>
+                                            <p className={`${magdaLig.className} text-xs text-zinc-500 tracking-widest`}>{item.selectedSize > 10 ? "Perfum" : "Tester"}</p>
                                         </div>
-                                        <div className='flex justify-between text-sm'>
-                                            <span className='text-zinc-600'>Price:</span>
-                                            <span className={`${magdaLig.className} text-stone-500`}>{item.onSale ? item.salePrice : item.price} PKR</span>
-                                        </div>
-                                    </div>
 
-                                    {/* Quantity Control */}
-                                    <div className='flex items-center gap-4 mt-4'>
-                                        <div className='flex items-center border border-zinc-200 rounded-sm'>
-                                            <button onClick={() => decrement(item.sku)} className='p-1 hover:bg-zinc-50'><FiMinus size={12} /></button>
-                                            <span className={`${magdaLig.className} px-4 text-xs`}>{item.quantity}</span>
-                                            <button onClick={() => increment(item.sku)} className='p-1 hover:bg-zinc-50'><FiPlus size={12} /></button>
+                                        <div className='space-y-1 pr-10 mt-4'>
+                                            <div className='flex justify-between text-sm'>
+                                                <span className='text-zinc-600'>Size:</span>
+                                                <span className={`${magdaLig.className} text-stone-500`}>{item.selectedSize}ml</span>
+                                            </div>
+                                            <div className='flex justify-between text-sm'>
+                                                <span className='text-zinc-600'>Price:</span>
+                                                <span className={`${magdaLig.className} text-stone-500`}>{item.onSale ? item.salePrice : item.price} PKR</span>
+                                            </div>
+                                        </div>
+
+                                        <div className='flex items-center gap-4 mt-4'>
+                                            <div className='flex items-center border border-zinc-200 rounded-sm'>
+                                                <button onClick={() => decrement(item.sku)} className='p-1 hover:bg-zinc-50'><FiMinus size={12} /></button>
+                                                <span className={`${magdaLig.className} px-4 text-xs`}>{item.quantity}</span>
+                                                <button onClick={() => increment(item.sku)} className='p-1 hover:bg-zinc-50'><FiPlus size={12} /></button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                    ))}
+                        ))}
+                    </div>
                 </div>
             )}
             {cart.length !== 0 && <div className='p-6 pb-10 bg-zinc-50 mt-auto'>
-                <div className='flex justify-between items-center mb-6'>
+                <div className='flex justify-between items-center mb-4'>
                     <p className='text-xs uppercase tracking-widest'>Sub total</p>
                     <p className={`${magdaReg.className} text-xl tracking-tighter`}>PKR {totalAmount}</p>
                 </div>
