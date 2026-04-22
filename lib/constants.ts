@@ -112,7 +112,7 @@ export const perfumes = [
         price:    4200,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-MIA-50",
         in_stock: true,
         stock: 2,
@@ -126,7 +126,7 @@ export const perfumes = [
         price:    7500,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-MIA-100",
         in_stock: true,
         stock: 2,
@@ -139,7 +139,7 @@ export const perfumes = [
         price:    5500,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-MIA-TEST",
         in_stock: true,
         stock: 2,
@@ -184,7 +184,7 @@ export const perfumes = [
         price:    6800,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-FAR-100",
         in_stock: true,
         stock: 2,
@@ -198,7 +198,7 @@ export const perfumes = [
         price:    4900,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-FAR-TEST",
         in_stock: false,
         stock: 2,
@@ -243,7 +243,7 @@ export const perfumes = [
         price:    4800,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-NR-50",
         in_stock: true,
         stock: 0,
@@ -257,7 +257,7 @@ export const perfumes = [
         price:    8200,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-NR-100",
         in_stock: true,
         stock: 2,
@@ -270,7 +270,7 @@ export const perfumes = [
         price:    6000,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-NR-TEST",
         in_stock: true,
         stock: 2,
@@ -315,7 +315,7 @@ export const perfumes = [
         price:    3500,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-AB-50",
         in_stock: true,
         stock: 2,
@@ -328,7 +328,7 @@ export const perfumes = [
         price:    6200,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-AB-100",
         in_stock: true,
         stock: 2,
@@ -342,7 +342,7 @@ export const perfumes = [
         price:    4500,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-AB-TEST",
         in_stock: true,
         stock: 2,
@@ -387,7 +387,7 @@ export const perfumes = [
         price:    5500,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-VO-50",
         in_stock: true,
         stock: 2,
@@ -401,7 +401,7 @@ export const perfumes = [
         price:    9800,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-VO-100",
         in_stock: true,
         stock: 2,
@@ -446,7 +446,7 @@ export const perfumes = [
         price:    3800,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-CB-50",
         in_stock: true,
         stock: 2,
@@ -459,7 +459,7 @@ export const perfumes = [
         price:    6500,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-CB-100",
         in_stock: false,
         stock: 2,
@@ -473,7 +473,7 @@ export const perfumes = [
         price:    4800,
         onSale: true,
         salePrice: 2500,
-        currency: "PKR",
+        
         sku:      "HA-CB-TEST",
         in_stock: true,
         stock: 2,

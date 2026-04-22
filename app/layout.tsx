@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { inter } from "@/lib/font";
 import SmoothScroll from "@/components/providers/SmoothScroll";
+import { CartContextProvider } from "../context/CartContext";
 
 export default function RootLayout({
   children,
@@ -13,9 +14,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.className} h-full antialiased`}
     >
-      <SmoothScroll>
-        <body className="min-h-full flex flex-col">{children}</body>
-      </SmoothScroll>
+      <CartContextProvider>
+        <SmoothScroll>
+          <body className="min-h-full flex flex-col">{children}</body>
+        </SmoothScroll>
+      </CartContextProvider>
     </html>
   );
 }
