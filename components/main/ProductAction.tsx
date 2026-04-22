@@ -3,8 +3,9 @@
 import React, { useState, useTransition } from 'react';
 import { magdaLig } from '@/lib/font';
 import { useRouter } from 'next/navigation';
+import AddToCart from './AddToCart';
 
-export default function ProductActions({ currentProduct, currentSlug, category, perfume }: any) {
+export default function ProductActions({ currentProduct, currentSlug, category, perfume, name, price, onSale, salePrice, image, sku, ml, stock }: any) {
   const [qty, setQty] = useState(1);
   const [isPending, startTransition] = useTransition();
   const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
@@ -73,9 +74,9 @@ export default function ProductActions({ currentProduct, currentSlug, category, 
         </div>
       </div>
 
-      <button className='w-full bg-stone-700 text-white py-4 text-sm font-black uppercase tracking-[0.2em] hover:bg-black transition-colors'>
-        add to cart
-      </button>
+      <div className='w-full bg-stone-700 text-center text-white py-4 text-sm font-black uppercase tracking-[0.2em] hover:bg-black transition-colors'>
+        <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={1} image={image} selectedSize={ml} stock={stock} sku={sku} />
+      </div>
       
       <p className={`${magdaLig.className} text-center text-[10px] text-zinc-500 italic uppercase tracking-wider`}>
         A complimentary Gift is included with your order

@@ -70,7 +70,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
 
             <p className={`${magdaLig.className} mb-8 hidden md:block text-sm mt-2`}>{sizeData.ml > 10 ? "Eau de perfum" : "Tester"}</p>
 
-            <ProductActions currentProduct={currentProduct} currentSlug={slug} category={category} perfume={perfume} />
+            <ProductActions name={currentProduct.name} price={sizeData.price} onSale={sizeData.onSale} salePrice={sizeData.salePrice} quantity={1} image={sizeData.images[0]} selectedSize={sizeData.ml} stock={sizeData.stock} sku={sizeData.sku} currentProduct={currentProduct} currentSlug={slug} category={category} perfume={perfume} />
 
             {/* Technical Specifications */}
             <div className='mt-6 border-t border-zinc-200 pt-7'>
