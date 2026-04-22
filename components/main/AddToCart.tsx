@@ -18,24 +18,9 @@ const AddToCart = ({name, price, onSale, salePrice, quantity, image, selectedSiz
 
         setStatus('loading')
 
-        try {
-            addToCart(item)
-
-            // Since addToCart uses setCart (async state update),
-            // we check on next tick whether the item is in the cart
-            setTimeout(() => {
-                setStatus((prev) => {
-                    const inCart = cart.some(i => i.sku === sku)
-                    // item was already in cart OR just added — both are success
-                    return inCart ? 'success' : 'error'
-                })
-                setTimeout(() => setStatus('idle'), 2000)
-            }, 50)
-
-        } catch {
-            setStatus('error')
-            setTimeout(() => setStatus('idle'), 2000)
-        }
+        const wasAdded = addToCart(item)
+        setStatus(wasAdded ? 'success' : 'error')
+        setTimeout(() => setStatus('idle'), 1500)
     }
 
     const label: Record<Status, string> = {

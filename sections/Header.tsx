@@ -12,11 +12,13 @@ import Menu from '@/components/main/Menu';
 import { AnimatePresence } from 'framer-motion';
 import SearchSide from '@/components/main/SearchSide';
 import Cart from '@/components/main/Cart';
+import { useCart } from '@/hook/UseCart';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isSearchOpen, setIsSearchOpen] = useState(false)
     const [isCartOpen, setIsCartOpen] = useState(false)
+    const {totalItems} = useCart()
 
   return (
     <header className='shadow-md z-40'>
@@ -87,7 +89,7 @@ const Header = () => {
             <AnimatePresence>
                 {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
             </AnimatePresence>
-            <p className='font-light text-sm'>(0)</p>
+            <p className='font-light text-sm'>({totalItems})</p>
         </div>
       </div>
     </header>

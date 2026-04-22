@@ -18,10 +18,11 @@ export interface CartContextType {
   cart: CartItem[];
   totalAmount: number;
   totalItems: number;
-  addToCart: (item: CartItem) => void;
+  addToCart: (item: CartItem) => boolean;
   removeFromCart: (sku: string) => void;
   clearCart: () => void;
-  updateQuantity: (sku: string, quantity: number) => void;
+  increment: (sku: string) => void
+  decrement: (sku: string) => void
 }
 
 export const CartContext = createContext<CartContextType | null>(null);
@@ -64,40 +65,57 @@ export const CartContextProvider = ({ children }: { children: ReactNode }) => {
     setTotalItems(items);
   }, [cart]);
 
-  const addToCart = (newItem: CartItem) => {
+  const addToCart = (newItem: CartItem): boolean => {
+    let wasAdded = false
+
     setCart((prev) => {
-      const existing = prev.find((item) => item.sku === newItem.sku);
+        const existing = prev.find((item) => item.sku === newItem.sku)
 
-      if (existing) {
-        const updatedQuantity = Math.min(
-          existing.quantity + newItem.quantity,
-          newItem.stock
-        );
-        return prev.map((item) =>
-          item.sku === newItem.sku
-            ? { ...item, quantity: updatedQuantity }
-            : item
-        );
-      }
+        if (existing) {
+            const newQuantity = existing.quantity + newItem.quantity
+            if (newQuantity > newItem.stock) {
+                wasAdded = false
+                return prev
+            }
+            wasAdded = true
+            return prev.map((item) =>
+                item.sku === newItem.sku
+                    ? { ...item, quantity: newQuantity }
+                    : item
+            )
+        }
 
-      const quantity = Math.min(newItem.quantity, newItem.stock);
-      return [...prev, { ...newItem, quantity }];
-    });
-  };
+        wasAdded = true
+        const quantity = Math.min(newItem.quantity, newItem.stock)
+        return [...prev, { ...newItem, quantity }]
+    })
+
+    return wasAdded
+}
 
   const removeFromCart = (sku: string) => {
     setCart((prev) => prev.filter((item) => item.sku !== sku));
   };
 
-  const updateQuantity = (sku: string, quantity: number) => {
+  const increment = (sku: string) => {
     setCart((prev) =>
-      prev.map((item) =>
-        item.sku === sku
-          ? { ...item, quantity: Math.min(Math.max(1, quantity), item.stock) }
-          : item
-      )
-    );
-  };
+        prev.map((item) =>
+            item.sku === sku
+                ? { ...item, quantity: Math.min(item.quantity + 1, item.stock) }
+                : item
+        )
+    )
+}
+
+const decrement = (sku: string) => {
+    setCart((prev) =>
+        prev.flatMap((item) => {
+            if (item.sku !== sku) return [item]
+            if (item.quantity <= 1) return [] // remove from cart
+            return [{ ...item, quantity: item.quantity - 1 }]
+        })
+    )
+}
 
   const clearCart = () => setCart([]);
 
@@ -110,7 +128,8 @@ export const CartContextProvider = ({ children }: { children: ReactNode }) => {
         addToCart,
         removeFromCart,
         clearCart,
-        updateQuantity,
+        increment,
+        decrement
       }}
     >
       {children}
