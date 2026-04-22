@@ -34,3 +34,43 @@ type Perfume = {
   }
   sizes: PerfumeSize[]
 }
+
+export interface NoteItem {
+  name: string;
+  image: File | null;
+  preview: string;
+}
+
+export interface SizeForm {
+  slug: string;
+  label: string;
+  ml: number | '';
+  price: number | '';
+  onSale: boolean;
+  salePrice: number | '';
+  sku: string;
+  in_stock: boolean;
+  stock: number | '';
+  images: File[];
+  previews: string[];
+}
+
+export interface PerfumeForm {
+  slug: string;
+  name: string;
+  categories: string[];
+  tagline: string;
+  description: string;
+  mainImage: File | null;
+  mainImagePreview: string;
+  gender: 'men' | 'women' | 'unisex' | '';
+  longevity: string;
+  notes: {
+    top: NoteItem[];
+    heart: NoteItem[];
+    base: NoteItem[];
+  };
+  sizes: SizeForm[];
+}
+
+
