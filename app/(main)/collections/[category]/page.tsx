@@ -1,13 +1,25 @@
 import MainCard from '@/components/main/MainCard'
-import { COLLECTIONS, perfumes } from '@/lib/constants'
-import { magdaLig, magdaReg } from '@/lib/font'
+import { connectDB } from '@/lib/config/db'
+import { COLLECTIONS } from '@/lib/constants'
+import { magdaLig } from '@/lib/font'
+import Perfume from '@/lib/models/ProductSchema'
+import { PerfumeType } from '@/type'
 import Link from 'next/link'
 import React from 'react'
 
+export const revalidate = 60;
+
 const page = async ({params}: {params: Promise<{category: string}>}) => {
   const {category} = await params
+
+  await connectDB()
+
   const currentCollection = COLLECTIONS.find(item => item.slug === category)
-  const currentProducts = category === "all" ? perfumes : perfumes.filter(item => item.categories.includes(category))
+
+  const res = await Perfume.find(category === "all" ? {} : {categories: { $in: [category]}}).lean()
+
+  const currentProducts = JSON.parse(JSON.stringify(res))
+
   return (
     <main className='max-w-6xl mx-auto py-4 w-full bg-light'>
       {/* breadcrumps */}
@@ -26,12 +38,12 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
       {/* products */}
       {currentProducts.length > 0 ? 
       (<section className='flex flex-col p-3 md:p-5 gap-3'>
-        {currentProducts.map((item, index) => (
+        {currentProducts.map((item: PerfumeType, index: number) => (
           <MainCard key={index} index={index} name={item.name} image={item.mainImage} slug={item.slug} category={category}  />
         ))} </section>)
          : 
          (<section className='flex items-center border-t border-zinc-300 pt-8 justify-center my-10 flex-col'>
-            <h2 className='font-semibold uppercase text-lg'>No Collection Found</h2>
+            <h2 className='font-semibold uppercase text-lg'>No Perfumes Found</h2>
             <div className='flex gap-3 my-4'>
               <Link className={`${magdaLig.className} border border-zinc-300 text-sm px-6 py-2`} href='/collections/men'>Explore Men</Link>
               <Link className={`${magdaLig.className} border border-zinc-300 text-sm px-6 py-2`} href='/collections/women'>Explore Women</Link>
