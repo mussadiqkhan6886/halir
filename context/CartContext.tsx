@@ -12,6 +12,7 @@ export interface CartItem {
   selectedSize: number;
   stock: number;
   sku: string;
+  personlized?: string
 }
 
 export interface CartContextType {
@@ -19,10 +20,10 @@ export interface CartContextType {
   totalAmount: number;
   totalItems: number;
   addToCart: (item: CartItem) => boolean;
-  removeFromCart: (sku: string) => void;
+  removeFromCart: (sku: string, personlized?: string) => void;
   clearCart: () => void;
-  increment: (sku: string) => void
-  decrement: (sku: string) => void
+  increment: (sku: string, personlized?: string) => void
+  decrement: (sku: string, personlized?: string) => void
 }
 
 export const CartContext = createContext<CartContextType | null>(null);
@@ -69,49 +70,60 @@ export const CartContextProvider = ({ children }: { children: ReactNode }) => {
     let wasAdded = false
 
     setCart((prev) => {
-        const existing = prev.find((item) => item.sku === newItem.sku)
+        // Sum all quantities for this sku across all personalizations
+        const totalSkuQuantity = prev
+            .filter((item) => item.sku === newItem.sku)
+            .reduce((sum, item) => sum + item.quantity, 0)
+
+        // Check against stock before doing anything
+        if (totalSkuQuantity + newItem.quantity > newItem.stock) {
+            wasAdded = false
+            return prev
+        }
+
+        const existing = prev.find(
+            (item) => item.sku === newItem.sku && item.personlized === newItem.personlized
+        )
 
         if (existing) {
-            const newQuantity = existing.quantity + newItem.quantity
-            if (newQuantity > newItem.stock) {
-                wasAdded = false
-                return prev
-            }
             wasAdded = true
             return prev.map((item) =>
-                item.sku === newItem.sku
-                    ? { ...item, quantity: newQuantity }
+                item.sku === newItem.sku && item.personlized === newItem.personlized
+                    ? { ...item, quantity: existing.quantity + newItem.quantity }
                     : item
             )
         }
 
         wasAdded = true
-        const quantity = Math.min(newItem.quantity, newItem.stock)
-        return [...prev, { ...newItem, quantity }]
+        return [...prev, { ...newItem, quantity: newItem.quantity }]
     })
 
     return wasAdded
 }
 
-  const removeFromCart = (sku: string) => {
-    setCart((prev) => prev.filter((item) => item.sku !== sku));
-  };
+  const removeFromCart = (sku: string, personlized?: string) => {
+    setCart((prev) =>
+        prev.filter((item) => !(item.sku === sku && item.personlized === personlized))
+    )
+}
 
-  const increment = (sku: string) => {
+
+  const increment = (sku: string, personlized?: string) => {
     setCart((prev) =>
         prev.map((item) =>
-            item.sku === sku
+            item.sku === sku && item.personlized === personlized
                 ? { ...item, quantity: Math.min(item.quantity + 1, item.stock) }
                 : item
         )
     )
 }
 
-const decrement = (sku: string) => {
+
+const decrement = (sku: string, personlized?: string) => {
     setCart((prev) =>
         prev.flatMap((item) => {
-            if (item.sku !== sku) return [item]
-            if (item.quantity <= 1) return [] // remove from cart
+            if (!(item.sku === sku && item.personlized === personlized)) return [item]
+            if (item.quantity <= 1) return []
             return [{ ...item, quantity: item.quantity - 1 }]
         })
     )

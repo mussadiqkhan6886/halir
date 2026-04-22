@@ -44,7 +44,7 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
                     
                     <div className='overflow-y-auto max-h-[60vh]  bg-white'>
                         {cart.map(item => (
-                            <div key={item.sku} className='p-6 pb-3'>
+                            <div key={item.sku + item.personlized} className='p-6 pb-3'>
                                 <div className='flex gap-5 border-b border-zinc-50'>
                                     <div className='relative w-24 h-25 flex-shrink-0 bg-zinc-50 overflow-hidden'>
                                         <Image 
@@ -60,7 +60,7 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
                                             <div className='flex justify-between items-start'>
                                                 <h6 className='font-bold text-md tracking-tight uppercase'>{item.name}</h6>
                                                 <button className='text-zinc-400 hover:text-red-500 transition-colors'>
-                                                    <FiTrash2 onClick={() => removeFromCart(item.sku)} size={14} />
+                                                    <FiTrash2 onClick={() => removeFromCart(item.sku, item.personlized)} size={14} />
                                                 </button>
                                             </div>
                                             <p className={`${magdaLig.className} text-xs text-zinc-500 tracking-widest`}>{item.selectedSize > 10 ? "Perfum" : "Tester"}</p>
@@ -75,13 +75,17 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
                                                 <span className='text-zinc-600'>Price:</span>
                                                 <span className={`${magdaLig.className} text-stone-500`}>{item.onSale ? item.salePrice : item.price} PKR</span>
                                             </div>
+                                            <div className='flex justify-between'>
+                                                <span className='text-zinc-600 text-xs'>Engraving/For:</span>
+                                                <span className={`${magdaLig.className} text-xs text-stone-500`}>{item.personlized ? item.personlized : "--"}</span>
+                                            </div>
                                         </div>
 
                                         <div className='flex items-center gap-4 mt-4'>
                                             <div className='flex items-center border border-zinc-200 rounded-sm'>
-                                                <button onClick={() => decrement(item.sku)} className='p-1 hover:bg-zinc-50'><FiMinus size={12} /></button>
+                                                <button onClick={() => decrement(item.sku, item.personlized)} className='p-1 hover:bg-zinc-50'><FiMinus size={12} /></button>
                                                 <span className={`${magdaLig.className} px-4 text-xs`}>{item.quantity}</span>
-                                                <button onClick={() => increment(item.sku)} className='p-1 hover:bg-zinc-50'><FiPlus size={12} /></button>
+                                                <button onClick={() => increment(item.sku, item.personlized)} className='p-1 hover:bg-zinc-50'><FiPlus size={12} /></button>
                                             </div>
                                         </div>
                                     </div>

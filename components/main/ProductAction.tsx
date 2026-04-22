@@ -78,7 +78,7 @@ export default function ProductActions({ currentProduct, currentSlug, category, 
       </div>
 
       <div className='w-full bg-stone-700 text-center text-white py-4 text-sm font-black tracking-[0.2em] hover:bg-black transition-colors'>
-        <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={qty} image={image} selectedSize={selectedSize} stock={stock} sku={sku} />
+        <AddToCart personlized={personlized} name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={qty} image={image} selectedSize={selectedSize} stock={stock} sku={sku} />
       </div>
       
       <p className={`${magdaLig.className} text-center text-[10px] text-zinc-500 italic uppercase tracking-wider`}>
