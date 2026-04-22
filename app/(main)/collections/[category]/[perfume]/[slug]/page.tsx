@@ -7,6 +7,7 @@ import PerfumeCard from '@/components/main/PerfumeCard'
 import { connectDB } from '@/lib/config/db'
 import Perfume from '@/lib/models/ProductSchema'
 import { PerfumeNote, PerfumeSize } from '@/type'
+import Image from 'next/image'
 
 export const revalidate = 60;
 
@@ -23,7 +24,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
   const sizeData = currentProduct.sizes.find((item: PerfumeSize) => item.slug === slug)!
 
   return (
-    <main className='bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto'>
+    <main className='bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto w-full'>
       <section className='grid mx-4 sm:mx-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border border-zinc-200'>       
         <section className='xl:col-span-2 pt-5 md:border-r border-zinc-200 md:pl-3 lg:pl-12'>
           <nav className={`${magdaLig.className} pl-3 md:pl-0 flex gap-2 mb-5 items-center text-[11px] sm:text-sm uppercase text-zinc-500`}>
@@ -104,6 +105,9 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
                     <div>
                       <span className='text-[9px] uppercase tracking-widest text-zinc-400 block mb-2'>Top</span>
                       <p className='text-xs font-bold uppercase'>{note.name}</p>
+                      <div className="relative aspect-square mt-1">
+                        <Image src={note.image} fill alt={note.name} className="object-cover" />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -112,6 +116,9 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
                     <div>
                       <span className='text-[9px] uppercase tracking-widest text-zinc-400 block mb-2'>Heart</span>
                       <p className='text-xs font-bold uppercase'>{note.name}</p>
+                      <div className="relative aspect-square mt-1">
+                        <Image src={note.image} fill alt={note.name} className="object-cover" />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -120,6 +127,9 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
                     <div>
                       <span className='text-[9px] uppercase tracking-widest text-zinc-400 block mb-2'>Base</span>
                       <p className='text-xs font-bold uppercase'>{note.name}</p>
+                      <div className="relative aspect-square mt-1">
+                        <Image src={note.image} fill alt={note.name} className="object-cover" />
+                      </div>
                     </div>
                   </div>
                 ))}
