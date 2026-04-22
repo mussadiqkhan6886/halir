@@ -16,7 +16,7 @@ type PerfumeSize = {
   stock: number
 }
 
-type Perfume = {
+type PerfumeType = {
   id: string
   slug: string
   name: string
