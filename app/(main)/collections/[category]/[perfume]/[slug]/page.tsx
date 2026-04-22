@@ -1,19 +1,27 @@
-import { perfumes } from '@/lib/constants'
 import { magdaLig, ekate } from '@/lib/font'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ProductActions from '@/components/main/ProductAction'
 import ImageGallery from '@/components/main/ImageGallery'
 import PerfumeCard from '@/components/main/PerfumeCard'
+import { connectDB } from '@/lib/config/db'
+import Perfume from '@/lib/models/ProductSchema'
+import { PerfumeNote, PerfumeSize } from '@/type'
+
+export const revalidate = 60;
 
 const Page = async ({params}: {params: Promise<{category: string, perfume: string, slug: string}>}) => {
   const {category, perfume, slug} = await params
-  const currentProduct = perfumes.find(item => item.sizes.find(p => p.slug === slug))
+  await connectDB()
+
+  const res = await Perfume.findOne({"sizes.slug": slug}).lean()
+
+  const currentProduct = JSON.parse(JSON.stringify(res))
 
   if(!currentProduct) return notFound();
   
-  const sizeData = currentProduct.sizes.find(item => item.slug === slug)!
-  console.log(sizeData)
+  const sizeData = currentProduct.sizes.find((item: PerfumeSize) => item.slug === slug)!
+
   return (
     <main className='bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto'>
       <section className='grid mx-4 sm:mx-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border border-zinc-200'>       
@@ -91,7 +99,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
               </div>
 
               <div className='grid grid-cols-3 gap-4 border-t border-zinc-200 pt-7 pb-3'>
-                {currentProduct.notes.top.map((note, i) => (
+                {currentProduct.notes.top.map((note: PerfumeNote, i: number) => (
                   <div key={i} className='space-y-4'>
                     <div>
                       <span className='text-[9px] uppercase tracking-widest text-zinc-400 block mb-2'>Top</span>
@@ -99,7 +107,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
                     </div>
                   </div>
                 ))}
-                {currentProduct.notes.heart.map((note, i) => (
+                {currentProduct.notes.heart.map((note: PerfumeNote, i: number) => (
                   <div key={i} className='space-y-4'>
                     <div>
                       <span className='text-[9px] uppercase tracking-widest text-zinc-400 block mb-2'>Heart</span>
@@ -107,7 +115,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
                     </div>
                   </div>
                 ))}
-                {currentProduct.notes.base.map((note, i) => (
+                {currentProduct.notes.base.map((note: PerfumeNote, i: number) => (
                   <div key={i} className='space-y-4'>
                     <div>
                       <span className='text-[9px] uppercase tracking-widest text-zinc-400 block mb-2'>Base</span>
@@ -129,7 +137,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
       <section className='border-t border-zinc-200 p-12'>
          <h4 className={`${ekate.className} text-center text-4xl mb-13 z-20 md:mb-10`}>You may Like</h4>
          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-          {currentProduct.sizes.slice(0,3).map(item => (
+          {currentProduct.sizes.slice(0,3).filter((item: PerfumeSize) => item.slug !== slug).map((item: PerfumeSize) => (
             <PerfumeCard key={item.sku} {...item} name={currentProduct.name} category={category} perfume={perfume} />
           ))}
          </div>
