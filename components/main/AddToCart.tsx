@@ -7,9 +7,8 @@ import React, { useState } from 'react'
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 const AddToCart = ({name, price, onSale, salePrice, quantity, image, selectedSize, stock, sku}: CartItem) => {
-    const { addToCart, cart } = useCart()
+    const { addToCart } = useCart()
     const [status, setStatus] = useState<Status>('idle')
-
     const item = { name, price, onSale, salePrice, quantity, image, selectedSize, stock, sku }
 
     const handleClick = (e: React.MouseEvent) => {
@@ -42,7 +41,7 @@ const AddToCart = ({name, price, onSale, salePrice, quantity, image, selectedSiz
             disabled={status === 'loading'  || status === "success" || status === "error"}
             onClick={handleClick}
             aria-label={`Add ${name} to cart`}
-            className={`disabled:no-underline hover:underline cursor-pointer transition-colors duration-200 ${colorClass[status]} disabled:cursor-not-allowed`}
+            className={`disabled:no-underline hover:underline uppercase cursor-pointer transition-colors duration-200 ${colorClass[status]} disabled:cursor-not-allowed`}
         >
             {status === 'loading'
                 ? <div className='w-3 h-3 border border-zinc-500 border-t-transparent rounded-full animate-spin' />

@@ -5,12 +5,12 @@ import { magdaLig } from '@/lib/font';
 import { useRouter } from 'next/navigation';
 import AddToCart from './AddToCart';
 
-export default function ProductActions({ currentProduct, currentSlug, category, perfume, name, price, onSale, salePrice, image, sku, ml, stock }: any) {
+export default function ProductActions({ currentProduct, currentSlug, category, perfume, name, price, onSale, salePrice, image, sku, selectedSize, stock }: any) {
   const [qty, setQty] = useState(1);
   const [isPending, startTransition] = useTransition();
   const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
   const router = useRouter();
-
+  const [personlized, setPersonlized] = useState("")
   const handleRoute = (s: { slug: string }) => {
     if (s.slug === currentSlug) return;
     
@@ -70,12 +70,15 @@ export default function ProductActions({ currentProduct, currentSlug, category, 
             placeholder='Add Name (max 23 chars)' 
             className={`${magdaLig.className} w-full bg-transparent text-xs uppercase font-bold focus:outline-none placeholder:text-zinc-400`}
             maxLength={23} 
+            required
+            value={personlized}
+            onChange={e => setPersonlized(e.target.value)}
           />
         </div>
       </div>
 
-      <div className='w-full bg-stone-700 text-center text-white py-4 text-sm font-black uppercase tracking-[0.2em] hover:bg-black transition-colors'>
-        <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={1} image={image} selectedSize={ml} stock={stock} sku={sku} />
+      <div className='w-full bg-stone-700 text-center text-white py-4 text-sm font-black tracking-[0.2em] hover:bg-black transition-colors'>
+        <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={1} image={image} selectedSize={selectedSize} stock={stock} sku={sku} />
       </div>
       
       <p className={`${magdaLig.className} text-center text-[10px] text-zinc-500 italic uppercase tracking-wider`}>

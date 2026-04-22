@@ -13,7 +13,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
   if(!currentProduct) return notFound();
   
   const sizeData = currentProduct.sizes.find(item => item.slug === slug)!
-  
+  console.log(sizeData)
   return (
     <main className='bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto'>
       <section className='grid mx-4 sm:mx-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border border-zinc-200'>       
