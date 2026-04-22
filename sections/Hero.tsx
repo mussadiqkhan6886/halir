@@ -53,7 +53,6 @@ const Hero = () => {
           alt="Halir Perfumery - The Scent of Presence"
           fill
           priority
-          quality={100}
           sizes="100vw"
           className="object-cover object-center grayscale-[20%] contrast-[1.1] "
         />
