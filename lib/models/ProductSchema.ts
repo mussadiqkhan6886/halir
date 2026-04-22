@@ -75,10 +75,8 @@ const PerfumeSchema = new Schema<IPerfume>(
 );
 
 
-PerfumeSchema.index({ slug: 1 });
 PerfumeSchema.index({ categories: 1 });
 PerfumeSchema.index({ gender: 1 });
-PerfumeSchema.index({ "sizes.sku": 1 });
 
 
 const Perfume: Model<IPerfume> =
