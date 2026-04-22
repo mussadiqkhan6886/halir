@@ -34,6 +34,7 @@ const Hero = () => {
 
   return (
     <motion.section 
+      id='start'
       initial="hidden"
       animate="visible"
       variants={containerVariants}

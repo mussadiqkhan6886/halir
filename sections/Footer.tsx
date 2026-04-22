@@ -3,10 +3,14 @@ import { magdaLig } from '@/lib/font'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { FaArrowCircleUp } from 'react-icons/fa'
+import { FaArrowUp91, FaArrowUpLong } from 'react-icons/fa6'
+import { FiArrowUpCircle } from 'react-icons/fi'
+import { HiArrowCircleUp } from 'react-icons/hi'
 
 const Footer = () => {
   return (
-    <footer className='flex flex-col gap-10 px-6 md:px-10 border-t bg-zinc-100 border-zinc-300 pt-12 overflow-hidden'>
+    <footer className='relative flex flex-col gap-10 px-6 md:px-10 border-t bg-zinc-100 border-zinc-300 pt-12 overflow-hidden'>
       
       <div className='flex flex-col md:flex-row gap-12 md:gap-10 justify-between'>
         
@@ -70,6 +74,10 @@ const Footer = () => {
       <div className='py-4 text-center border-t border-zinc-200 text-[10px] tracking-[0.3em] text-stone-500 uppercase'>
         <p>All rights reserved &copy; {new Date().getFullYear()} — <Link href={"/"}>Halir Perfumery</Link>  Pakistan</p>
       </div>
+
+      <Link className='absolute p-3 border border-black rounded-full bottom-5 right-5' href={"#start"} >
+        <FaArrowUpLong size={20} />
+      </Link>
     </footer>
   )
 }

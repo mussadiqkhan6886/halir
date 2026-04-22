@@ -11,8 +11,8 @@ const faqs = [
     answer: "Our fragrances are formulated at 'Extrait de Parfum' concentration. Depending on the specific scent and your skin chemistry, you can expect a persistence of 12 to 24 hours."
   },
   {
-    question: "Do you offer international shipping?",
-    answer: "Currently, we focus on delivering excellence within Pakistan. However, we are working on expanding our logistics to bring Halir to the global stage soon."
+    question: "What is Engraving For?",
+    answer: "Engraving For lets you write your name on the fragrance bottle. If you choose not to add one, it will simply say YOU."
   },
   {
     question: "Can I return a fragrance if I don't like the scent?",

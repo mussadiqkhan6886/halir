@@ -77,7 +77,7 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
                                             </div>
                                             <div className='flex justify-between'>
                                                 <span className='text-zinc-600 text-xs'>Engraving/For:</span>
-                                                <span className={`${magdaLig.className} text-xs text-stone-500`}>{item.personlized ? item.personlized : "--"}</span>
+                                                <span className={`${magdaLig.className} text-xs text-stone-500`}>{item.personlized ? item.personlized : "YOU"}</span>
                                             </div>
                                         </div>
 
