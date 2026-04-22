@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/sections/Header";
 import Footer from "@/sections/Footer";
-import SmoothScroll from "@/components/providers/SmoothScroll";
-
 
 export const metadata: Metadata = {
   title: "Halir",
@@ -16,11 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-    <SmoothScroll>
       <Header />
        {children}
       <Footer />
-    </SmoothScroll>
     </>
   );
 }
