@@ -14,6 +14,8 @@ type PerfumeSize = {
   badge: string | null
   images: string[]
   stock: number
+  onSale: boolean
+  salePrice: number
 }
 
 type PerfumeType = {
