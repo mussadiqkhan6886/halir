@@ -11,7 +11,6 @@ const page = async ({params}: {params: Promise<{perfume: string, category: strin
   const currentPerfume = perfumes.find(item => item.slug === perfume)
 
   if(!currentPerfume) return notFound();
-  
   return (
     <main className='max-w-6xl pb-3 mx-auto'>
       <section className='bg-light px-4 lg:px-0'>

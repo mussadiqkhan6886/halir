@@ -13,6 +13,8 @@ interface Props {
     perfume: string
     ml: number
     stock: number
+    onSale: boolean
+  salePrice: number
 }
 
 interface Props2 {
@@ -22,12 +24,16 @@ interface Props2 {
   images: string[]
   ml: number
   stock: number
+  onSale: boolean
+  salePrice: number
 }
 
-const Card = ({name, label, price, images, ml, stock}: Props2) => {
+const Card = ({name, label, price, images, ml, stock, onSale, salePrice}: Props2) => {
+  console.log(onSale, salePrice)
   return (<>
     <div className='relative aspect-square'>
         <Image src={images[0]} alt={name + "Perfume Card"} fill className='object-cover object-bottom'  />
+        {onSale && <div className={`${magdaReg.className} w-20 h-7 flex items-center justify-center text-center bg-red-700 text-white uppercase text-sm absolute z-50 top-0 right-0`}>on sale</div>}
       </div>
       <div className='p-1.5 border-b border-zinc-200'>
         <h2 className='font-black text-lg uppercase  group-hover:underline'>{name}</h2>
@@ -42,19 +48,29 @@ const Card = ({name, label, price, images, ml, stock}: Props2) => {
         :
           <button aria-label={`Out of stock ${name}`} className=' cursor-not-allowed'>Out of stock</button>
         }
-        <h4 className={magdaReg.className}>{price} PKR</h4>
+       <h4 className={magdaReg.className}>
+          {onSale ? (
+            <>
+              {salePrice.toLocaleString()} 
+              <span className="line-through ml-2 text-xs text-zinc-500">{price.toLocaleString()}</span>
+            </>
+          ) : (
+            price.toLocaleString()
+          )} 
+          {" "}PKR
+        </h4>
       </div>
   </>)
 }
-const PerfumeCard = ({name, label, price, images, ml, category, perfume, slug,stock}: Props) => {
+const PerfumeCard = ({name, label, price, images, ml, category, perfume, slug,stock, onSale, salePrice}: Props) => {
   return (stock > 0 ? 
     <Link className='block group aspect-3/4 border border-zinc-200 text-sm' href={`/collections/${category}/${perfume}/${slug}`}>
-      <Card stock={stock} name={name} label={label} price={price} images={images} ml={ml}  />
+      <Card stock={stock} name={name} label={label} price={price} images={images} ml={ml} onSale={onSale} salePrice={salePrice}  />
     </Link>
     : 
     <div className='aspect-3/4 border border-zinc-200 text-sm relative opacity-60'>
       <div className='absolute z-20 text-center py-2 font-black w-full bg-light/80 left-1/2 top-[37%] text-black -translate-x-1/2 -translate-y-1/2'>OUT OF STOCK</div>
-      <Card stock={stock} name={name} label={label} price={price} images={images} ml={ml}  />
+      <Card stock={stock} name={name} label={label} price={price} images={images} ml={ml} onSale={onSale} salePrice={salePrice}  />
     </div>
     )
 }

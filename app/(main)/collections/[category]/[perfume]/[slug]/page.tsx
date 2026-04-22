@@ -13,7 +13,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
   if(!currentProduct) return notFound();
   
   const sizeData = currentProduct.sizes.find(item => item.slug === slug)!
-
+  
   return (
     <main className='bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto'>
       <section className='grid mx-4 sm:mx-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border border-zinc-200'>       
@@ -31,9 +31,18 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
               <h1 className='text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none '>
                 {currentProduct.name}
               </h1>
-              <p className={`font-light text-md text-stone-700`}>
-                PKR. {sizeData.price.toLocaleString()}
-              </p>
+              <h2 className="font-light text-md text-stone-700">
+                PKR. {sizeData.onSale ? (
+                  <>
+                    {sizeData.salePrice.toLocaleString()}
+                    <span className="line-through ml-2 text-xs text-zinc-500">
+                      {sizeData.price.toLocaleString()}
+                    </span>
+                  </>
+                ) : (
+                  sizeData.price.toLocaleString()
+                )}  
+              </h2>
           </div>
               <p className={`${magdaLig.className} block md:hidden px-3 mb-3 text-xs mt-1`}>{sizeData.ml > 10 ? "Eau de perfum" : "Tester"}</p>
           <ImageGallery images={sizeData.images} alt={currentProduct.name} />
@@ -45,9 +54,18 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
               <h1 className='text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter leading-none '>
                 {currentProduct.name}
               </h1>
-              <p className={`font-light text-xl text-stone-700`}>
-                PKR. {sizeData.price.toLocaleString()}
-              </p>
+              <h2 className={`font-light text-xl text-stone-700`}>
+                 PKR. {sizeData.onSale ? (
+                  <>
+                    {sizeData.salePrice.toLocaleString()}
+                    <span className="line-through ml-2 text-xs text-zinc-500">
+                      {sizeData.price.toLocaleString()}
+                    </span>
+                  </>
+                ) : (
+                  sizeData.price.toLocaleString()
+                )} 
+              </h2>
             </div>
 
             <p className={`${magdaLig.className} mb-8 hidden md:block text-sm mt-2`}>{sizeData.ml > 10 ? "Eau de perfum" : "Tester"}</p>
@@ -55,14 +73,24 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
             <ProductActions currentProduct={currentProduct} currentSlug={slug} category={category} perfume={perfume} />
 
             {/* Technical Specifications */}
-            <div className='mt-6 space-y-6 border-t border-zinc-200 pt-8'>
+            <div className='mt-6 border-t border-zinc-200 pt-7'>
               <div>
-                <p className={`${magdaLig.className} text-black text-sm`}>
+                <p className={`${magdaLig.className} pb-3 text-black text-sm`}>
                   {currentProduct.description}
                 </p>
               </div>
+              <div>
+                <p className={`${magdaLig.className} border-t border-zinc-200 py-3 text-black text-sm`}>
+                  {currentProduct.tagline}
+                </p>
+              </div>
+              <div>
+                <p className={`${magdaLig.className} border-t border-zinc-200 py-3 text-black text-sm`}>
+                 <span className='font-medium'>Timing:</span>  {currentProduct.longevity}
+                </p>
+              </div>
 
-              <div className='grid grid-cols-3 gap-4 border-t border-zinc-200 pt-8'>
+              <div className='grid grid-cols-3 gap-4 border-t border-zinc-200 pt-7 pb-3'>
                 {currentProduct.notes.top.map((note, i) => (
                   <div key={i} className='space-y-4'>
                     <div>
