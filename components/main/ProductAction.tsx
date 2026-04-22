@@ -60,7 +60,7 @@ export default function ProductActions({ currentProduct, currentSlug, category, 
           <div className='flex items-center justify-between'>
             <button onClick={() => setQty(Math.max(1, qty - 1))} className='hover:text-red-600 transition-colors'>-</button>
             <span className='font-bold text-sm'>{qty}</span>
-            <button onClick={() => setQty(qty + 1)} className='hover:text-red-600 transition-colors'>+</button>
+            <button onClick={() => setQty(stock <= qty ? qty : qty + 1)} className='hover:text-red-600 transition-colors'>+</button>
           </div>
         </div>
         <div className='border col-span-2 w-full border-zinc-200 p-3'>
@@ -78,7 +78,7 @@ export default function ProductActions({ currentProduct, currentSlug, category, 
       </div>
 
       <div className='w-full bg-stone-700 text-center text-white py-4 text-sm font-black tracking-[0.2em] hover:bg-black transition-colors'>
-        <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={1} image={image} selectedSize={selectedSize} stock={stock} sku={sku} />
+        <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={qty} image={image} selectedSize={selectedSize} stock={stock} sku={sku} />
       </div>
       
       <p className={`${magdaLig.className} text-center text-[10px] text-zinc-500 italic uppercase tracking-wider`}>

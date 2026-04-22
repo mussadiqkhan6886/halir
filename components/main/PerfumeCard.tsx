@@ -44,13 +44,13 @@ const Card = ({name, label, price, images, ml, stock, onSale, salePrice, sku}: P
         <h3 className='text-xs sm:text-sm'>{label}</h3>
         <h3 className='text-xs sm:text-sm'>{ml > 10 ? "eau de perfum" : "Tester"}</h3>
       </div>
-      <div className={`font-light tracking-tight text-zinc-700 border-t border-zinc-200 p-1.5 flex justify-between text-center`}>
+      <div className={`font-light tracking-tight text-zinc-700 border-t border-zinc-200 p-1.5 grid grid-cols-4 justify-between text-center items-center place-content-center`}>
         {stock > 0 ?
           <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={1} image={images[0]} selectedSize={ml} stock={stock} sku={sku} />
         :
           <button aria-label={`Out of stock ${name}`} className=' cursor-not-allowed'>Out of stock</button>
         }
-       <h4 className={magdaReg.className}>
+       <h4 className={`${magdaReg.className} w-full col-span-3 text-right`}>
           {onSale ? (
             <>
               {salePrice.toLocaleString()} 

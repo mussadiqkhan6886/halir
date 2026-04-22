@@ -41,7 +41,7 @@ const AddToCart = ({name, price, onSale, salePrice, quantity, image, selectedSiz
             disabled={status === 'loading'  || status === "success" || status === "error"}
             onClick={handleClick}
             aria-label={`Add ${name} to cart`}
-            className={`disabled:no-underline hover:underline uppercase cursor-pointer transition-colors duration-200 ${colorClass[status]} disabled:cursor-not-allowed`}
+            className={`disabled:no-underline hover:underline uppercase cursor-pointer transition-colors duration-200 ${colorClass[status]} disabled:cursor-not-allowed w-full whitespace-nowrap`}
         >
             {status === 'loading'
                 ? <div className='w-3 h-3 border border-zinc-500 border-t-transparent rounded-full animate-spin' />
