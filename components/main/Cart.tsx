@@ -6,6 +6,7 @@ import { FiX, FiPlus, FiMinus, FiTrash2 } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import { magdaLig, magdaReg } from '@/lib/font';
 import { useCart } from '@/hook/UseCart';
+import Link from 'next/link';
 
 const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
     const {cart, totalAmount, removeFromCart, clearCart, increment, decrement} = useCart()
@@ -15,7 +16,7 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className='fixed md:absolute bg-white shadow-2xl top-0 md:top-20 right-0 md:right-10 w-full md:w-[420px] h-screen md:h-auto md:max-h-[300px] z-[999] flex flex-col'
+            className='fixed md:absolute bg-white shadow-2xl top-0 md:top-15 right-0 md:right-10 w-full md:w-[420px] h-screen md:h-auto md:max-h-[300px] z-[999] flex flex-col'
         >
             {/* Header */}
             <div className='flex justify-between items-center border-b border-zinc-100 p-2 px-6'>
@@ -42,7 +43,7 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
                 <div className='flex flex-col'>
                     <button onClick={() => clearCart()} className={`${magdaLig.className} text-right text-xs underline pr-4 cursor-pointer text-stone-700`}>Clear All</button>
                     
-                    <div className='overflow-y-auto max-h-[60vh]  bg-white'>
+                    <div className='overflow-y-auto max-h-[50vh]  bg-white'>
                         {cart.map(item => (
                             <div key={item.sku + item.personlized} className='p-6 pb-3'>
                                 <div className='flex gap-5 border-b border-zinc-50'>
@@ -101,9 +102,9 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
                     <p className={`${magdaReg.className} text-xl tracking-tighter`}>PKR {totalAmount}</p>
                 </div>
                 
-                <button className='w-full bg-black text-white py-5 text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-zinc-800 transition-all duration-500 shadow-xl'>
+                <Link href={"/checkout"} className='w-full bg-black text-white py-5 text-[10px] font-bold tracking-[0.4em] uppercase hover:bg-zinc-800 transition-all duration-500 shadow-xl block text-center'>
                     Secure Checkout
-                </button>
+                </Link>
                 
                 <p className={`${magdaLig.className} text-[9px] text-center text-zinc-400 uppercase mt-4 tracking-widest`}>
                     Tax included. Shipping calculated at checkout.
