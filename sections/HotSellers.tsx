@@ -1,4 +1,3 @@
-import { hotSellers } from '@/lib/constants'
 import { ekate, magdaLig } from '@/lib/font'
 import HotSellerCard from '@/components/main/HotSellerCard';
 import { connectDB } from '@/lib/config/db';
