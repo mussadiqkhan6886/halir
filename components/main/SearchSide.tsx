@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react'
+import React, { FormEvent } from 'react'
 import { FiSearch, FiX } from "react-icons/fi"
 import { motion, Variants } from 'framer-motion';
 import { magdaLig } from '@/lib/font';
 
-const SearchSide = ({ setIsSearchOpen }: { setIsSearchOpen: (s: boolean) => void }) => {
+const SearchSide = ({query, setQuery, handleSearch ,setIsSearchOpen }: {query: string, setQuery: (q: string) => void, handleSearch: (e: FormEvent) => void ,setIsSearchOpen: (s: boolean) => void }) => {
 
   const containerVariants: Variants = {
     hidden: {
@@ -24,6 +24,10 @@ const SearchSide = ({ setIsSearchOpen }: { setIsSearchOpen: (s: boolean) => void
     }
   }
 
+  const handleQuickSearch = (item: string) => {
+    setQuery(item)
+  }
+
   return (
     <motion.aside
       variants={containerVariants}
@@ -34,15 +38,17 @@ const SearchSide = ({ setIsSearchOpen }: { setIsSearchOpen: (s: boolean) => void
       className='fixed top-0 left-0 w-full h-screen bg-white z-50 p-4 shadow-2xl'
     >
       <div className='flex items-center gap-5'>
-        <div className={`border border-zinc-200 flex items-center gap-4 ${magdaLig.className} px-3 text-sm w-full py-2 outline-none `}>
+        <form onSubmit={handleSearch} className={`border border-zinc-200 flex items-center gap-4 ${magdaLig.className} px-3 text-sm w-full py-2 outline-none `}>
           <FiSearch />
           <input 
             type="text" 
             placeholder='Search...' 
             className="w-full outline-none bg-transparent"
             autoFocus 
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
           />
-        </div>
+        </form>
         <button onClick={() => setIsSearchOpen(false)} className='cursor-pointer p-1 hover:bg-zinc-100 rounded-full transition-colors'>
           <FiX size={25} />
         </button>
@@ -52,8 +58,8 @@ const SearchSide = ({ setIsSearchOpen }: { setIsSearchOpen: (s: boolean) => void
         <div>
           <h2 className='font-bold mb-3 tracking-wider'>POPULAR SEARCHES</h2>
           <ul className={`${magdaLig.className} text-sm flex gap-1 flex-col`}>
-            {['Farenheit', 'Tom Ford', 'Blue d Channel', 'Ambassador'].map((item) => (
-              <li key={item} className="cursor-pointer">
+            {['Farenheit', 'Tom Ford', 'Blue d Channel', 'Ambassador', 'Men'].map((item) => (
+              <li onClick={() => handleQuickSearch(item)} key={item} className="cursor-pointer">
                 {item}
               </li>
             ))}

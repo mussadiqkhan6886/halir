@@ -2,7 +2,7 @@
 
 import UpperHeader from '@/components/main/UpperHeader'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import {HiOutlineMenu, HiOutlineSearch, HiOutlineShoppingBag, HiX} from "react-icons/hi"
 import {FaInstagram} from "react-icons/fa"
 import { menu } from '@/lib/constants'
@@ -19,6 +19,14 @@ const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false)
     const [isCartOpen, setIsCartOpen] = useState(false)
     const {totalItems} = useCart()
+    const [query, setQuery] = useState("")
+
+    const handleSearch = (e: FormEvent) => {
+        e.preventDefault()
+        if(!query.trim()) return null
+        setIsSearchOpen(false)
+        setQuery("")
+    }
 
   return (
     <header className='shadow-md z-40'>
@@ -47,7 +55,7 @@ const Header = () => {
                     <HiOutlineSearch size={20} />
                 </button>
                 <AnimatePresence>
-                    {isSearchOpen && <SearchSide setIsSearchOpen={setIsSearchOpen} />}
+                    {isSearchOpen && <SearchSide query={query} setQuery={setQuery} handleSearch={handleSearch} setIsSearchOpen={setIsSearchOpen} />}
                 </AnimatePresence>
             </div>
         </div>
@@ -62,10 +70,10 @@ const Header = () => {
             {/* search bar */}
             <div className='flex border-zinc-200 lg:border-b'>
                 {/* search */}
-                <div className='flex pl-5 w-full gap-4 items-center p-3 '>
-                    <HiOutlineSearch /> 
-                    <input type='text' placeholder='Search for products' className={`placeholder:${magdaLig.className} ${magdaLig.className} text-sm w-full outline-none `} />
-                </div>
+                <form onSubmit={handleSearch} className='flex pl-5 w-full gap-4 items-center p-3 '>
+                    <HiOutlineSearch className='cursor-pointer' onClick={handleSearch} /> 
+                    <input type='text' placeholder='Search for products' className={`placeholder:${magdaLig.className} ${magdaLig.className} text-sm w-full outline-none `} value={query} onChange={(e) => setQuery(e.target.value)} />
+                </form>
                 {/* icons */}
                 <div className='border-zinc-200 border-l p-2 px-3 flex justify-center items-center'>
                     <FaInstagram />
