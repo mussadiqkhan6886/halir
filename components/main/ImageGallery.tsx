@@ -6,9 +6,10 @@ import Image from 'next/image';
 interface Props {
   images: string[];
   alt: string;
+  stock: number
 }
 
-export default function ImageGallery({ images, alt }: Props) {
+export default function ImageGallery({ images, alt, stock }: Props) {
   const [index, setIndex] = useState(0);
 
   return (  
@@ -43,8 +44,9 @@ export default function ImageGallery({ images, alt }: Props) {
               alt={alt}
               fill
               priority
-              className="object-cover object-bottom"
+              className={`${stock <= 0 ? "opacity-40" : "opacity-100"} object-cover object-bottom`}
             />
+            {stock <= 0 && <div className='bg-red-600 text-white w-full text-lg absolute top-0 right-0 text-center font-bold py-7'>OUT OF STOCK</div>}
           </div>
       </div>
     </div>

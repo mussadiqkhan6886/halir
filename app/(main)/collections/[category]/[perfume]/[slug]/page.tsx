@@ -54,7 +54,7 @@ const Page = async ({params}: {params: Promise<{category: string, perfume: strin
               </h2>
           </div>
               <p className={`${magdaLig.className} block md:hidden px-3 mb-3 text-xs mt-1`}>{sizeData.ml > 10 ? "Eau de perfum" : "Tester"}</p>
-          <ImageGallery images={sizeData.images} alt={currentProduct.name} />
+          <ImageGallery images={sizeData.images} stock={sizeData.stock} alt={currentProduct.name} />
         </section>
 
         <section className='p-3 sm:p-5 pt-8 md:pt-14  flex flex-col'>
