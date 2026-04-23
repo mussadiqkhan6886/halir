@@ -39,7 +39,8 @@ const OrderSchema = new Schema({
         required: true
       },
       personlized: {
-        type: String
+        type: String,
+        default: "YOU"
       }
     }
     ],
