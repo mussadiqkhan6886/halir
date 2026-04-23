@@ -41,7 +41,6 @@ export const POST = async (req: NextRequest) => {
     }
 
 
-    // 🔹 Create new order in MongoDB
     const newOrder = await order.create({
       items: orderData.items,
       totalPrice: orderData.totalPrice,
@@ -54,21 +53,29 @@ export const POST = async (req: NextRequest) => {
     });
 
 
-   for (const item of orderData.items) {
-  const product = await Perfume.find({"sizes.sku": item.sku});
-    console.log(product)
-//   if (product) {
-//     // Calculate new stock
-//     let newStock = product.stock - item.quantity;
-//     if (newStock < 0) newStock = 0;
+    for (const item of orderData.items) {
+        const product = await Perfume.findOne(
+            { "sizes.sku": item.sku },
+            { sizes: { $elemMatch: { sku: item.sku } } }
+        );
 
-//     // Update stock and inStock flag
-//     await Product.findByIdAndUpdate(item.id, {
-//       stock: newStock,
-//       inStock: newStock > 0, // true if stock > 0, false if 0
-//     });
-//   }
-}
+        if (product && product.sizes.length > 0) {
+            const size = product.sizes[0];
+
+            let newStock = size.stock - item.quantity;
+            if (newStock < 0) newStock = 0;
+
+            await Perfume.updateOne(
+            { "sizes.sku": item.sku },
+            {
+                $set: {
+                "sizes.$.stock": newStock,
+                "sizes.$.inStock": newStock > 0
+                }
+            }
+            );
+        }
+    }
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -80,7 +87,7 @@ export const POST = async (req: NextRequest) => {
 
     const html = `
       <h2>New Order Received!</h2>
-      <a href="https://www.mzstorepk.com/admin-dashboard">Check it out</a>
+      <a href="https://halir-seven.vercel.app/admin-dashboard">Check it out</a>
     `;
 
     const mailOptions = {
