@@ -1,4 +1,3 @@
-import { newArrivals } from '@/lib/constants'
 import MainCard from '@/components/main/MainCard';
 import { connectDB } from '@/lib/config/db';
 import Perfume from '@/lib/models/ProductSchema';

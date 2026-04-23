@@ -13,6 +13,7 @@ import { AnimatePresence } from 'framer-motion';
 import SearchSide from '@/components/main/SearchSide';
 import Cart from '@/components/main/Cart';
 import { useCart } from '@/hook/UseCart';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -20,10 +21,14 @@ const Header = () => {
     const [isCartOpen, setIsCartOpen] = useState(false)
     const {totalItems} = useCart()
     const [query, setQuery] = useState("")
+    const router = useRouter()
 
-    const handleSearch = (e: FormEvent) => {
+    const handleSearch = async (e: FormEvent) => {
         e.preventDefault()
         if(!query.trim()) return null
+
+        router.push(`/search?q=${query}`)
+
         setIsSearchOpen(false)
         setQuery("")
     }
