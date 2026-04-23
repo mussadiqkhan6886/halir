@@ -1,9 +1,10 @@
+import { transporter } from "@/helpers/CloudinaryConnect";
 import { uploadToCloudinary } from "@/helpers/uploadImage";
 import { connectDB } from "@/lib/config/db";
 import order from "@/lib/models/OrderSchema";
 import Perfume from "@/lib/models/ProductSchema";
+import { OrderType } from "@/type";
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 export const GET = async (req: NextRequest) => {
   try {
@@ -60,45 +61,161 @@ export const POST = async (req: NextRequest) => {
         );
 
         if (product && product.sizes.length > 0) {
-            const size = product.sizes[0];
-
-            let newStock = size.stock - item.quantity;
-            if (newStock < 0) newStock = 0;
 
             await Perfume.updateOne(
-            { "sizes.sku": item.sku },
-            {
-                $set: {
-                "sizes.$.stock": newStock,
-                "sizes.$.inStock": newStock > 0
+                {
+                    "sizes.sku": item.sku,
+                    "sizes.stock": { $gte: item.quantity }
+                },
+                {
+                    $inc: { "sizes.$.stock": -item.quantity }
                 }
-            }
             );
         }
     }
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_APP_PASSWORD,
-      },
-    });
+    const generateAdminEmail = (newOrder: OrderType) => {
+        const itemsHtml = newOrder.items.map(item => `
+            <tr>
+            <td style="padding:10px;border:1px solid #eee;">
+                <img src="${item.image}" width="50" style="border-radius:6px;" />
+            </td>
+            <td style="padding:10px;border:1px solid #eee;">
+                ${item.name} <br/>
+                <small>Size: ${item.selectedSize}</small><br/>
+                <small>SKU: ${item.sku}</small>
+            </td>
+            <td style="padding:10px;border:1px solid #eee;">${item.quantity}</td>
+            <td style="padding:10px;border:1px solid #eee;">
+                Rs ${item.onSale ? item.salePrice : item.price}
+            </td>
+            </tr>
+        `).join("");
 
-    const html = `
-      <h2>New Order Received!</h2>
-      <a href="https://halir-seven.vercel.app/admin-dashboard">Check it out</a>
-    `;
+        return `
+        <div style="font-family:Arial,sans-serif;background:#f6f6f6;padding:20px;">
+            <div style="max-width:600px;margin:auto;background:#fff;border-radius:10px;overflow:hidden;">
+            
+            <div style="background:#111;color:#fff;padding:20px;text-align:center;">
+                <h2>🛒 New Order Received</h2>
+            </div>
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: "mussadiqkhan6886@gmail.com", // admin email
-      subject: `New Order`,
-      html,
+            <div style="padding:20px;">
+                <p><strong>Order ID:</strong> ${newOrder.orderId.slice(0,7)}</p>
+                <p><strong>Customer:</strong> ${newOrder.userDetails.fullName}</p>
+                <p><strong>Phone:</strong> ${newOrder.userDetails.phone}</p>
+                <p><strong>Email:</strong> ${newOrder.userDetails.email}</p>
+
+                <h3>Items</h3>
+                <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f2f2f2;">
+                    <th style="padding:10px;border:1px solid #eee;">Image</th>
+                    <th style="padding:10px;border:1px solid #eee;">Product</th>
+                    <th style="padding:10px;border:1px solid #eee;">Qty</th>
+                    <th style="padding:10px;border:1px solid #eee;">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${itemsHtml}
+                </tbody>
+                </table>
+
+                <h3>Total: Rs ${newOrder.totalPrice}</h3>
+
+                <p><strong>Address:</strong><br/>
+                ${newOrder.shippingAddress.address}, ${newOrder.shippingAddress.city}</p>
+
+                <p><strong>Payment:</strong> ${newOrder.paymentMethod.toUpperCase()}</p>
+
+                <div style="text-align:center;margin-top:20px;">
+                <a href="https://halir-seven.vercel.app/admin-dashboard"
+                    style="background:#111;color:#fff;padding:12px 20px;text-decoration:none;border-radius:6px;">
+                    View Dashboard
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        `;
+        };
+
+    const generateCustomerEmail = (newOrder: OrderType) => {
+        const itemsHtml = newOrder.items.map(item => `
+            <tr>
+            <td style="padding:10px;border:1px solid #eee;">
+                ${item.name} (${item.selectedSize} ml)
+            </td>
+            <td style="padding:10px;border:1px solid #eee;">${item.quantity}</td>
+            <td style="padding:10px;border:1px solid #eee;">
+                Rs ${item.onSale ? item.salePrice : item.price}
+            </td>
+            </tr>
+        `).join("");
+
+        return `
+        <div style="font-family:Arial,sans-serif;background:#f6f6f6;padding:20px;">
+            <div style="max-width:600px;margin:auto;background:#fff;border-radius:10px;overflow:hidden;">
+            
+            <div style="background:#111;color:#fff;padding:20px;text-align:center;">
+                <h2>✅ Order Confirmed</h2>
+            </div>
+
+            <div style="padding:20px;">
+                <p>Hi ${newOrder.userDetails.fullName},</p>
+                <p>Your order has been placed successfully 🎉</p>
+
+                <p><strong>Order ID:</strong> ${newOrder.orderId.slice(0,7)}</p>
+
+                <h3>Order Summary</h3>
+                <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f2f2f2;">
+                    <th style="padding:10px;border:1px solid #eee;">Product</th>
+                    <th style="padding:10px;border:1px solid #eee;">Qty</th>
+                    <th style="padding:10px;border:1px solid #eee;">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${itemsHtml}
+                </tbody>
+                </table>
+
+                <h3>Total: Rs ${newOrder.totalPrice}</h3>
+
+                <p>We will contact you soon for delivery 🚚</p>
+
+                <p style="margin-top:20px;">Thanks for shopping with us ❤️</p>
+            </div>
+            </div>
+        </div>
+        `;
+        };
+
+    const sendOrderEmails = async (newOrder: OrderType) => {
+        try {
+            // Admin email
+            await transporter.sendMail({
+            from: `"Halir Store" <${process.env.EMAIL_USER}>`,
+            to: "mussadiqkhan6886@gmail.com",
+            subject: `🛒 New Order - ${newOrder.orderId}`,
+            html: generateAdminEmail(newOrder),
+            });
+
+            // Customer email
+            await transporter.sendMail({
+            from: `"Halir Store" <${process.env.EMAIL_USER}>`,
+            to: newOrder.userDetails.email,
+            subject: `✅ Order Confirmed - ${newOrder.orderId}`,
+            html: generateCustomerEmail(newOrder),
+            });
+
+        } catch (error) {
+            console.error("Email Error:", error);
+        }
     };
 
-    // 4️⃣ Send email
-    await transporter.sendMail(mailOptions);
+    sendOrderEmails(newOrder)
 
     return NextResponse.json({
       success: true,

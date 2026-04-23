@@ -76,3 +76,58 @@ export interface PerfumeForm {
 }
 
 
+export type OrderItem = {
+  name: string;
+  price: number;
+  onSale: boolean;
+  salePrice: number | null;
+  quantity: number;
+  image: string;
+  selectedSize: string;
+  sku: string;
+  personlized?: string;
+};
+
+export type UserDetails = {
+  fullName: string;
+  phone: string;
+  email: string;
+};
+export type ShippingAddress = {
+  city?: string;
+  postalCode?: string;
+  address: string;
+};
+
+export type OrderStatus =
+  | "pending"
+  | "processing"
+  | "shipped"
+  | "delivered"
+  | "cancelled";
+
+export type PaymentMethod = "cod" | "easypaisa";
+
+export type OrderType = {
+  _id: string; // MongoDB ID
+  orderId: string;
+
+  items: OrderItem[];
+
+  totalPrice: number;
+
+  userDetails: UserDetails;
+
+  notes?: string;
+
+  status: OrderStatus;
+
+  shippingAddress: ShippingAddress;
+
+  paymentMethod: PaymentMethod;
+
+  paymentProof?: string | null;
+
+  createdAt: string;
+  updatedAt: string;
+};
