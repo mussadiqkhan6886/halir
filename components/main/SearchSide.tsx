@@ -39,7 +39,7 @@ const SearchSide = ({query, setQuery, handleSearch ,setIsSearchOpen }: {query: s
     >
       <div className='flex items-center gap-5'>
         <form onSubmit={handleSearch} className={`border border-zinc-200 flex items-center gap-4 ${magdaLig.className} px-3 text-sm w-full py-2 outline-none `}>
-          <FiSearch />
+          <FiSearch onClick={handleSearch} />
           <input 
             type="text" 
             placeholder='Search...' 
