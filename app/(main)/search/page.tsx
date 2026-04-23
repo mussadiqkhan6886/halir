@@ -49,7 +49,7 @@ const SearchPage = async ({ searchParams }: { searchParams: Promise<{ q: string 
                     <section className="mb-10 border-b border-zinc-200 pb-3 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <div>
                             <h1 className="text-2xl md:text-4xl font-black tracking-tighter leading-none">
-                                Results for <span className={`${magdaReg.className} text-2xl md:text-5xl capitalize text-zinc-800`}>{q}</span>
+                                Results for {q}
                             </h1>
                         </div>
                         <p className={`${magdaLig.className} text-sm text-zinc-600 capitalize tracking-widest`}>
