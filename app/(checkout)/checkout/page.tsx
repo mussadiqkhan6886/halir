@@ -192,7 +192,7 @@ const page = () => {
           </form>
 
           {status && (
-            <p className="my-6 text-center text-black font-medium">{status}</p>
+            <p className="my-3 text-center text-black font-medium">{status}</p>
           )}
         </div>
       </section>
