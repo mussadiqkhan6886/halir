@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block admin & private areas
+Disallow: /admin-dashboard
+Disallow: /api
+Disallow: /checkout
+Disallow: /thankyou/
+Disallow: /search
+Disallow: /cart
+Disallow: /login
+
+# Optional: block query params (SEO cleanup)
+Disallow: /*?*
+
+# Sitemap
+Sitemap: https://halir-seven.vercel.app/sitemap.xml
