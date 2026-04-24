@@ -23,7 +23,6 @@ export default function TestimonialsList({
               
               <div>
                 <h2 className="text-lg font-semibold capitalize">{t.name}</h2>
-                <p className="text-gray-500 text-sm">{t.message}</p>
               </div>
             </div>
 
