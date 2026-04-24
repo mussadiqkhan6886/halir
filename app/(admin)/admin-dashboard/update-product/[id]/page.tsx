@@ -1,5 +1,6 @@
 'use client';
 
+import NewSize from '@/components/admin/NewSize';
 import { PerfumeNote, PerfumeType } from '@/type';
 import axios from 'axios';
 import Image from 'next/image';
@@ -45,6 +46,7 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
   const [longevity, setLongevity]     = useState("")
   const [categories, setCategories]   = useState<string[]>([])
   const [deleteLoading, setDeleteLoading] = useState(false)
+  const [showNewSize, setShowNewSize] = useState(false)
   // Main image
   const [mainImageUrl, setMainImageUrl]         = useState("")
   const [mainImageFile, setMainImageFile]       = useState<File | null>(null)
@@ -406,9 +408,20 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
         {/* ── Section 2: Sizes ─────────────────────────────── */}
         <div className="space-y-4">
           <div className="flex justify-between items-center">
-          <p className={labelCls}>Sizes</p>
-          <button className='uppercase text-xs bg-black text-white border py-2 cursor-pointer px-3'>Add New Size</button>
+            <p className={labelCls}>Sizes</p>
+            <button onClick={() => setShowNewSize(true)} className='uppercase text-xs bg-black text-white border py-2 cursor-pointer px-3'>Add New Size</button>
           </div>
+          {showNewSize && (
+              <NewSize
+                productId={productData._id}
+                perfumeName={productData.name}
+                onSuccess={async () => {
+                  const res = await axios.get(`/api/perfumes/${productData._id}`);
+                  setProductData(res.data.product);
+                  setShowNewSize(false);
+                }}
+              />
+            )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {productData.sizes.map(item => (
               <div key={item.slug}>
