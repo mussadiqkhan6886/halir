@@ -129,3 +129,9 @@ export type OrderType = {
   createdAt: string;
   updatedAt: string;
 };
+
+export interface reviewType {
+  name: string
+  message: string
+  _id: string
+}
