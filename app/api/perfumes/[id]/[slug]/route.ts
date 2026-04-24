@@ -118,6 +118,7 @@ export const DELETE = async (_req: NextRequest, {params}: {params: Promise<{id: 
 
   await connectDB()
 
+  try{
   const product = await Perfume.findById(id);
 
     if (!product) {
@@ -145,4 +146,5 @@ export const DELETE = async (_req: NextRequest, {params}: {params: Promise<{id: 
       { success: false, message: err.message },
       { status: 500 }
     );
+}
 }

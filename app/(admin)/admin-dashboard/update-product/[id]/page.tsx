@@ -405,7 +405,10 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
 
         {/* ── Section 2: Sizes ─────────────────────────────── */}
         <div className="space-y-4">
+          <div className="flex justify-between items-center">
           <p className={labelCls}>Sizes</p>
+          <button className='uppercase text-xs bg-black text-white border py-2 cursor-pointer px-3'>Add New Size</button>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {productData.sizes.map(item => (
               <div key={item.slug}>
