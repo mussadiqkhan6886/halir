@@ -50,7 +50,7 @@ export default function ProductTable({ products }: ProductTableProps) {
     { field: 'name', headerName: 'Product Name', flex: 1, minWidth: 100 },
     { field: 'sizes', headerName: 'Sizes', width: 300, renderCell: (params) => (
       <div>
-        {params.row.sizes.map(item => (
+        {params.row.sizes.map((item: {sku: string, ml: string}) => (
           <p className='inline' key={item.sku}>{item.ml} ml, </p>
         ))}
       </div>

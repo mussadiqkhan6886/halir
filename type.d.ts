@@ -19,7 +19,7 @@ type PerfumeSize = {
 }
 
 type PerfumeType = {
-  id: string
+  _id: string
   slug: string
   name: string
   categories: string[]
