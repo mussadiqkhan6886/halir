@@ -19,7 +19,7 @@ const HotSellers = async () => {
     <section className='bg-black py-32 px-6 overflow-hidden relative'>
       
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none opacity-[0.03] select-none">
-        <h2 className="text-9xl lg:text-[20rem] font-black uppercase text-white leading-none">HALIR</h2>
+        <h4 className="text-9xl lg:text-[20rem] font-black uppercase text-white leading-none">HALIR</h4>
       </div>
 
       <div className='relative z-10 max-w-7xl mx-auto mb-20 md:mb-32'>

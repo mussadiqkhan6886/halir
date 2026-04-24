@@ -2,11 +2,7 @@ import { clientCare, pages } from '@/lib/constants'
 import { magdaLig } from '@/lib/font'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import { FaArrowCircleUp } from 'react-icons/fa'
-import { FaArrowUp91, FaArrowUpLong } from 'react-icons/fa6'
-import { FiArrowUpCircle } from 'react-icons/fi'
-import { HiArrowCircleUp } from 'react-icons/hi'
+import { FaArrowUpLong } from 'react-icons/fa6'
 
 const Footer = () => {
   return (

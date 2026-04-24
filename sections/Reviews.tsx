@@ -72,13 +72,13 @@ const Reviews = () => {
         
         <div className="text-center mb-16 relative z-20">
         
-         <motion.h2 
+         <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className={`${ekate.className} text-4xl sm:text-5xl md:text-6xl text-stone-900 mb-3 md:mb-0`}
           >
             Letters of <span className="italic text-[#800000]"> Love</span>
-          </motion.h2>
+          </motion.h3>
           <p className={`${magdaLig.className} text-stone-500 mt-6 text-sm sm:text-lg`}>
             A few kind words from those who have experienced the magic of HALIR Perfumery.
           </p>

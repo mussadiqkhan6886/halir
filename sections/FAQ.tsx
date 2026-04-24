@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ekate, magdaLig } from '@/lib/font'
+import { magdaLig } from '@/lib/font'
 import { HiPlus, HiMinus } from "react-icons/hi"
 
 const faqs = [
@@ -38,10 +38,10 @@ const FAQ = () => {
         {/* Left Side: Sticky Header */}
         <div className='lg:col-span-4 lg:sticky lg:top-32 h-fit'>
           
-          <h2 className='text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-[0.9] mb-6'>
+          <h3 className='text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-[0.9] mb-6'>
             Common <br className='hidden md:block' /> 
             Inquiries.
-          </h2>
+          </h3>
           <p className={`${magdaLig.className} text-zinc-500 text-sm max-w-xs leading-relaxed`}>
             Can't find what you're looking for? Reach out to our olfactory experts via WhatsApp or Email.
           </p>

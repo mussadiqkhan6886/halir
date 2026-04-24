@@ -32,19 +32,11 @@ to craft fragrances that embody luxury in every detail.</p>
 We believe that premium should be felt before it is even experienced in the way it looks, the way it is held, and the way it becomes part of your lifestyle.
 </p>
         </div>
-        {/* <div className='col-span-2'>
-          Today, Halir offers a growing range of fragrances for both men and women, each created to complement individuality and confidence. As we continue to evolve, our vision extends beyond perfumes into a complete world of fragrance.
-
-Our goal is to redefine how fragrance is experienced across Pakistan making luxury more accessible, more refined, and more personal.
-
-At Halir, we are not just creating perfumes.
-We are creating identity.
-        </div> */}
       </div>
       <div className='flex justify-center gap-3 flex-col items-center my-15'>
-        <h3 className={`${ekate.className} mb-10 sm:mb-0 text-4xl`}>
+        <h4 className={`${ekate.className} mb-10 sm:mb-0 text-4xl`}>
           Halir
-        </h3>
+        </h4>
         <p className='font-semibold text-sm'>Where scent becomes identity</p>
       </div>
     </section>
