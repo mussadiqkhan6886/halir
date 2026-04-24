@@ -8,10 +8,8 @@ type PerfumeSize = {
   label: string
   ml: number
   price: number
-  currency: string
   sku: string
   in_stock: boolean
-  badge: string | null
   images: string[]
   stock: number
   onSale: boolean
