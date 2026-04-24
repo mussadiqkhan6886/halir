@@ -7,9 +7,10 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import IconButton from '@mui/material/IconButton';
 import axios from 'axios';
 import Link from 'next/link';
+import { PerfumeType } from '@/type';
 
 interface ProductTableProps {
-  products: Product[]; // categories with products
+  products: PerfumeType[];
 }
 
 export default function ProductTable({ products }: ProductTableProps) {
@@ -17,7 +18,7 @@ export default function ProductTable({ products }: ProductTableProps) {
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this product?")) return;
     try {
-      const res = await axios.delete(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products/${id}`);
+      const res = await axios.delete(`${process.env.NEXT_PUBLIC_BASE_URL}/api/perfumes/${id}`);
       if (res.status === 200) {
         alert("Product deleted successfully!");
       }
@@ -30,14 +31,14 @@ export default function ProductTable({ products }: ProductTableProps) {
   const columns: GridColDef<any>[] = [
 
     {
-    field: 'image',
+    field: 'mainImage',
     headerName: 'Image',
     width: 100,
     sortable: false,
     renderCell: (params) => (
-      params.row.images && params.row.images.length > 0 ? (
+      params.row.mainImage ? (
         <img
-          src={params.row.images[0]}
+          src={params.row.mainImage}
           alt={params.row.name}
           style={{ width: 60, height: 60, objectFit: 'cover'}}
         />
@@ -47,42 +48,29 @@ export default function ProductTable({ products }: ProductTableProps) {
     ),
   },
     { field: 'name', headerName: 'Product Name', flex: 1, minWidth: 100 },
-    { field: 'price', headerName: 'Price', type: 'number', width: 100, },
+    { field: 'sizes', headerName: 'Sizes', width: 300, renderCell: (params) => (
+      <div>
+        {params.row.sizes.map(item => (
+          <p className='inline' key={item.sku}>{item.ml} ml, </p>
+        ))}
+      </div>
+    ) },
+    { field: 'gender', headerName: 'Gender', type: 'string', width: 100, },
     {
-      field: 'newPrice',
-      headerName: 'Discount Price',
-      type: 'number',
+      field: 'longevity',
+      headerName: 'longevity',
+      type: 'string',
       width: 130,
-      renderCell: (params) => params.row.newPrice || '-',
     },
     {
-      field: 'onSale',
-      headerName: 'Sale',
-      width: 80,
-      type: 'boolean',
-    },
-    {
-      field: 'inStock',
-      headerName: 'In Stock',
-      width: 80,
-      type: 'boolean',
-    },
-    {
-      field: 'stock',
-      headerName: 'Stock',
-      width: 80,
-      type: 'number',
-    },
-    {
-      field: 'colors',
-      headerName: 'Colors',
-      width: 320,
-      renderCell: (params) => params.row.colors.join(", "),
-    },
-    {
-      field: 'collection',
+      field: 'categories',
       headerName: 'Category',
       width: 220,
+      renderCell: (params) => (
+        <div>
+          {params.row.categories.join(", ")}
+        </div>
+      )
     },
     {
       field: 'actions',

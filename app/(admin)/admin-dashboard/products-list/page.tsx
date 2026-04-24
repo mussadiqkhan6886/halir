@@ -1,8 +1,8 @@
 'use client';
 
-import ProductTable from "@/components/adminComp/ProductTable";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ProductTable from "@/components/admin/ProductTable";
 
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<any[]>([]);
@@ -12,7 +12,7 @@ export default function AdminProductsPage() {
     const fetchProducts = async () => {
       try {
         const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/perfumes`);
-        console.log(res)
+        setProducts(res.data)
       } catch (error) {
         console.error(error);
       } finally {
