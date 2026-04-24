@@ -4,6 +4,7 @@ import { PerfumeNote, PerfumeType } from '@/type';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
 
 // ── Types ─────────────────────────────────────────────────────
@@ -22,6 +23,9 @@ const Field = ({ label, children }: { label: string; children: React.ReactNode }
   </div>
 )
 
+const toSlug = (str: string) =>
+  str.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
 // ── Main Page ─────────────────────────────────────────────────
 
 const Page = ({ params }: { params: Promise<{ id: string }> }) => {
@@ -30,7 +34,7 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
   const [saving, setSaving]           = useState(false)
   const [error, setError]             = useState("")
   const [success, setSuccess]         = useState("")
-
+  const router = useRouter()
   // Form state
   const [name, setName]               = useState("")
   const [slug, setSlug]               = useState("")
@@ -179,6 +183,9 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
       const { id } = await params
       await axios.put(`/api/perfumes/${id}`, data)
       setSuccess("Saved successfully.")
+      setTimeout(() => {
+        router.push("/admin-dashboard/products-list")
+      }, 2000)
     } catch (err: any) {
       setError(err.message)
     } finally {
@@ -186,6 +193,11 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
     }
   }
 
+  useEffect(() => {
+    if (name) {
+      setSlug(toSlug(name))
+    }
+  }, [name])
   // ── States ──────────────────────────────────────────────────
 
   if (loading) return (
@@ -221,9 +233,6 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
             {saving ? 'Saving...' : 'Save Changes'}
           </button>
         </div>
-
-        {success && <p className="text-green-400 text-sm border border-green-800 bg-green-950/40 px-4 py-2.5">✓ {success}</p>}
-        {error   && <p className="text-red-400 text-sm border border-red-800 bg-red-950/40 px-4 py-2.5">✗ {error}</p>}
 
         {/* ── Section 1: Core Info ─────────────────────────── */}
         <div className="space-y-8">
@@ -418,7 +427,8 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
             {saving ? 'Saving...' : 'Save Changes'}
           </button>
         </div>
-
+          {success && <p className="text-green-400 text-sm border border-green-700 px-4 py-2.5">✓ {success}</p>}
+        {error   && <p className="text-red-400 text-sm border border-red-700  px-4 py-2.5">✗ {error}</p>}
       </div>
     </main>
   )

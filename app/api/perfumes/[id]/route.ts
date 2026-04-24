@@ -1,4 +1,5 @@
-  import { connectDB } from "@/lib/config/db";
+import { uploadToCloudinary } from "@/helpers/uploadImage";
+import { connectDB } from "@/lib/config/db";
 import Perfume from "@/lib/models/ProductSchema";
 import { NextRequest, NextResponse } from "next/server"
 
@@ -14,90 +15,100 @@ export const GET = async (_req: NextRequest, {params}: {params: Promise<{id: str
     return NextResponse.json({message: "Product Found", product}, {status: 200})
 }
 
-export const PATCH = async (
+export async function PUT(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) => {
-  await connectDB();
-  const id = (await params).id;
-
+) {
+  const {id} = await params
   try {
-    const contentType = req.headers.get("content-type");
+    await connectDB();
 
-    // 1️⃣ Handle image deletion
-    if (contentType?.includes("application/json")) {
-          const body = await req.json();
-          if (body.action === "deleteImage") {
-            await Perfume.findByIdAndUpdate(id, { $pull: { images: body.imageUrl } });
-            return NextResponse.json({ success: true });
-          }
-        }
-
-    // 2️⃣ Handle form data update
     const formData = await req.formData();
-    
-    const name = formData.get("name") as string;
-    const description = formData.get("description") as string;
-    const price = Number(formData.get("price"));
-    const newPrice = formData.get("newPrice") ? Number(formData.get("newPrice")) : null;
-    const stock = Number(formData.get("stock"))
-    const onSale = formData.get("onSale") === "true";
-    const colors = formData.getAll("colors").map(c => c.toString());
-    const slug = formData.get("slug") as string
-    const inStock = formData.get("inStock") === "true";
-    const files = formData.getAll("images") as File[];
-    const uploadedImages: string[] = [];
 
-    for (const file of files) {
-         if (typeof file === "string" || !file?.arrayBuffer) {
-          console.log("Skipping invalid file:", file);
-          continue; // Skip invalid entries
-        }
-      const buffer = Buffer.from(await file.arrayBuffer());
-      const uploadRes = await new Promise((resolve, reject) => {
-        cloudinary.uploader.upload_stream({ folder: "mzstore" }, (err, res) => {
-          if (err) reject(err);
-          else resolve(res);
-        }).end(buffer);
-      });
-      uploadedImages.push((uploadRes as any).secure_url);
+    const product = await Perfume.findById(id);
+    if (!product) {
+      return NextResponse.json({ message: 'Product not found' }, { status: 404 });
     }
 
-     // 🔹 Fetch existing product to merge images
-    const existingProduct = await Product.findById(id);
-    if (!existingProduct) {
-      return NextResponse.json({ success: false, message: "Product not found" }, { status: 404 });
+    // ── Basic fields ─────────────────────────────────────────
+    const name        = formData.get('name') as string;
+    const slug        = formData.get('slug') as string;
+    const tagline     = formData.get('tagline') as string;
+    const description = formData.get('description') as string;
+    const gender      = formData.get('gender') as ('men' | 'women' | 'unisex');
+    const longevity   = formData.get('longevity') as string;
+    const categories  = JSON.parse(formData.get('categories') as string);
+
+    product.name        = name;
+    product.slug        = slug;
+    product.tagline     = tagline;
+    product.description = description;
+    product.gender      = gender;
+    product.longevity   = longevity;
+    product.categories  = categories;
+
+    // ── MAIN IMAGE ───────────────────────────────────────────
+    const mainImageFile = formData.get('mainImage') as File | null;
+    const mainImageUrl  = formData.get('mainImageUrl') as string;
+
+    if (mainImageFile) {
+      product.mainImage = await uploadToCloudinary(mainImageFile, 'halir');
+    } else {
+      product.mainImage = mainImageUrl; // keep old
     }
 
-    // Merge existing images with newly uploaded images
-    const updatedImages = [...existingProduct.images, ...uploadedImages];
+    // ── NOTES ────────────────────────────────────────────────
+    const notesJson = JSON.parse(formData.get('notes') as string);
 
-    // Build update object
-    const updateQuery = {
-      name,
-      slug,
-      description,
-      price,
-      stock,
-      newPrice,
-      onSale,
-      colors,
-      inStock,
-      images: updatedImages, // just overwrite with merged array
+    const tiers = ['top', 'heart', 'base'] as const;
+
+    const updatedNotes: any = {
+      top: [],
+      heart: [],
+      base: [],
     };
 
-    // Update in DB
-    const updatedProduct = await Product.findByIdAndUpdate(id, updateQuery, { new: true });
+    for (const tier of tiers) {
+      for (let i = 0; i < notesJson[tier].length; i++) {
+        const noteData = notesJson[tier][i];
 
-    return NextResponse.json({ success: true, message: "Product updated successfully", updatedProduct });
-  } catch (err: any) {
-    console.error("PATCH error:", err);
+        const file = formData.get(`note_${tier}_${i}`) as File | null;
+
+        let imageUrl = noteData.existingUrl;
+
+        if (file) {
+          // new image uploaded
+          imageUrl = await uploadToCloudinary(file, 'halir');
+        }
+
+        updatedNotes[tier].push({
+          name: noteData.name,
+          image: imageUrl || '',
+        });
+      }
+    }
+
+    product.notes = updatedNotes;
+
+    // ── SAVE ────────────────────────────────────────────────
+    await product.save();
+
     return NextResponse.json(
-      { success: false, message: "Failed to update product", error: err.message },
-      { status: 500 }
+      { message: 'Product updated successfully' },
+      { status: 200 }
     );
+
+  } catch (err: any) {
+    if (err.code === 11000) {
+      return NextResponse.json(
+        { message: 'Slug already exists' },
+        { status: 409 }
+      );
+    }
+
+    return NextResponse.json({ message: err.message }, { status: 500 });
   }
-};
+}
 
 
 export const DELETE = async (_req: NextRequest, { params }: { params: Promise<{ id: string }> }) => {
@@ -105,7 +116,7 @@ export const DELETE = async (_req: NextRequest, { params }: { params: Promise<{ 
   const id = (await params).id;
 
   try {
-    const deletedProduct = await Product.findByIdAndDelete(id);
+    const deletedProduct = await Perfume.findByIdAndDelete(id);
 
     if (!deletedProduct) {
       return NextResponse.json(
