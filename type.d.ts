@@ -33,6 +33,7 @@ type PerfumeType = {
     base: PerfumeNote[]
   }
   sizes: PerfumeSize[]
+  updatedAt: string
 }
 
 export interface NoteItem {
