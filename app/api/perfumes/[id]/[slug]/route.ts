@@ -112,3 +112,37 @@ export async function PUT(
     );
   }
 }
+
+export const DELETE = async (_req: NextRequest, {params}: {params: Promise<{id: string, slug: string}>}) => {
+  const {id, slug} = await params
+
+  await connectDB()
+
+  const product = await Perfume.findById(id);
+
+    if (!product) {
+      return NextResponse.json(
+        { success: false, message: "Product not found" },
+        { status: 404 }
+      );
+    }
+
+    await Perfume.updateOne(
+      { _id: id },
+      {
+        $pull: {
+          sizes: { slug: slug }
+        }
+      }
+    );
+
+    return NextResponse.json(
+      { success: true, message: "Size deleted successfully" },
+      { status: 200 }
+    );
+  } catch (err: any) {
+    return NextResponse.json(
+      { success: false, message: err.message },
+      { status: 500 }
+    );
+}

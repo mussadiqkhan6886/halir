@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
+import { FiTrash } from 'react-icons/fi';
 
 // ── Types ─────────────────────────────────────────────────────
 
@@ -43,7 +44,7 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
   const [gender, setGender]           = useState("")
   const [longevity, setLongevity]     = useState("")
   const [categories, setCategories]   = useState<string[]>([])
-
+  const [deleteLoading, setDeleteLoading] = useState(false)
   // Main image
   const [mainImageUrl, setMainImageUrl]         = useState("")
   const [mainImageFile, setMainImageFile]       = useState<File | null>(null)
@@ -198,6 +199,27 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
       setSlug(toSlug(name))
     }
   }, [name])
+
+  const deleteSize = async (slug: string) => {
+    const {id} = await params
+    try{
+      setDeleteLoading(true)
+      await axios.delete(`/api/perfumes/${id}/${slug}`)
+      setProductData(prev =>
+  prev
+    ? {
+        ...prev,
+        sizes: prev.sizes.filter(item => item.slug !== slug),
+      }
+    : prev
+);
+    }catch(err){
+      console.log(err)
+      alert("failed to delete")
+    }finally{
+      setDeleteLoading(false)
+    }
+  }
   // ── States ──────────────────────────────────────────────────
 
   if (loading) return (
@@ -386,33 +408,35 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
           <p className={labelCls}>Sizes</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {productData.sizes.map(item => (
-              <Link
-                key={item.slug}
-                href={`/admin-dashboard/update-product/${productData._id}/${item.slug}`}
-                className="group border border-zinc-800 hover:border-zinc-600 transition-colors p-4 flex gap-4 items-start"
-              >
-                <div className="relative w-16 h-20 overflow-hidden flex-shrink-0">
-                  <Image src={item.images[0]} alt={item.label} fill className="object-cover object-bottom" />
-                </div>
-                <div className="flex flex-col justify-between h-20 flex-grow">
-                  <div>
-                    <p className="text-xs uppercase tracking-widest text-zinc-700 group-hover:text-black transition-colors">{item.label}</p>
-                    <p className="text-lg font-bold mt-0.5">
-                      {item.onSale ? item.salePrice : item.price}
-                      {item.onSale && (
-                        <span className="text-xs text-zinc-500 line-through ml-2">{item.price}</span>
-                      )}
-                      <span className="text-xs text-zinc-500 ml-1">PKR</span>
-                    </p>
+              <div key={item.slug}>
+               {deleteLoading ? <div className="border-zinc-700 border border-t-transparent bg-transparent w-3 h-3 mb-2 animate-spin rounded-full" /> : <FiTrash className='inline-block mb-2 cursor-pointer' color='red' onClick={() => deleteSize(item.slug)} />}
+                <Link
+                  href={`/admin-dashboard/update-product/${productData._id}/${item.slug}`}
+                  className="group border border-zinc-800 hover:border-zinc-600 transition-colors p-4 flex gap-4 items-start"
+                >
+                  <div className="relative w-16 h-20 overflow-hidden flex-shrink-0">
+                    <Image src={item.images[0]} alt={item.label} fill className="object-cover object-bottom" />
                   </div>
-                  <div className="flex gap-4 text-xs text-zinc-500">
-                    <span>{item.ml}ml</span>
-                    <span className={item.stock <= 3 ? 'text-red-400' : ''}>{item.stock} in stock</span>
-                    {item.onSale && <span className="text-red-400 uppercase tracking-widest">Sale</span>}
+                  <div className="flex flex-col justify-between h-20 flex-grow">
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-zinc-700 group-hover:text-black transition-colors">{item.label}</p>
+                      <p className="text-lg font-bold mt-0.5">
+                        {item.onSale ? item.salePrice : item.price}
+                        {item.onSale && (
+                          <span className="text-xs text-zinc-500 line-through ml-2">{item.price}</span>
+                        )}
+                        <span className="text-xs text-zinc-500 ml-1">PKR</span>
+                      </p>
+                    </div>
+                    <div className="flex gap-4 text-xs text-zinc-500">
+                      <span>{item.ml}ml</span>
+                      <span className={item.stock <= 3 ? 'text-red-400' : ''}>{item.stock} in stock</span>
+                      {item.onSale && <span className="text-red-400 uppercase tracking-widest">Sale</span>}
+                    </div>
                   </div>
-                </div>
-                <span className="text-zinc-600 group-hover:text-black transition-colors text-lg self-center">→</span>
-              </Link>
+                  <span className="text-zinc-600 group-hover:text-black transition-colors text-lg self-center">→</span>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
