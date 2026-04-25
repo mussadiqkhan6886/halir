@@ -29,22 +29,25 @@ export default function SmoothScroll({ children }: Props) {
     gsap.ticker.add(tickerCallback);
     gsap.ticker.lagSmoothing(0);
 
-    // ✅ Fix 1: Refresh after fonts + images load so Lenis gets correct height
     const onLoad = () => {
-      lenis.resize();           // recalculate scroll height
-      ScrollTrigger.refresh();  // sync ScrollTrigger
+      lenis.resize();
+      ScrollTrigger.refresh();
     };
 
     if (document.readyState === "complete") {
-      onLoad(); // already loaded (e.g. cached page)
+      onLoad();
     } else {
       window.addEventListener("load", onLoad);
     }
 
-    // ✅ Fix 2: Also refresh on resize (handles dynamic content/layout shifts)
+    // ✅ Debounce resize — prevents rapid-fire calls while dragging window
+    let resizeTimer: ReturnType<typeof setTimeout>;
     const onResize = () => {
-      lenis.resize();
-      ScrollTrigger.refresh();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        lenis.resize();
+        ScrollTrigger.refresh();
+      }, 150);
     };
 
     window.addEventListener("resize", onResize);
@@ -54,6 +57,7 @@ export default function SmoothScroll({ children }: Props) {
       gsap.ticker.remove(tickerCallback);
       window.removeEventListener("load", onLoad);
       window.removeEventListener("resize", onResize);
+      clearTimeout(resizeTimer); // ✅ Clear any pending debounce on unmount
     };
   }, []);
 
