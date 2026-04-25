@@ -1,9 +1,15 @@
+import type { Metadata } from 'next';
 import MainCard from '@/components/main/MainCard'
 import { PerfumeType } from '@/type'
 import axios from 'axios'
 import Link from 'next/link'
 import React from 'react'
-import { ekate, magdaLig, magdaReg } from '@/lib/font'
+import { ekate, magdaLig } from '@/lib/font'
+
+
+export const generateMetadata = (): Metadata => { return {
+    title: "Search"
+} };
 
 const getData = async (query: string) => {
     try {

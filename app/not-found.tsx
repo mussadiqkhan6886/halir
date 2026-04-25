@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { magdaLig } from '@/lib/font';
 
+export const generateMetaData = () => ({
+  title: "Page Not Found"
+})
+
 export default function NotFound() {
   return (
     <main className={magdaLig.className}>

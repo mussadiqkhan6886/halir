@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { connectDB } from '@/lib/config/db'
 import order from '@/lib/models/OrderSchema'
 import { notFound } from 'next/navigation'
@@ -5,6 +6,9 @@ import React from 'react'
 import { ekate, magdaLig } from '@/lib/font'
 import Link from 'next/link'
 import Image from 'next/image'
+
+
+export const generateMetadata = (): Metadata => { return {title: "Thank you for Shopping"} };
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = await params

@@ -22,7 +22,7 @@ const jsonLd = {
     description:
       'Premium luxury fragrance brand based in Pakistan specializing in Extrait de Parfum.',
     url: 'https://halir-seven.vercel.app',
-    logo: 'https://halir.com/halirLogo.png',
+    logo: 'https://halir-seven.vercel.app/halirLogo.png',
   },
 };
 
