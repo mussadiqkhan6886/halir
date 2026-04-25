@@ -35,7 +35,7 @@ const Card = ({name, label, price, images, ml, stock, onSale, salePrice, sku}: P
   return (<>
     <div className='relative aspect-square'>
         <Image src={images[0]} alt={name + "Perfume Card"} fill className='object-cover object-bottom'  />
-        {onSale && <div className={`${magdaReg.className} w-20 h-7 flex items-center justify-center text-center bg-red-700 text-white uppercase text-sm absolute z-50 top-0 right-0`}>on sale</div>}
+        {onSale && <div className={`${magdaReg.className} w-20 h-7 flex items-center justify-center text-center bg-red-700 text-white uppercase text-sm absolute z-40 top-0 right-0`}>on sale</div>}
       </div>
       <div className='p-1.5 border-b border-zinc-200'>
         <h2 className='font-black text-lg uppercase  group-hover:underline'>{name}</h2>
@@ -44,7 +44,7 @@ const Card = ({name, label, price, images, ml, stock, onSale, salePrice, sku}: P
         <h3 className='text-xs sm:text-sm'>{label}</h3>
         <h3 className='text-xs sm:text-sm'>{ml > 10 ? "eau de perfum" : "Tester"}</h3>
       </div>
-      <div className={`font-light tracking-tight text-zinc-700 border-t border-zinc-200 p-1.5 grid grid-cols-4 justify-between text-center items-center place-content-center`}>
+      <div className={`font-light tracking-tight text-zinc-700 border-t border-zinc-200 p-1.5 flex flex-col-reverse gap-2 sm:grid  sm:grid-cols-4 justify-between text-center items-center place-content-center`}>
         {stock > 0 ?
         <>
           <AddToCart name={name} price={price} onSale={onSale} salePrice={salePrice} quantity={1} image={images[0]} selectedSize={ml} stock={stock} sku={sku} />
@@ -52,7 +52,7 @@ const Card = ({name, label, price, images, ml, stock, onSale, salePrice, sku}: P
         :
           <button aria-label={`Out of stock ${name}`} className='whitespace-nowrap cursor-not-allowed'>Out of stock</button>
         }
-       <h4 className={`${magdaReg.className} w-full col-span-3 text-right`}>
+       <h4 className={`${magdaReg.className} w-full sm:col-span-3 sm:text-right`}>
           {onSale ? (
             <>
               {salePrice.toLocaleString()} 

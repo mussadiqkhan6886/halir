@@ -16,7 +16,7 @@ const Cart = ({ setIsCartOpen }: { setIsCartOpen: (b: boolean) => void }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className='fixed md:absolute bg-white shadow-2xl top-0 md:top-15 right-0 md:right-10 w-full md:w-[420px] h-screen md:h-auto md:max-h-[300px] z-[999] flex flex-col'
+            className='fixed md:absolute bg-white shadow-2xl top-0 md:top-15 right-0 md:right-10 w-full md:w-[420px] h-screen md:h-auto md:max-h-[300px] z-50 flex flex-col'
         >
             {/* Header */}
             <div className='flex justify-between items-center border-b border-zinc-100 p-2 px-6'>
