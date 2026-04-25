@@ -1,4 +1,3 @@
-import React from 'react'
 import { ekate, magdaLig } from '@/lib/font'
 import Link from 'next/link'
 

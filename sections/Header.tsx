@@ -1,6 +1,6 @@
 'use client';
 
-import UpperHeader from '@/components/main/UpperHeader'
+// import UpperHeader from '@/components/main/UpperHeader'
 import Image from 'next/image'
 import React, { FormEvent, useState } from 'react'
 import {HiOutlineMenu, HiOutlineSearch, HiOutlineShoppingBag, HiX} from "react-icons/hi"
@@ -37,7 +37,7 @@ const Header = () => {
     <header className='shadow-md z-40'>
 
         {/* upper header */}
-        <UpperHeader />
+        {/* <UpperHeader /> */}
 
         {/* lower header */}
       <div className='flex border-zinc-200 justify-between items-center px-3 lg:border-b'>
@@ -96,8 +96,8 @@ const Header = () => {
 
         {/* cart */}
         <div className='flex items-center justify-center gap-1 p-2 px-5 md:px-7 relative'>
-            <button className='cursor-pointer' onClick={() => setIsCartOpen(true)}>
-                <HiOutlineShoppingBag  size={26} />
+            <button aria-label="shopping bag button" name='cart button' className='cursor-pointer' onClick={() => setIsCartOpen(true)}>
+                <HiOutlineShoppingBag name='shopping bag'  size={26} />
             </button>
             <AnimatePresence>
                 {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}

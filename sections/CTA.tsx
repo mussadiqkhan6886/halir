@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { ekate } from '@/lib/font'
 
 const CTA = () => {

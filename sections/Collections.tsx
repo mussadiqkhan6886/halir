@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image'
-import React from 'react'
 import { motion } from 'framer-motion'
 import { ekate, magdaLig } from '@/lib/font'
 import { HiOutlineArrowRight } from "react-icons/hi"
