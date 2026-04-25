@@ -11,6 +11,35 @@ import Image from 'next/image'
 
 export const revalidate = 60;
 
+export const generateStaticParams = async () => {
+  await connectDB();
+
+  const perfumes = await Perfume.find(
+    {},
+    { slug: 1, categories: 1, "sizes.slug": 1 }
+  ).lean();
+
+  const paths: {
+    category: string;
+    perfume: string;
+    slug: string;
+  }[] = [];
+
+  perfumes.forEach((item) => {
+    item.categories.forEach((category: string) => {
+      item.sizes.forEach((size: any) => {
+        paths.push({
+          category,
+          perfume: item.slug,
+          slug: size.slug,
+        });
+      });
+    });
+  });
+
+  return paths;
+};
+
 const Page = async ({params}: {params: Promise<{category: string, perfume: string, slug: string}>}) => {
   const {category, perfume, slug} = await params
   await connectDB()

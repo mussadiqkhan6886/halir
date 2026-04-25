@@ -10,6 +10,31 @@ import React from 'react'
 
 export const revalidate = 60;
 
+export const generateStaticParams = async () => {
+  await connectDB();
+
+  const perfumes = await Perfume.find(
+    {},
+    { slug: 1, categories: 1 }
+  ).lean();
+
+  const paths: {
+    category: string;
+    perfume: string;
+  }[] = [];
+
+  perfumes.forEach((item) => {
+    item.categories.forEach((category: string) => {
+        paths.push({
+          category,
+          perfume: item.slug,
+        });
+    });
+  });
+
+  return paths;
+};
+
 const page = async ({params}: {params: Promise<{perfume: string, category: string}>}) => {
   const {perfume, category} = await params
 

@@ -7,10 +7,9 @@ import React, { useState } from 'react'
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 const AddToCart = ({name, price, onSale, salePrice, quantity, image, selectedSize, stock, sku, personlized}: CartItem) => {
-    const { addToCart, cart } = useCart()
+    const { addToCart } = useCart()
     const [status, setStatus] = useState<Status>('idle')
     const item = { name, price, onSale, salePrice, quantity, image, selectedSize, stock, sku, personlized }
-    console.log(cart)
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault()
         e.stopPropagation()

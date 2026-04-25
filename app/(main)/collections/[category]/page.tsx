@@ -9,6 +9,12 @@ import React from 'react'
 
 export const revalidate = 60;
 
+export const generateStaticParams = async () => {
+  return COLLECTIONS.map(item => ({
+    category: item.slug
+  }));
+};
+
 const page = async ({params}: {params: Promise<{category: string}>}) => {
   const {category} = await params
 
