@@ -50,7 +50,7 @@ const Hero = () => {
       >
         <Image 
           
-          src="/hero.png"
+          src="/hero.webp"
           alt="Halir Perfumery - The Scent of Presence"
           fill
           priority

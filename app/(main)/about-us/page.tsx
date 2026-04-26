@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Halir | Crafting Fragrance Identity',
     description: "Discover the vision behind Pakistan's most aesthetic perfumery.",
-    images: [{ url: '/hero.png' }],
+    images: [{ url: '/hero.webp' }],
   },
 };
 

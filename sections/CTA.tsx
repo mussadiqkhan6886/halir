@@ -12,7 +12,7 @@ const CTA = () => {
 
       <div className='relative h-[80vh]'>
         <Image 
-          src="/unique.jpg" 
+          src="/unique.webp" 
           alt='Halir unique collection' 
           fill 
           sizes="(max-width: 768px) 100vw, 50vw"

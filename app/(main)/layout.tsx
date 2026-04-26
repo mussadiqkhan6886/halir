@@ -63,7 +63,7 @@ export const metadata: Metadata = {
       'Pakistan\'s premium fragrance brand. Shop luxury perfumes, signature collections, and exclusive scents.',
     images: [
       {
-        url: '/hero.png',
+        url: '/hero.webp',
         width: 1200,
         height: 630,
         alt: 'Halir — Luxury Perfumes Pakistan',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Halir — Luxury Perfumes Pakistan',
     description: 'Pakistan\'s premium fragrance brand.',
-    images: ['/hero.png'],
+    images: ['/hero.webp'],
     // creator: '@halirpk',  // add when you have a Twitter handle
   },
 

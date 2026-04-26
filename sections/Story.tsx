@@ -5,8 +5,8 @@ import React from 'react'
 const Story = () => {
   return (
     <section className='bg-light relative max-w-8xl mx-auto'>
-      <Image src={"/story2.jpg"} alt='story image' width={300} height={400} className='object-cover object-left lg:h-[300px] w-full lg:w-[250px] lg:absolute lg:left-0 lg:top-[70%] lg:-translate-y-1/2' />
-      <Image src={"/story3.jpg"} alt='perfume image' width={200} height={300} className='object-cover object-center hidden lg:block absolute top-0 right-0' />
+      <Image src={"/story2.webp"} alt='story image' width={300} height={400} className='object-cover object-left lg:h-[300px] w-full lg:w-[250px] lg:absolute lg:left-0 lg:top-[70%] lg:-translate-y-1/2' />
+      <Image src={"/story3.webp"} alt='perfume image' width={200} height={300} className='object-cover object-center hidden lg:block absolute top-0 right-0' />
 
       <div className='flex justify-center'>
         <h3 className='text-3xl md:text-5xl px-2 pt-7 sm:pt-10 md:pt-20 relative leading-10 tracking-tight'> 
