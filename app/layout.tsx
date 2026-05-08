@@ -15,9 +15,11 @@ export default function RootLayout({
       className={`${inter.className} h-full antialiased`}
     >
       <CartContextProvider>
-        <SmoothScroll>
-          <body className="min-h-full flex flex-col">{children}</body>
-        </SmoothScroll>
+          <body className="min-h-full flex flex-col">
+            <SmoothScroll>
+              {children}
+            </SmoothScroll>
+          </body>
       </CartContextProvider>
     </html>
   );

@@ -11,53 +11,24 @@ type Props = {
 
 export default function SmoothScroll({ children }: Props) {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const lenis = new Lenis({
       duration: 1.3,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      touchMultiplier: 2,
     });
 
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Sync Lenis with GSAP
     lenis.on("scroll", ScrollTrigger.update);
 
-    const tickerCallback = (time: number) => {
-      lenis.raf(time * 1000);
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     };
 
-    gsap.ticker.add(tickerCallback);
-    gsap.ticker.lagSmoothing(0);
-
-    const onLoad = () => {
-      lenis.resize();
-      ScrollTrigger.refresh();
-    };
-
-    if (document.readyState === "complete") {
-      onLoad();
-    } else {
-      window.addEventListener("load", onLoad);
-    }
-
-    // ✅ Debounce resize — prevents rapid-fire calls while dragging window
-    let resizeTimer: ReturnType<typeof setTimeout>;
-    const onResize = () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        lenis.resize();
-        ScrollTrigger.refresh();
-      }, 150);
-    };
-
-    window.addEventListener("resize", onResize);
+    requestAnimationFrame(raf);
 
     return () => {
       lenis.destroy();
-      gsap.ticker.remove(tickerCallback);
-      window.removeEventListener("load", onLoad);
-      window.removeEventListener("resize", onResize);
-      clearTimeout(resizeTimer); // ✅ Clear any pending debounce on unmount
     };
   }, []);
 
