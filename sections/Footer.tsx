@@ -71,8 +71,8 @@ const Footer = () => {
         <p>All rights reserved &copy; {new Date().getFullYear()} — <Link href={"/"}>Halir Perfumery</Link>  Pakistan</p>
       </div>
 
-      <Link className='absolute animate-bounce p-3 border border-black/40 rounded-full bottom-5 right-5' href={"#start"} >
-        <FaArrowUpLong  size={20} />
+      <Link aria-label='Go to start of website' className='absolute animate-bounce p-3 border border-black/40 rounded-full bottom-5 right-5' href={"#start"} >
+        <FaArrowUpLong name='arrow'  size={20} />
       </Link>
     </footer>
   )

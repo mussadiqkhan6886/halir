@@ -5,8 +5,8 @@ import React from 'react'
 const Story = () => {
   return (
     <section className='bg-light relative max-w-8xl mx-auto'>
-      <Image src={"/story2.webp"} alt='story image' width={300} height={400} className='object-cover object-left lg:h-[300px] w-full lg:w-[250px] lg:absolute lg:left-0 lg:top-[70%] lg:-translate-y-1/2' />
-      <Image src={"/story3.webp"} alt='perfume image' width={200} height={300} className='object-cover object-center hidden lg:block absolute top-0 right-0' />
+      <Image loading='lazy' quality={80} placeholder='blur' src={"/story2.webp"} alt='story image' width={300} height={400} className='object-cover object-left lg:h-[300px] w-full lg:w-[250px] lg:absolute lg:left-0 lg:top-[70%] lg:-translate-y-1/2' />
+      <Image loading='lazy' quality={80} placeholder='blur' src={"/story3.webp"} alt='perfume image' width={200} height={300} className='object-cover object-center hidden lg:block absolute top-0 right-0' />
 
       <div className='flex justify-center'>
         <h3 className='text-3xl md:text-5xl px-2 pt-7 sm:pt-10 md:pt-20 relative leading-10 tracking-tight'> 
@@ -21,7 +21,7 @@ const Story = () => {
       </div>
       <div className='grid p-3 text-zinc-700 grid-cols-1 md:grid-cols-2  gap-10 text-sm max-w-3xl mx-auto my-10 text-justify'>
         <div>
-          <p>Halir was born from a deep passion for refined, premium fragrances a passion to create scents that do more than just smell good. We believe a fragrance is a personal signature, an invisible expression of identity that leaves a lasting impression.
+          <p>Halir was born from a deep passion for refined, premium fragrances a passion to create perfumery that do more than just smell good but capture emotions. We believe a fragrance is a personal signature, an invisible expression of identity that leaves a lasting impression.
 
 From the beginning, our vision has been clear:
 to craft fragrances that embody luxury in every detail.</p>

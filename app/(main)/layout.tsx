@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     default: 'Halir — Luxury Perfumes Pakistan',
     template: '%s | Halir',
   },
-  description:
-    'Halir is Pakistan\'s premium luxury perfume brand. Shop signature fragrances, exclusive collections, and long lasting scents. Delivered across Pakistan.',
+ description:
+  'Halir Pakistan\'s finest luxury perfumery. Discover handcrafted eau de parfums, rare oud & signature scents inspired by the soul of the East. Shop exclusive fragrances online. Free delivery across Pakistan.',
 
   // ── Keywords ──────────────────────────────────────────────────────────────
   keywords: [

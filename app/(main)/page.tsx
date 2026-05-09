@@ -17,7 +17,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Halir — Luxury Perfumes & Fragrances in Pakistan',
   description:
-    'Discover Halir — Pakistan\'s premium fragrance brand. Shop luxury perfumes, signature collections, and exclusive scents crafted for the modern Pakistani. Free delivery across Pakistan.',
+    'Halir Pakistan\'s finest luxury perfumery. Discover handcrafted eau de parfums, rare oud & signature scents inspired by the soul of the East. Shop exclusive fragrances online. Free delivery across Pakistan.',
   alternates: {
     canonical: 'https://www.halir.pk',
   },

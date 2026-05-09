@@ -49,7 +49,6 @@ const Hero = () => {
         className="absolute inset-0 z-0 h-[74vh]"
       >
         <Image 
-          
           src="/hero.webp"
           alt="Halir Perfumery - The Scent of Presence"
           fill

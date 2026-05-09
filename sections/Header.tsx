@@ -43,8 +43,8 @@ const Header = () => {
             <nav>
                 {isMenuOpen ? <button className='cursor-pointer' onClick={() => setIsMenuOpen(false)} >
                     <HiX size={23} />
-                </button> : <button className='cursor-pointer' onClick={() => setIsMenuOpen(true)}>
-                    <HiOutlineMenu  size={23} />
+                </button> : <button aria-label='menu button' className='cursor-pointer' onClick={() => setIsMenuOpen(true)}>
+                    <HiOutlineMenu name='menu icon' size={23} />
                 </button> }
                 <AnimatePresence>
                     {isMenuOpen && <Menu setIsMenuOpen={setIsMenuOpen} />}
@@ -52,8 +52,8 @@ const Header = () => {
             </nav>
             {/* search */}
             <div>
-                <button className='cursor-pointer' onClick={() => setIsSearchOpen(true)} >
-                    <HiOutlineSearch size={20} />
+                <button aria-label='search button' className='cursor-pointer' onClick={() => setIsSearchOpen(true)} >
+                    <HiOutlineSearch name='search icon' size={20} />
                 </button>
                 <AnimatePresence>
                     {isSearchOpen && <SearchSide query={query} setQuery={setQuery} handleSearch={handleSearch} setIsSearchOpen={setIsSearchOpen} />}
@@ -76,9 +76,9 @@ const Header = () => {
                     <input type='text' placeholder='Search for products' className={`placeholder:${magdaLig.className} ${magdaLig.className} text-sm w-full outline-none `} value={query} onChange={(e) => setQuery(e.target.value)} />
                 </form>
                 {/* icons */}
-                <div className='border-zinc-200 border-l p-2 px-3 flex justify-center items-center'>
-                    <FaInstagram />
-                </div>  
+                <Link aria-label='instagram link' href={"https://www.instagram.com/halirperfumery/?__pwa=1"} className='border-zinc-200 border-l p-2 px-3 flex justify-center items-center'>
+                    <FaInstagram name='instagram icon' />
+                </Link>  
             </div>
             {/* menu */}
             <nav className='text-center p-2'>

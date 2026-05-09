@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const trustPoints = [
   {
-    title: "24HR PERSISTENCE",
-    desc: "Engineered for longevity. Our high-concentration oils ensure your signature scent stays with you from dawn until long after dusk.",
+    title: "8-12HR PERSISTENCE",
+    desc: "Engineered for longevity. Our high-concentration oils ensure your signature perfumery stays with you from dawn until long after dusk.",
     tag: "Performance"
   },
   {
