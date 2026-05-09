@@ -36,10 +36,6 @@ const Header = () => {
   return (
     <header className='shadow-md z-40'>
 
-        {/* upper header */}
-        {/* <UpperHeader /> */}
-
-        {/* lower header */}
       <div className='flex border-zinc-200 justify-between items-center px-3 lg:border-b'>
         {/* mobile size menu */}
         <div className='flex lg:hidden relative gap-6 items-center'>
@@ -67,7 +63,7 @@ const Header = () => {
 
         {/* logo */}
         <Link href={"/"} className=' p-4 flex justify-center items-center'>
-            <Image src={"/halirLogo.png"} alt='halir logo image in header' width={120} height={120} />
+            <Image src={"/halirLogo.png"} priority alt='halir logo image in header' width={120} height={120} />
         </Link>
 
         {/* nav bigger screen */}
