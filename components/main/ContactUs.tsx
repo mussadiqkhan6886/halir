@@ -59,7 +59,13 @@ const ContactUs = () => {
         }
         try{
             const res = await axios.post("/api/contact-us", body)
-            console.log(res)
+            if(res.data.success){
+                setData({
+                    name: "",
+                    email: "",
+                    message: "",
+                })
+            }
         }catch(err: any){
             console.log(err.message)
         }finally{
@@ -74,7 +80,7 @@ const ContactUs = () => {
             <section className='relative flex items-center justify-center p-6 md:p-12 overflow-hidden border-r border-zinc-900 h-[85vh] md:h-full'>
                 
                 <Image 
-                    src="/contact.jpg" 
+                    src="/contact.webp" 
                     alt="Atmospheric contact inspiration coffee image" 
                     fill 
                     priority
