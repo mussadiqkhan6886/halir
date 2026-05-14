@@ -11,7 +11,7 @@ import Perfume from '@/lib/models/ProductSchema'
 import { PerfumeNote, PerfumeSize } from '@/type'
 import Image from 'next/image'
 
-const BASE_URL = 'https://halir-seven.vercel.app'
+const BASE_URL = 'https://halirperfumerypk.com'
 
 export const revalidate = 60
 
@@ -190,7 +190,7 @@ const Page = async ({
         '@type': 'OfferShippingDetails',
         shippingRate: {
           '@type': 'MonetaryAmount',
-          value: displayPrice >= 4000 ? 0 : 300,
+          value: 0,
           currency: 'PKR',
         },
         deliveryTime: {

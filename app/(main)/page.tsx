@@ -13,23 +13,22 @@ import React from 'react'
 
 export const revalidate = 60
 
-// ── Page-level metadata (extends layout defaults) ─────────────────────────────
 export const metadata: Metadata = {
-  title: 'Halir — Luxury Perfumes & Fragrances in Pakistan',
+  title: 'Halir | Long lasting Perfumes in Affordable Prices in Pakistan',
   description:
-    'Halir Pakistan\'s finest luxury perfumery. Discover handcrafted eau de parfums, rare oud & signature scents inspired by the soul of the East. Shop exclusive fragrances online. Free delivery across Pakistan.',
+    'Halir Pakistan\'s finest long lasting luxury perfumery. Discover handcrafted eau de parfums, rare oud & signature scents inspired by the soul of the East. Shop exclusive fragrances online. Free delivery across Pakistan.',
   alternates: {
-    canonical: 'https://www.halir.pk',
+    canonical: 'https://halirperfumerypk.com',
   },
   openGraph: {
-    title: 'Halir — Luxury Perfumes & Fragrances in Pakistan',
+    title: 'Halir | Long lasting Perfumes in Affordable Prices in Pakistan',
     description:
       'Pakistan\'s premium fragrance brand. Shop luxury perfumes and exclusive scents crafted for the modern Pakistani.',
-    url: 'https://www.halir.pk',
+    url: 'https://halirperfumerypk.com',
     type: 'website',
     images: [
       {
-        url: 'https://www.halir.pk/og-home.jpg', // replace with real image
+        url: 'https://halirperfumerypk.com/hero.webp',
         width: 1200,
         height: 630,
         alt: 'Halir — Luxury Perfumes Pakistan',
@@ -38,29 +37,28 @@ export const metadata: Metadata = {
   },
 }
 
-// ── JSON-LD Schemas ───────────────────────────────────────────────────────────
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Halir',
-  url: 'https://www.halir.pk',
-  logo: 'https://www.halir.pk/logo.png', // replace with real logo
+  url: 'https://halirperfumerypk.com',
+  logo: 'https://halirperfumerypk.com/favicon.ico', 
   description:
     'Halir is a luxury perfume brand based in Pakistan, offering premium fragrances and signature scents.',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'PK',
-    addressRegion: 'Punjab',
-    addressLocality: 'Lahore', // update to your city
+    addressRegion: 'Islamabad Capital Territory',
+    addressLocality: 'Islamabad', 
   },
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    availableLanguage: ['English', 'Urdu'],
+    availableLanguage: ['English', 'Urdu', 'Pashto'],
   },
   sameAs: [
-    'https://www.instagram.com/halir.pk',   // update with real handles
-    'https://www.facebook.com/halir.pk',
+    'https://www.instagram.com/halirperfumery/?__pwa=1', 
+    'https://www.facebook.com/halir.pk', 
     'https://www.tiktok.com/@halir.pk',
   ],
 }
@@ -69,12 +67,12 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Halir',
-  url: 'https://www.halir.pk',
+  url: 'https://halirperfumerypk.com',
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://www.halir.pk/search?q={search_term_string}',
+      urlTemplate: 'https://halirperfumerypk.com/search?q={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   },
@@ -88,7 +86,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://www.halir.pk',
+      item: 'https://halirperfumerypk.com',
     },
   ],
 }
@@ -97,15 +95,15 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'Store',
   name: 'Halir',
-  image: 'https://www.halir.pk/og-home.jpg',
-  url: 'https://www.halir.pk',
+  image: 'https://halirperfumerypk.com/hero.webp',
+  url: 'https://halirperfumerypk.com',
   description:
     'Premium luxury perfumes and fragrances brand based in Pakistan.',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'PK',
-    addressRegion: 'Punjab',
-    addressLocality: 'Lahore',
+    addressRegion: 'Islamabad Capital Territory',
+    addressLocality: 'Islamabad',
   },
   priceRange: '₨₨₨',
   currenciesAccepted: 'PKR',
@@ -113,6 +111,42 @@ const localBusinessSchema = {
   areaServed: {
     '@type': 'Country',
     name: 'Pakistan',
+  },
+}
+
+const mainEntitySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Halir',
+  url: 'https://halirperfumerypk.com',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Collections',
+        url: 'https://halirperfumerypk.com/collections',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Men Perfumes',
+        url: 'https://halirperfumerypk.com/collections/men',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Hot Sellers',
+        url: 'https://halirperfumerypk.com/collections/hot-sellers',
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: 'Contact Us',
+        url: 'https://halirperfumerypk.com/contact-us',
+      },
+    ],
   },
 }
 
@@ -142,6 +176,14 @@ const Home = () => {
         id="schema-localbusiness"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        strategy="beforeInteractive"
+      />
+      <Script
+        id="schema-mainentity"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(mainEntitySchema),
+        }}
         strategy="beforeInteractive"
       />
 

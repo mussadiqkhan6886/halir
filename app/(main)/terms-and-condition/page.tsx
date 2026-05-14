@@ -3,13 +3,12 @@ import Script from 'next/script'
 import { ekate, magdaLig } from '@/lib/font'
 import Link from "next/link"
 
-// ── Metadata ──────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
   description:
     'Read the Terms & Conditions for Halir — Pakistan\'s luxury perfume brand. Understand our purchase policies, intellectual property rights, delivery terms, and governing law.',
   alternates: {
-    canonical: 'https://halir-seven.vercel.app/terms-and-conditions',
+    canonical: 'https://halirperfumerypk.com/terms-and-conditions',
   },
   robots: {
     index: true,
@@ -19,12 +18,11 @@ export const metadata: Metadata = {
     title: 'Terms & Conditions | Halir',
     description:
       'Read the Terms & Conditions for Halir — Pakistan\'s luxury perfume brand.',
-    url: 'https://halir-seven.vercel.app/terms-and-conditions',
+    url: 'https://halirperfumerypk.com/terms-and-conditions',
     type: 'website',
   },
 }
 
-// ── JSON-LD ───────────────────────────────────────────────────────────────────
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -33,13 +31,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://halir-seven.vercel.app',
+      item: 'https://halirperfumerypk.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Terms & Conditions',
-      item: 'https://halir-seven.vercel.app/terms-and-conditions',
+      item: 'https://halirperfumerypk.com/terms-and-conditions',
     },
   ],
 }
@@ -48,14 +46,14 @@ const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Terms & Conditions — Halir',
-  url: 'https://halir-seven.vercel.app/terms-and-conditions',
+  url: 'https://halirperfumerypk.com/terms-and-conditions',
   description:
     'Terms & Conditions for Halir, Pakistan\'s luxury perfume brand. Covers purchases, intellectual property, delivery, returns, and governing law.',
   inLanguage: 'en-PK',
   isPartOf: {
     '@type': 'WebSite',
     name: 'Halir',
-    url: 'https://halir-seven.vercel.app',
+    url: 'https://halirperfumerypk.com',
   },
   breadcrumb: breadcrumbSchema,
   dateModified: new Date().toISOString().split('T')[0],
@@ -84,8 +82,8 @@ const TermsAndConditions = () => {
           {/* Semantic breadcrumb — visible to crawlers, hidden visually */}
           <nav aria-label="Breadcrumb" className="sr-only">
             <ol>
-              <li><a href="https://halir-seven.vercel.app">Home</a></li>
-              <li><a href="https://halir-seven.vercel.app/terms-and-conditions">Terms &amp; Conditions</a></li>
+              <li><a href="https://halirperfumerypk.com">Home</a></li>
+              <li><a href="https://halirperfumerypk.com/terms-and-conditions">Terms &amp; Conditions</a></li>
             </ol>
           </nav>
 
@@ -96,21 +94,21 @@ const TermsAndConditions = () => {
           </div>
 
           <article
-            className={`space-y-16 ${magdaLig.className} text-zinc-600 leading-relaxed text-sm md:text-base`}
+            className={`space-y-12 ${magdaLig.className} text-zinc-600 leading-relaxed text-sm md:text-base`}
             itemScope
             itemType="https://schema.org/WebPageElement"
           >
             <section aria-labelledby="acceptance">
-              <h2 id="acceptance" className="text-zinc-900 font-bold uppercase tracking-widest text-xs mb-6">01. Acceptance</h2>
+              <h2 id="acceptance" className="text-zinc-900 font-bold uppercase tracking-widest text-xs mb-4">01. Acceptance</h2>
               <p>
-                By accessing the <strong>Halir</strong> studio (halir.pk), you agree to be bound by these Terms of Service.
+                By accessing the <strong>Halir</strong> studio (halirperfumerypk.com), you agree to be bound by these Terms of Service.
                 These terms govern your use of our platform and the purchase of our premium fragrances. If you do not
                 agree with any part of these terms, we kindly ask you to discontinue use of our services.
               </p>
             </section>
 
             <section aria-labelledby="purchases">
-              <h2 id="purchases" className="text-zinc-900 font-bold uppercase tracking-widest text-xs mb-6">02. Purchases &amp; Payments</h2>
+              <h2 id="purchases" className="text-zinc-900 font-bold uppercase tracking-widest text-xs mb-4">02. Purchases &amp; Payments</h2>
               <p className="mb-4">
                 When making a purchase, you agree to provide accurate and complete information.
                 We reserve the right to refuse or cancel any order for reasons including:
@@ -123,7 +121,7 @@ const TermsAndConditions = () => {
             </section>
 
             <section aria-labelledby="ip">
-              <h2 id="ip" className="text-zinc-900 font-bold uppercase tracking-widest text-xs mb-6">03. Intellectual Property</h2>
+              <h2 id="ip" className="text-zinc-900 font-bold uppercase tracking-widest text-xs mb-4">03. Intellectual Property</h2>
               <p>
                 All aesthetic content, including imagery, custom fonts, brand identity, and the fragrances themselves,
                 are the exclusive property of <strong>Halir</strong>. You may not distribute, modify, or use our digital
@@ -132,10 +130,10 @@ const TermsAndConditions = () => {
             </section>
 
             <section aria-labelledby="delivery">
-              <h2 id="delivery" className="text-zinc-900 font-bold uppercase tracking-widest text-xs mb-6">04. Delivery &amp; Returns</h2>
+              <h2 id="delivery" className="text-zinc-900 font-bold uppercase tracking-widest text-xs mb-4">04. Delivery &amp; Returns</h2>
               <p>
                 We aim for excellence in fulfillment. Standard delivery within Pakistan is typically completed
-                within 3 working days. For information regarding our 20hr+ scent longevity guarantee and our
+                within 3 working days. For information regarding our 10hr+ scent longevity guarantee and our
                 return protocols, please refer to our dedicated Exchange &amp; Return page.
               </p>
             </section>
@@ -156,11 +154,11 @@ const TermsAndConditions = () => {
               </p>
               <div className="space-y-2">
                 <Link
-                  href="mailto:hello@halir.pk"
+                  href="mailto:halirperfumery@gmail.com"
                   className="text-zinc-900 font-bold italic underline underline-offset-4 tracking-tighter"
                   aria-label="Contact Halir by email"
                 >
-                  hello@halir.pk
+                  halirperfumery@gmail.com
                 </Link>
               </div>
             </section>

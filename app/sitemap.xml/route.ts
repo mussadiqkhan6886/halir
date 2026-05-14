@@ -5,7 +5,7 @@ import { PerfumeType } from "@/type";
 
 type SitemapUrl = {
   loc: string;
-  changefreq: string;
+  changefreq: string; 
   priority: number;
   lastmod: string;
 };
@@ -17,7 +17,7 @@ export async function GET() {
     const data = await Perfume.find({}).lean();
     const products: PerfumeType[] = JSON.parse(JSON.stringify(data));
 
-    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://halir-seven.vercel.app";
+    const BASE_URL = "https://halirperfumerypk.com";
 
     const urls: SitemapUrl[] = [];
 

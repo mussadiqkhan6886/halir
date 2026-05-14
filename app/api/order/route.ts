@@ -129,7 +129,7 @@ export const POST = async (req: NextRequest) => {
                 <p><strong>Payment:</strong> ${newOrder.paymentMethod.toUpperCase()}</p>
 
                 <div style="text-align:center;margin-top:20px;">
-                <a href="https://halir-seven.vercel.app/admin-dashboard"
+                <a href="https://halirperfumerypk.com/admin-dashboard"
                     style="background:#111;color:#fff;padding:12px 20px;text-decoration:none;border-radius:6px;">
                     View Dashboard
                 </a>

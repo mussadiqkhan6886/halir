@@ -6,7 +6,7 @@ import React from 'react'
 import { magdaLig } from '@/lib/font'
 import { COLLECTIONS } from '@/lib/constants'
 
-const BASE_URL = 'https://halir-seven.vercel.app'
+const BASE_URL = 'https://halirperfumerypk.com'
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
@@ -122,7 +122,7 @@ const CollectionsPage = () => {
           </ol>
         </nav>
 
-        <section className="max-w-7xl mx-auto pb-10 md:mb-20">
+        <section className="max-w-7xl mx-auto pb-10 md:mb-10">
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85]">
             Collections
           </h1>

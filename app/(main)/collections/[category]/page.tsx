@@ -9,7 +9,7 @@ import { PerfumeType } from '@/type'
 import Link from 'next/link'
 import React from 'react'
 
-const BASE_URL = 'https://halir-seven.vercel.app'
+const BASE_URL = 'https://halirperfumerypk.com'
 
 export const revalidate = 60
 
@@ -38,10 +38,6 @@ export const generateMetadata = async ({
     description,
     alternates: {
       canonical: `${BASE_URL}/collections/${category}`,
-    },
-    robots: {
-      index: true,
-      follow: true,
     },
     openGraph: {
       title: `${title} | Halir`,

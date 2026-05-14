@@ -4,13 +4,12 @@ import React from 'react'
 import { ekate, magdaLig } from '@/lib/font'
 import Link from 'next/link'
 
-// ── Metadata ──────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   title: 'Shipping & Returns',
   description:
-    'Halir offers free shipping on orders above PKR 4,000 across Pakistan. Learn about our delivery timelines, return policy, exchange process, and studio pickup in Karachi.',
+    'Halir offers free shipping on all orders across Pakistan. Learn about our delivery timelines, return policy, exchange process, and studio pickup in Karachi.',
   alternates: {
-    canonical: 'https://halir-seven.vercel.app/shipping-and-returns',
+    canonical: 'https://halirperfumerypk.com/shipping-and-returns',
   },
   robots: {
     index: true,
@@ -19,8 +18,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Shipping & Returns | Halir',
     description:
-      'Free shipping above PKR 4,000. Returns accepted within 30 days. Studio pickup available in Karachi.',
-    url: 'https://halir-seven.vercel.app/shipping-and-returns',
+      'Free shipping on all orders. Returns accepted within 30 days. Studio pickup available in Islamabad.',
+    url: 'https://halirperfumerypk.com/shipping-and-returns',
     type: 'website',
   },
 }
@@ -34,13 +33,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://halir-seven.vercel.app',
+      item: 'https://halirperfumerypk.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Shipping & Returns',
-      item: 'https://halir-seven.vercel.app/shipping-and-returns',
+      item: 'https://halirperfumerypk.com/shipping-and-returns',
     },
   ],
 }
@@ -49,14 +48,14 @@ const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Shipping & Returns — Halir',
-  url: 'https://halir-seven.vercel.app/shipping-and-returns',
+  url: 'https://halirperfumerypk.com/shipping-and-returns',
   description:
-    'Halir shipping policy: free delivery above PKR 4,000, 4–6 working days nationwide. Returns accepted within 30 days in original packaging.',
+    'Halir shipping policy: free delivery on all orders, 4–6 working days nationwide. Returns accepted within 30 days in original packaging.',
   inLanguage: 'en-PK',
   isPartOf: {
     '@type': 'WebSite',
     name: 'Halir',
-    url: 'https://halir-seven.vercel.app',
+    url: 'https://halirperfumerypk.com',
   },
   breadcrumb: breadcrumbSchema,
   dateModified: new Date().toISOString().split('T')[0],
@@ -79,34 +78,6 @@ const shippingSchema = {
     unitCode: 'DAY',
   },
 }
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Store',
-  name: 'Halir Perfumes',
-  url: 'https://halir-seven.vercel.app',
-  telephone: '+923357375999',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'House # 261-O, Ground Portion, PECHS, Block 6',
-    addressLocality: 'Karachi',
-    addressRegion: 'Sindh',
-    addressCountry: 'PK',
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Wednesday', 'Thursday'],
-      opens: '11:00',
-      closes: '19:00',
-    },
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Halir Fragrances',
-  },
-}
-
 // ── Page ─────────────────────────────────────────────────────────────────────
 const ServiceProtocol = () => {
   return (
@@ -129,12 +100,6 @@ const ServiceProtocol = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(shippingSchema) }}
         strategy="beforeInteractive"
       />
-      <Script
-        id="schema-localbusiness-shipping"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        strategy="beforeInteractive"
-      />
 
       <main className="bg-light text-zinc-900 py-10 px-6">
         <div className="max-w-4xl mx-auto">
@@ -142,8 +107,8 @@ const ServiceProtocol = () => {
           {/* Semantic breadcrumb — visible to crawlers, hidden visually */}
           <nav aria-label="Breadcrumb" className="sr-only">
             <ol>
-              <li><a href="https://halir-seven.vercel.app">Home</a></li>
-              <li><a href="https://halir-seven.vercel.app/shipping-and-returns">Shipping &amp; Returns</a></li>
+              <li><a href="https://halirperfumerypk.com">Home</a></li>
+              <li><a href="https://halirperfumerypk.com/shipping-and-returns">Shipping &amp; Returns</a></li>
             </ol>
           </nav>
 
@@ -168,8 +133,7 @@ const ServiceProtocol = () => {
                 <div>
                   <h3 className="text-zinc-900 font-bold text-sm mb-2 uppercase">Domestic Shipping</h3>
                   <p>
-                    We offer <strong>Free Standard Shipping</strong> on all orders above PKR 4,000.
-                    For orders below this threshold, a flat rate of PKR 300 applies.
+                    We offer <strong>Free Standard Shipping</strong> on all orders.
                   </p>
                 </div>
                 <div>
@@ -179,24 +143,6 @@ const ServiceProtocol = () => {
                     we strive for speed, these are estimates.
                   </p>
                 </div>
-              </div>
-
-              <div className="bg-zinc-50 p-6 rounded-sm border border-zinc-100">
-                <h3 className="text-zinc-900 font-bold text-sm mb-2 uppercase">Studio Pickup</h3>
-                <p>
-                  In-store collection is available Wednesday – Thursday, 11 AM – 7 PM. Please
-                  coordinate via WhatsApp at{' '}
-                  <Link
-                    href="https://wa.me/923357375999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Contact Halir on WhatsApp"
-                    className="font-bold text-zinc-900 underline underline-offset-2"
-                  >
-                    +92 335 7375999
-                  </Link>{' '}
-                  before arrival.
-                </p>
               </div>
             </section>
 

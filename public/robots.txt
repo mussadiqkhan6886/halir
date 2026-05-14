@@ -10,8 +10,6 @@ Disallow: /search
 Disallow: /cart
 Disallow: /login
 
-# Optional: block query params (SEO cleanup)
-Disallow: /*?*
 
 # Sitemap
-Sitemap: https://halir-seven.vercel.app/sitemap.xml
+Sitemap: https://halirperfumerypk.com/sitemap.xml

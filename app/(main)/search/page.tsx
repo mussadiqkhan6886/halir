@@ -7,9 +7,16 @@ import React from 'react'
 import { ekate, magdaLig } from '@/lib/font'
 
 
-export const generateMetadata = (): Metadata => { return {
-    title: "Search"
-} };
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Search Perfumes",
+    description: "Search luxury perfumes, oud, and fragrances at Halir Perfumes Pakistan.",
+    robots: {
+      index: false,
+      follow: true,
+    },
+  }
+}
 
 const getData = async (query: string) => {
     try {

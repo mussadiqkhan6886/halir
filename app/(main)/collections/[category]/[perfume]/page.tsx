@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-const BASE_URL = 'https://halir-seven.vercel.app'
+const BASE_URL = 'https://halirperfumerypk.com'
 
 export const revalidate = 60
 

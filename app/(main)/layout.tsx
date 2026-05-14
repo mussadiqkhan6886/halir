@@ -3,7 +3,7 @@ import Header from "@/sections/Header";
 import Footer from "@/sections/Footer";
 
 
-const BASE_URL = 'https://halir-seven.vercel.app'
+const BASE_URL = 'https://halirperfumerypk.com'
 
 export const viewport: Viewport = {
   themeColor: '#0a0a0a',
@@ -14,15 +14,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
-  // ── Defaults (pages override these) ──────────────────────────────────────
   title: {
-    default: 'Halir — Luxury Perfumes Pakistan',
+    default: 'Halir | Long Lasting Perfumes Pakistan',
     template: '%s | Halir',
   },
  description:
   'Halir Pakistan\'s finest luxury perfumery. Discover handcrafted eau de parfums, rare oud & signature scents inspired by the soul of the East. Shop exclusive fragrances online. Free delivery across Pakistan.',
 
-  // ── Keywords ──────────────────────────────────────────────────────────────
   keywords: [
     'perfume pakistan',
     'luxury perfume pakistan',
@@ -40,7 +38,6 @@ export const metadata: Metadata = {
     'karachi perfume',
   ],
 
-  // ── Robots ────────────────────────────────────────────────────────────────
   robots: {
     index: true,
     follow: true,
@@ -52,7 +49,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // ── Open Graph ────────────────────────────────────────────────────────────
   openGraph: {
     type: 'website',
     locale: 'en_PK',
@@ -71,7 +67,6 @@ export const metadata: Metadata = {
     ],
   },
 
-  // ── Twitter / X ───────────────────────────────────────────────────────────
   twitter: {
     card: 'summary_large_image',
     title: 'Halir — Luxury Perfumes Pakistan',

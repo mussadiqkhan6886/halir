@@ -5,7 +5,8 @@ export const metadata: Metadata = {
   title: "Halir - Admin Dashboard",
   description: "Admin Dashboard",
   robots: {
-    index: false
+    index: false,
+    follow: false
   }
 };
 

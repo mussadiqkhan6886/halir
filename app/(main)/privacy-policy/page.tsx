@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { ekate, magdaLig } from '@/lib/font'
 
-const BASE_URL = 'https://halir-seven.vercel.app'
+const BASE_URL = 'https://halirperfumerypk.com'
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
                   className="font-bold text-zinc-900 underline underline-offset-2"
                   aria-label="Halir homepage"
                 >
-                  halir-seven.vercel.app
+                  halirperfumerypk.com
                 </Link>{' '}
                 and your rights regarding that data.
               </p>
@@ -126,7 +126,6 @@ const PrivacyPolicy = () => {
               <ul className="list-disc pl-5 space-y-2">
                 <li><strong>Contact Details:</strong> Name, email, phone number, and shipping address.</li>
                 <li><strong>Usage Data:</strong> IP address, browser type, and interaction with our aesthetic visuals.</li>
-                <li><strong>Cookies:</strong> Small files used to remember your selection in the cart.</li>
               </ul>
             </section>
 
@@ -148,8 +147,8 @@ const PrivacyPolicy = () => {
               </h2>
               <p>
                 Security is paramount. We use third-party payment processors to handle your transactions.
-                <strong> Halir does not store your credit card or bank details.</strong> All payment information
-                is handled by PCI-DSS compliant providers to ensure absolute safety.
+                <strong> Halir does not store your credit card or bank details.</strong>
+                
               </p>
             </section>
 
@@ -172,11 +171,11 @@ const PrivacyPolicy = () => {
                 <p className="text-zinc-900 font-bold">
                   Email:{' '}
                   <Link
-                    href="mailto:hello@halir.pk"
+                    href="mailto:halirperfumery@gmail.com"
                     className="underline underline-offset-2 hover:text-zinc-600 transition-colors"
                     aria-label="Email Halir privacy support"
                   >
-                    hello@halir.pk
+                    halirperfumery@gmail.com
                   </Link>
                 </p>
                 <p className="text-zinc-900 font-bold">
