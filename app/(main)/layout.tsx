@@ -87,10 +87,9 @@ export const metadata: Metadata = {
     apple: '/favicon.ico',
   },
 
-  // ── Verification (add when ready) ────────────────────────────────────────
-  // verification: {
-  //   google: 'your-google-verification-code',
-  // },
+  verification: {
+    google: 'OOuOj7c-nDN2hjEuNR-iGSSfdzn5oNTwMYdMvRW8vTo',
+  },
 }
 
 export default function RootLayout({
