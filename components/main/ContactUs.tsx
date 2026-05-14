@@ -1,16 +1,23 @@
 'use client';
 
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ekate, magdaLig } from '@/lib/font'
 import { HiOutlineArrowLongRight, HiOutlinePhone } from 'react-icons/hi2'
 import { HiOutlineMail } from 'react-icons/hi';
+import axios from 'axios';
 
 const ContactUs = () => {
     const [response, setResponse] = useState<null | 'yes' | 'no'>(null);
     const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
     const [clicked, setClicked] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+        message:  ""
+    })
 
     const handleNoHover = () => {
         if (response === 'yes') return; // Don't move if they already said yes
@@ -31,6 +38,35 @@ const ContactUs = () => {
 
       return () => clearTimeout(timer);
     }, [clicked]);
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const name = e.target.name
+        const value = e.target.value
+
+        setData(prev => ({
+            ...prev, [name]: value
+        }))
+    }
+    
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault()
+        setLoading(true)
+        const name = data.name
+        const email = data.email
+        const message= data.message
+        const body = {
+            name, email, message
+        }
+        try{
+            const res = await axios.post("/api/contact-us", body)
+            console.log(res)
+        }catch(err: any){
+            console.log(err.message)
+        }finally{
+            setLoading(false)
+        }
+    
+    }
 
     return (
         <main className='grid grid-cols-1 md:grid-cols-2 bg-black text-white min-h-screen overflow-hidden'>
@@ -59,12 +95,12 @@ const ContactUs = () => {
                                 className='space-y-6'
                             >
                                 <span className={`${ekate.className} text-4xl sm:text-5xl text-red-700 block mb-10 md:-mb-4`}>Quick question</span>
-                                <h1 className='text-4xl sm:text-6xl font-bold uppercase tracking-tighter leading-none'>
+                                <h2 className='text-4xl sm:text-6xl font-bold uppercase tracking-tighter leading-none'>
                                     DO YOU
                                     LOVE <br />
                                     COFFEE?
                                 
-                                </h1>
+                                </h2>
                                 
                                 <div className='flex items-center justify-center gap-10 pt-10 relative'>
                                     <motion.button 
@@ -112,10 +148,10 @@ const ContactUs = () => {
             <section className='p-8 md:p-16 lg:p-24 flex flex-col bg-black relative'>
                 
                 <div className='mb-16'>
-                    <h2 className='text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tighter'>
+                    <h1 className='text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tighter'>
                         Connect with <br />
                         <span className={`${ekate.className} text-zinc-200 capitalize font-light mb-2 md:mt-4 text-center block`}>Halir.</span>
-                    </h2>
+                    </h1>
                 </div>
 
                 {/* Contact Links Grid */}
@@ -132,23 +168,24 @@ const ContactUs = () => {
                     </div>
                 </div>
 
-                <form className='flex-grow space-y-6'>
+                <form onSubmit={handleSubmit} className='flex-grow space-y-6'>
                     <div className="relative">
-                        <input type="text" placeholder="Full Name" className="w-full bg-transparent border-b border-zinc-800 py-4 text-sm tracking-tight placeholder:text-zinc-700 focus:border-white focus:outline-none transition-all" />
+                        <input name="name" value={data.name} onChange={handleChange} type="text" placeholder="Full Name" className="w-full bg-transparent border-b border-zinc-800 py-4 text-sm tracking-tight placeholder:text-zinc-700 focus:border-white focus:outline-none transition-all" />
                     </div>
                     <div className="relative">
-                        <input type="email" placeholder="Email Address" className="w-full bg-transparent border-b border-zinc-800 py-4 text-sm tracking-tight placeholder:text-zinc-700 focus:border-white focus:outline-none transition-all" />
+                        <input name="email" value={data.email} onChange={handleChange} type="email" placeholder="Email Address" className="w-full bg-transparent border-b border-zinc-800 py-4 text-sm tracking-tight placeholder:text-zinc-700 focus:border-white focus:outline-none transition-all" />
                     </div>
                     <div className="relative">
-                        <textarea placeholder="Message / Enquiry" rows={4} className="w-full bg-transparent border-b border-zinc-800 py-4 text-sm tracking-tight placeholder:text-zinc-700 focus:border-white focus:outline-none transition-all resize-none" />
+                        <textarea name="message" value={data.message} onChange={handleChange} placeholder="Message / Enquiry" rows={4} className="w-full bg-transparent border-b border-zinc-800 py-4 text-sm tracking-tight placeholder:text-zinc-700 focus:border-white focus:outline-none transition-all resize-none" />
                     </div>
 
                     <motion.button 
                         whileHover={{ scale: 1.02 }}
                         type="submit" 
-                        className="w-full flex items-center justify-between border border-white/20 bg-zinc-950 p-4 text-[10px] font-bold tracking-[0.5em] uppercase hover:bg-white hover:text-black transition-all group cursor-pointer"
+                        className="w-full flex items-center justify-between border border-white/20 bg-zinc-950 p-4 text-[10px] font-bold tracking-[0.5em] uppercase enabled:hover:bg-white  enabled:hover:text-black transition-all group cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 "
+                        disabled={loading}
                     >
-                        Send Enquiry
+                        {loading ? "Sending..." : "Send Enquiry"}
                         <HiOutlineArrowLongRight size={20} className="transform -translate-x-2 group-hover:translate-x-0 transition-transform duration-500" />
                     </motion.button>
                 </form>
