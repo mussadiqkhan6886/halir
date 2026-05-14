@@ -120,7 +120,6 @@ const localBusinessSchema = {
 const Home = () => {
   return (
     <>
-      {/* JSON-LD — injected in <head> via next/script */}
       <Script
         id="schema-organization"
         type="application/ld+json"
