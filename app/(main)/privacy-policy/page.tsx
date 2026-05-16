@@ -181,11 +181,11 @@ const PrivacyPolicy = () => {
                 <p className="text-zinc-900 font-bold">
                   Phone:{' '}
                   <Link
-                    href="tel:+923357375999"
+                    href="tel:+923339941336"
                     className="underline underline-offset-2 hover:text-zinc-600 transition-colors"
                     aria-label="Call Halir customer support"
                   >
-                    +92 335 7375999
+                    03339941336
                   </Link>
                 </p>
               </div>

@@ -182,9 +182,9 @@ const ServiceProtocol = () => {
 
               <address className="not-italic space-y-2" itemScope itemType="https://schema.org/PostalAddress">
                 <p className="text-xl font-bold tracking-tight" itemProp="name">Halir Perfumes</p>
-                <p className="text-zinc-400" itemProp="streetAddress">House # 261-O, Ground Portion</p>
+                <p className="text-zinc-400" itemProp="streetAddress">G-14/4 street 4 House #996</p>
                 <p className="text-zinc-400">
-                  <span itemProp="addressLocality">PECHS, Block 6, Karachi</span>,{' '}
+                  <span itemProp="addressLocality">Islamabad</span>,{' '}
                   <span itemProp="addressCountry">Pakistan</span>
                 </p>
               </address>
@@ -192,11 +192,11 @@ const ServiceProtocol = () => {
               <div className="mt-10 pt-10 border-t border-zinc-800">
                 <p className="text-xs tracking-widest uppercase text-zinc-500 mb-4">Concierge Support</p>
                 <Link
-                  href="tel:+923357375999"
+                  href="tel:+923339941336"
                   className="text-lg font-bold hover:text-zinc-300 transition-colors"
                   aria-label="Call Halir customer support"
                 >
-                  +92 335 7375999
+                  03339941336
                 </Link>
               </div>
 

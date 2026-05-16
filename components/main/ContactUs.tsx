@@ -170,7 +170,7 @@ const ContactUs = () => {
                     <div className='border-l border-zinc-800 pl-6 group cursor-pointer'>
                         <HiOutlinePhone className="text-zinc-700 mb-6 group-hover:text-white transition-colors" size={24} />
                         <h4 className='text-sm font-bold uppercase tracking-widest mb-2'>Speak Directly</h4>
-                        <p className={`${magdaLig.className} text-zinc-500`}>+92 321 HALIR (01)</p>
+                        <p className={`${magdaLig.className} text-zinc-500`}>03339941336</p>
                     </div>
                 </div>
 
