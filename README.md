@@ -44,7 +44,6 @@ The site is **live in production** at [halirperfumerypk.com](https://halirperfum
 | **Tailwind CSS 4** | Utility-first responsive styling |
 | **Framer Motion 12** | Animations and page transitions |
 | **MUI + MUI X Data Grid** | Admin dashboard UI components |
-| **Swiper.js** | Touch-enabled product carousels |
 | **React Icons** | Scalable icon system |
 
 ### Backend & Database
