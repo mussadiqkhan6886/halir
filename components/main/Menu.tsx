@@ -40,7 +40,7 @@ const Menu = ({setIsMenuOpen}: {setIsMenuOpen: (b: boolean) => void}) => {
       initial="hidden"
       animate="visible"
       exit="hidden" 
-      className='fixed top-26 min-[483px]:top-20 left-0 w-full flex flex-col bg-white z-50 overflow-hidden pt-10 px-10 gap-5'
+      className='fixed top-15 left-0 w-full flex flex-col bg-white z-50 overflow-hidden pt-10 px-10 gap-5'
     >
       {menu.map((item, i) => (
         <motion.li 
