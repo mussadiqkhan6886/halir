@@ -69,7 +69,7 @@ The site is **live in production** at [halirperfumerypk.com](https://halirperfum
 
 ### 🛍️ E-Commerce Core
 - Full product catalog with categories and filtering
-- Product detail pages with image galleries (Swiper carousels)
+- Product detail pages with image galleries
 - Shopping cart with persistent state via Context API
 - Checkout flow with order management
 - Responsive design across all screen sizes
