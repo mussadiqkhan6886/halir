@@ -15,6 +15,10 @@ const NewArrival = async () => {
     .limit(4)
     .lean();
 
+    if(newArrivals.length <= 0){
+      return null
+    }
+
   return (
     <section className='bg-white'>
       <h3 className='text-center font-bold uppercase text-3xl sm:text-5xl mb-8 border-t border-b border-zinc-300 py-1.5 '>New Arrivals</h3>

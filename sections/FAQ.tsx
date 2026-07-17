@@ -8,7 +8,7 @@ import { HiPlus, HiMinus } from "react-icons/hi"
 const faqs = [
   {
     question: "How long does a Halir fragrance typically last?",
-    answer: "Our fragrances are formulated at 'Extrait de Parfum' concentration. Depending on the specific scent and your skin chemistry, you can expect a persistence of 12 to 24 hours."
+    answer: "Our fragrances are formulated at 'Extrait de Parfum' concentration. Depending on the specific scent and your skin chemistry, you can expect a persistence of 8 to 12 hours."
   },
   {
     question: "What is Engraving For?",
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Can I return a fragrance if I don't like the scent?",
-    answer: "Yes. We offer a 30-day return and exchange policy. To ensure a perfect match, we recommend trying our discovery sets before committing to a full-sized bottle."
+    answer: "Yes. We offer a 10-day return and exchange policy. To ensure a perfect match, we recommend trying our discovery sets before committing to a full-sized bottle."
   },
   {
     question: "Is the packaging sustainable?",

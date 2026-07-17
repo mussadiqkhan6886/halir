@@ -18,8 +18,8 @@ const trustPoints = [
     tag: "Aesthetic"
   },
   {
-    title: "30-DAY ASSURANCE",
-    desc: "Shop with total confidence. We offer a 30 days return and exchange policy for a completely risk-free discovery.",
+    title: "10-DAY ASSURANCE",
+    desc: "Shop with total confidence. We offer a 10 days return and exchange policy for a completely risk-free discovery.",
     tag: "Policy"
   }
 ]

@@ -25,7 +25,7 @@ const CTA = () => {
 
             <h5 className={`${ekate.className} text-white text-6xl mb-18 md:-mb-1 text-center`}>Order</h5>
             <p className='text-zinc-200 text-sm text-justify max-w-sm mx-auto uppercase leading-relaxed mb-8 tracking-tight'>
-                Experience premium, 20hr+ long-lasting scents delivered to your doorstep within 3 days.
+                Experience premium, 10hr+ long-lasting scents delivered to your doorstep within 3 days.
             </p>
 
             <Link 

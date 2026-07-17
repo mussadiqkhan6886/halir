@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Shipping & Returns | Halir',
     description:
-      'Free shipping on all orders. Returns accepted within 30 days. Studio pickup available in Islamabad.',
+      'Free shipping on all orders. Returns accepted within 10 days. Studio pickup available in Islamabad.',
     url: 'https://halirperfumerypk.com/shipping-and-returns',
     type: 'website',
   },
@@ -50,7 +50,7 @@ const webPageSchema = {
   name: 'Shipping & Returns — Halir',
   url: 'https://halirperfumerypk.com/shipping-and-returns',
   description:
-    'Halir shipping policy: free delivery on all orders, 4–6 working days nationwide. Returns accepted within 30 days in original packaging.',
+    'Halir shipping policy: free delivery on all orders, 4–6 working days nationwide. Returns accepted within 10 days in original packaging.',
   inLanguage: 'en-PK',
   isPartOf: {
     '@type': 'WebSite',
@@ -157,7 +157,7 @@ const ServiceProtocol = () => {
 
               <p>
                 We accept returns of non-damaged, significantly unused perfume bottles in their
-                original packaging within <strong>30 days</strong> of purchase.
+                original packaging within <strong>10 days</strong> of purchase.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
