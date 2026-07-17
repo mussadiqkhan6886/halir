@@ -167,18 +167,57 @@ const page = () => {
                 className="w-full p-3 border-gray-300 outline-none border rounded-md"
               />
             </div>
-            <div className="text-black text-center border py-2 md:col-span-2">
-              <p>Payment Method</p>
-              <p>{formData.paymentMethod}</p>
-              <select value={formData.paymentMethod} onChange={handleChange} name="paymentMethod">
+           <div className="border rounded-lg p-4 md:col-span-2 space-y-3">
+            <div className="flex items-center justify-between">
+              <p className="text-sm font-medium text-gray-900">Payment Method</p>
+              <select
+                value={formData.paymentMethod}
+                onChange={handleChange}
+                name="paymentMethod"
+                className="text-sm border rounded-md px-3 py-1.5 bg-white focus:outline-none focus:ring-1 focus:ring-black"
+              >
                 <option value="cod">Cash on Delivery</option>
                 <option value="easypaisa">Easypaisa</option>
-                {/* <option value="card">Bank Payment</option> */}
               </select>
             </div>
 
-            {formData.paymentMethod === "easypaisa" && ( <div className=" border border-green-400 bg-green-50 rounded-lg p-4 space-y-3"> <h3 className="font-semibold text-green-800 text-lg">Easypaisa Payment</h3> <p><strong>Number:</strong> ----------</p> <p><strong>Account Name:</strong> ------</p> <label className="block text-sm font-medium text-gray-700 mt-2"> Upload Payment Screenshot </label> <input type="file" accept="image/*" onChange={handleFileChange} className="block w-full mt-2 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border file:border-gray-300 file:bg-gray-200 hover:file:bg-gray-300" /> 
-            {preview && ( <div className="mt-3"> <Image src={preview} alt="Payment proof" width={200} height={200} className="rounded-md border" /> </div> )} </div> )} 
+            {formData.paymentMethod === "easypaisa" && (
+              <div className="border-t pt-3 space-y-3">
+                <div className="text-sm text-gray-700 space-y-1">
+                  <p>
+                    <span className="text-gray-500">Number:</span> 03339941336
+                  </p>
+                  <p>
+                    <span className="text-gray-500">Account Name:</span> Muhammad Hashir Khan
+                  </p>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1.5">
+                    Upload Payment Screenshot
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    className="block w-full text-sm text-gray-600 file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border file:border-gray-300 file:bg-white file:text-sm hover:file:bg-gray-50"
+                  />
+                </div>
+
+                {preview && (
+                  <div>
+                    <Image
+                      src={preview}
+                      alt="Payment proof"
+                      width={160}
+                      height={160}
+                      className="rounded-md border object-cover"
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
 
             <button
               type="submit"
