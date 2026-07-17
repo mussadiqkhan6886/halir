@@ -147,6 +147,7 @@ const CollectionsPage = () => {
                       src={col.image}
                       alt={`${col.title} — Halir fragrance collection`}
                       fill
+                      unoptimized={index > 3}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-center transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale-[0.5]"
                       // First 3 collections above fold — eager load; rest lazy
