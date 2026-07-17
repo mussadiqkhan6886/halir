@@ -10,9 +10,9 @@ const CTA = () => {
         <h4 className='uppercase text-[44px] sm:text-6xl lg:px-10 font-medium leading-tight tracking-tight text-center'>Want to be unique?</h4>
       </div>
 
-      <div className='relative h-[80vh]'>
+      <div className='relative h-[85vh]'>
         <Image 
-          src="/unique.webp" 
+          src="/new.webp" 
           alt='Halir unique collection' 
           fill 
           sizes="(max-width: 768px) 100vw, 50vw"

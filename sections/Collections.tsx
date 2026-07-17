@@ -7,9 +7,9 @@ import { HiOutlineArrowRight } from "react-icons/hi"
 import Link from 'next/link';
 
 const categories = [
-  {link: "/collections/hot-sellers" , title: 'Hot Sellers', src: '/hot.webp', subtitle: 'The Icons' },
-  {link: "/collections/men" , title: 'For Him', src: '/men.webp', subtitle: 'Raw & Bold' },
-  {link: "/collections/women" , title: 'For Her', src: '/women.webp', subtitle: 'Pure Elegance' },
+  {link: "/collections/hot-sellers" , title: 'Hot Sellers', src: '/hotsellers.webp', subtitle: 'The Icons' },
+  {link: "/collections/men" , title: 'For Him', src: '/for him.webp', subtitle: 'Raw & Bold' },
+  {link: "/collections/women" , title: 'For Her', src: '/for her.webp', subtitle: 'Pure Elegance' },
 ]
 
 const Collections = () => {
