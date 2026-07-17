@@ -26,6 +26,7 @@ export async function GET() {
     const staticPages = [
       '/',
       '/collections',
+      '/collections/all',
       '/add-review',
       '/about-us',
       '/privacy-policy',
