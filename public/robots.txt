@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
+Allow: /collections/
+Allow: /collections/men
+Allow: /collections/women
+Allow: /collections/hot-sellers
+Allow: /collections/all
+Allow: /about-us
+Allow: /terms-and-condition
+Allow: /privacy-policy
+Allow: /shipping-and-returns
+Allow: /contact-us
 
 # Block admin & private areas
 Disallow: /admin-dashboard
@@ -7,9 +17,7 @@ Disallow: /api
 Disallow: /checkout
 Disallow: /thankyou/
 Disallow: /search
-Disallow: /cart
-Disallow: /login
 
 
 # Sitemap
-Sitemap: https://halirperfumerypk.com/sitemap.xml
+Sitemap: https://www.halirperfumerypk.com/sitemap.xml

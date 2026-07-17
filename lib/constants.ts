@@ -46,7 +46,7 @@ export const COLLECTIONS = [
     title: 'New Arrivals',
     slug: 'new-arrivals',
     desc: 'The latest olfactory signatures from our atelier.',
-    image: '/new.webp',
+    image: '/new.jpg',
   },
   {
     title: 'Hot Sellers',

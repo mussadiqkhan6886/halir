@@ -17,7 +17,7 @@ export async function GET() {
     const data = await Perfume.find({}).lean();
     const products: PerfumeType[] = JSON.parse(JSON.stringify(data));
 
-    const BASE_URL = "https://halirperfumerypk.com";
+    const BASE_URL = "https://www.halirperfumerypk.com";
 
     const urls: SitemapUrl[] = [];
 

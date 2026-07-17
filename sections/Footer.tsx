@@ -46,7 +46,7 @@ const Footer = () => {
                 <Image src={"/for him.webp"} alt='men' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
               </div>
               <div className='relative w-full aspect-[3/4] overflow-hidden'>
-                <Image src={"/for her 2.webp"} alt='women' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
+                <Image src={"/for her 2.png"} alt='women' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
               </div>
               <div className='relative w-full aspect-[3/4] overflow-hidden'>
                 <Image src={"/hotsellers.webp"} alt='hot' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
