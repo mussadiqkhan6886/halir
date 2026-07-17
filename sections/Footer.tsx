@@ -43,13 +43,13 @@ const Footer = () => {
             <h5 className='font-bold mb-5 uppercase text-xs tracking-[0.2em] md:text-right'>Instagram</h5>
             <div className='flex mb-2'>
               <div className='relative w-full aspect-[3/4] overflow-hidden'>
-                <Image src={"/for him.webp"} alt='men' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
+                <img src={"/for him.webp"} alt='men' className='object-cover duration-300 md:grayscale hover:grayscale-0 transition-all' />
               </div>
               <div className='relative w-full aspect-[3/4] overflow-hidden'>
-                <Image src={"/for her.webp"} alt='women' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
+                <img src={"/for her 2.png"} alt='women' className='object-cover duration-300 md:grayscale hover:grayscale-0 transition-all' />
               </div>
               <div className='relative w-full aspect-[3/4] overflow-hidden'>
-                <Image src={"/hotsellers.webp"} alt='hot' fill className='object-cover md:grayscale hover:grayscale-0 transition-all' />
+                <img src={"/new.webp"} alt='hot' className='object-cover duration-300 w-full h-full md:grayscale hover:grayscale-0 transition-all' />
               </div>
             </div>
             <Link href={"https://www.instagram.com/halirperfumery/?__pwa=1"} className='font-bold text-sm tracking-tighter md:text-right block'>@halirperfumery</Link>
