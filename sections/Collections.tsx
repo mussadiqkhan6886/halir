@@ -72,7 +72,7 @@ const Collections = () => {
 
       {/* Visual Section Footer */}
       <div className='mt-15 flex flex-col items-center gap-4'>
-          <Link href={"/collections"} className={`${magdaLig.className} text-[11px] uppercase tracking-[0.4em] text-zinc-500 hover:text-black transition-colors`}>
+          <Link href={"/collections"} className={`${magdaLig.className} text-[12px] uppercase tracking-[0.2em] text-zinc-600 duration-300 transition-colors border p-3 px-5 hover:bg-dark hover:text-white`}>
              View Collections
           </Link>
       </div>

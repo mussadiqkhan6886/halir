@@ -3,7 +3,7 @@ import Header from "@/sections/Header";
 import Footer from "@/sections/Footer";
 
 
-const BASE_URL = 'https://halirperfumerypk.com'
+const BASE_URL = 'https://www.halirperfumerypk.com'
 
 export const viewport: Viewport = {
   themeColor: '#0a0a0a',
@@ -54,23 +54,23 @@ export const metadata: Metadata = {
     locale: 'en_PK',
     siteName: 'Halir',
     url: BASE_URL,
-    title: 'Halir — Luxury Perfumes Pakistan',
+    title: 'Halir | Long Lasting Perfumes Pakistan',
     description:
-      'Pakistan\'s premium fragrance brand. Shop luxury perfumes, signature collections, and exclusive scents.',
+      'Halir Pakistan\'s finest luxury perfumery. Discover handcrafted eau de parfums, rare oud & signature scents inspired by the soul of the East. Shop exclusive fragrances online. Free delivery across Pakistan.',
     images: [
       {
         url: '/hero.webp',
         width: 1200,
         height: 630,
-        alt: 'Halir — Luxury Perfumes Pakistan',
+        alt: 'Halir | Long Lasting Perfumes Pakistan',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Halir — Luxury Perfumes Pakistan',
-    description: 'Pakistan\'s premium fragrance brand.',
+    title: 'Halir | Long Lasting Perfumes Pakistan',
+    description: 'Halir Pakistan\'s finest luxury perfumery. Discover handcrafted eau de parfums, rare oud & signature scents inspired by the soul of the East. Shop exclusive fragrances online. Free delivery across Pakistan.',
     images: ['/hero.webp'],
     // creator: '@halirpk',  // add when you have a Twitter handle
   },
@@ -84,6 +84,9 @@ export const metadata: Metadata = {
 
   verification: {
     google: 'OOuOj7c-nDN2hjEuNR-iGSSfdzn5oNTwMYdMvRW8vTo',
+  },
+  alternates: {
+    canonical: "https://www.halirperfumerypk.com",
   },
 }
 

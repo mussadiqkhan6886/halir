@@ -36,7 +36,7 @@ const WhyUs = () => {
               <span className={`${ekate.className} text-zinc-700 capitalize font-light`}>standard.</span>
             </h3>
           </div>
-          <p className={`${magdaLig.className} text-zinc-500 text-[10px] uppercase tracking-[0.2em]`}>
+          <p className={`${magdaLig.className} text-zinc-600 text-[12px] uppercase tracking-[0.2em]`}>
             Beyond the Scent / Excellence in Every Detail
           </p>
         </div>
@@ -54,7 +54,7 @@ const WhyUs = () => {
                 <h4 className='text-3xl font-bold tracking-tight uppercase mb-4'>
                   {point.title}
                 </h4>
-                <p className={`${magdaLig.className} text-zinc-500 text-sm md:text-base leading-relaxed max-w-md`}>
+                <p className={`${magdaLig.className} text-zinc-600 text-sm md:text-base leading-relaxed max-w-md`}>
                   {point.desc}
                 </p>
               </div>
@@ -75,7 +75,7 @@ const WhyUs = () => {
                 A surprise gift awaits in every order
             </p>
           </div>
-          <Link href={"/collections/all"} className={`${magdaLig.className} text-[10px] tracking-[0.4em] uppercase border border-white/20 px-8 py-4 bg-white text-black`}>
+          <Link href={"/collections/all"} className={`${magdaLig.className} text-[12px] tracking-[0.4em] uppercase border border-white/20 px-7 py-3 bg-white text-black`}>
             Order Now
           </Link>
         </div>

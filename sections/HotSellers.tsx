@@ -15,6 +15,7 @@ const HotSellers = async () => {
 
   const hotSellers = JSON.parse(JSON.stringify(res))
 
+
   return (
     <section className='bg-black py-32 px-6 overflow-hidden relative'>
       
@@ -37,7 +38,7 @@ const HotSellers = async () => {
 
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-red-600/10 blur-[150px] pointer-events-none rounded-full" />
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-red-900/15 blur-[150px] pointer-events-none rounded-full" />
-      <Link className={`${magdaLig.className} text-white text-center text-sm uppercase absolute bottom-8 hover:underline left-1/2 -translate-x-1/2`} href="/collections/hot-sellers">Explore All Hot Sellers</Link>
+      <Link className={`${magdaLig.className} text-white text-center text-[12px] p-3 px-5 hover:bg-white hover:text-black uppercase absolute bottom-8 transition-all duration-300 border border-white left-1/2 -translate-x-1/2`} href="/collections/hot-sellers">Explore All Hot Sellers</Link>
     </section>  
   )
 }

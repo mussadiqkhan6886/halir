@@ -42,7 +42,7 @@ const FAQ = () => {
             Common <br className='hidden md:block' /> 
             Inquiries.
           </h3>
-          <p className={`${magdaLig.className} text-zinc-500 text-sm max-w-xs leading-relaxed`}>
+          <p className={`${magdaLig.className} text-zinc-600 text-sm max-w-xs leading-relaxed`}>
             Can't find what you're looking for? Reach out to our olfactory experts via WhatsApp or Email.
           </p>
         </div>
@@ -72,7 +72,7 @@ const FAQ = () => {
                     transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                     className='overflow-hidden'
                   >
-                    <p className={`${magdaLig.className} text-zinc-500 text-sm md:text-md pb-7 max-w-2xl md:leading-relaxed`}>
+                    <p className={`${magdaLig.className} text-zinc-600 text-sm md:text-md pb-7 max-w-2xl md:leading-relaxed`}>
                       {faq.answer}
                     </p>
                   </motion.div>
