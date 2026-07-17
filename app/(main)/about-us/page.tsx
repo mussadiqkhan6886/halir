@@ -21,8 +21,8 @@ const jsonLd = {
     name: 'Halir Perfumery',
     description:
       'Premium luxury fragrance brand based in Pakistan specializing in Extrait de Parfum.',
-    url: 'https://halirperfumerypk.com',
-    logo: 'https://halirperfumerypk.com/halirLogo.png',
+    url: 'https://www.halirperfumerypk.com',
+    logo: 'https://www.halirperfumerypk.com/halirLogo.png',
   },
 };
 

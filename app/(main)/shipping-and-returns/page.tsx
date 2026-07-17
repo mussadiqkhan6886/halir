@@ -4,12 +4,14 @@ import React from 'react'
 import { ekate, magdaLig } from '@/lib/font'
 import Link from 'next/link'
 
+const BASE_URL = "https://www.halirperfumerypk.com"
+
 export const metadata: Metadata = {
   title: 'Shipping & Returns',
   description:
     'Halir offers free shipping on all orders across Pakistan. Learn about our delivery timelines, return policy, exchange process, and studio pickup in Karachi.',
   alternates: {
-    canonical: 'https://halirperfumerypk.com/shipping-and-returns',
+    canonical: `${BASE_URL}/shipping-and-returns`,
   },
   robots: {
     index: true,
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
     title: 'Shipping & Returns | Halir',
     description:
       'Free shipping on all orders. Returns accepted within 10 days. Studio pickup available in Islamabad.',
-    url: 'https://halirperfumerypk.com/shipping-and-returns',
+    url: `${BASE_URL}/shipping-and-returns`,
     type: 'website',
   },
 }
@@ -33,13 +35,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://halirperfumerypk.com',
+      item: BASE_URL,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Shipping & Returns',
-      item: 'https://halirperfumerypk.com/shipping-and-returns',
+      item: `${BASE_URL}/shipping-and-returns`,
     },
   ],
 }
@@ -48,14 +50,14 @@ const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Shipping & Returns — Halir',
-  url: 'https://halirperfumerypk.com/shipping-and-returns',
+  url: `${BASE_URL}/shipping-and-returns`,
   description:
     'Halir shipping policy: free delivery on all orders, 4–6 working days nationwide. Returns accepted within 10 days in original packaging.',
   inLanguage: 'en-PK',
   isPartOf: {
     '@type': 'WebSite',
     name: 'Halir',
-    url: 'https://halirperfumerypk.com',
+    url: BASE_URL,
   },
   breadcrumb: breadcrumbSchema,
   dateModified: new Date().toISOString().split('T')[0],
@@ -86,19 +88,19 @@ const ServiceProtocol = () => {
         id="schema-breadcrumb-shipping"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-webpage-shipping"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-shipping-time"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(shippingSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
 
       <main className="bg-light text-zinc-900 py-10 px-6">
@@ -107,8 +109,8 @@ const ServiceProtocol = () => {
           {/* Semantic breadcrumb — visible to crawlers, hidden visually */}
           <nav aria-label="Breadcrumb" className="sr-only">
             <ol>
-              <li><a href="https://halirperfumerypk.com">Home</a></li>
-              <li><a href="https://halirperfumerypk.com/shipping-and-returns">Shipping &amp; Returns</a></li>
+              <li><a href="https://www.halirperfumerypk.com">Home</a></li>
+              <li><a href="https://www.halirperfumerypk.com/shipping-and-returns">Shipping &amp; Returns</a></li>
             </ol>
           </nav>
 

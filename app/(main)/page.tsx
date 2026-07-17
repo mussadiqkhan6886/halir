@@ -160,25 +160,25 @@ const Home = () => {
         id="schema-organization"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-website"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-breadcrumb"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-localbusiness"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-mainentity"
@@ -186,7 +186,7 @@ const Home = () => {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(mainEntitySchema),
         }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
 
       <main className="overflow-x-hidden">

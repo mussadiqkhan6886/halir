@@ -1,14 +1,16 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
-import { ekate, magdaLig } from '@/lib/font'
+import { magdaLig } from '@/lib/font'
 import Link from "next/link"
+
+const BASE_URL = "https://www.halirperfumerypk.com"
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
   description:
     'Read the Terms & Conditions for Halir — Pakistan\'s luxury perfume brand. Understand our purchase policies, intellectual property rights, delivery terms, and governing law.',
   alternates: {
-    canonical: 'https://halirperfumerypk.com/terms-and-conditions',
+    canonical: `${BASE_URL}/terms-and-conditions`,
   },
   robots: {
     index: true,
@@ -17,8 +19,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Terms & Conditions | Halir',
     description:
-      'Read the Terms & Conditions for Halir — Pakistan\'s luxury perfume brand.',
-    url: 'https://halirperfumerypk.com/terms-and-conditions',
+      'Read the Terms & Conditions for Halir — Pakistan\'s luxury perfume brand. Understand our purchase policies, intellectual property rights, delivery terms, and governing law.',
+    url: `${BASE_URL}/terms-and-conditions`,
     type: 'website',
   },
 }
@@ -31,13 +33,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://halirperfumerypk.com',
+      item: BASE_URL,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Terms & Conditions',
-      item: 'https://halirperfumerypk.com/terms-and-conditions',
+      item: `${BASE_URL}/terms-and-conditions`,
     },
   ],
 }
@@ -46,14 +48,14 @@ const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Terms & Conditions — Halir',
-  url: 'https://halirperfumerypk.com/terms-and-conditions',
+  url: `${BASE_URL}/terms-and-conditions`,
   description:
-    'Terms & Conditions for Halir, Pakistan\'s luxury perfume brand. Covers purchases, intellectual property, delivery, returns, and governing law.',
+    'Read the Terms & Conditions for Halir — Pakistan\'s luxury perfume brand. Understand our purchase policies, intellectual property rights, delivery terms, and governing law.',
   inLanguage: 'en-PK',
   isPartOf: {
     '@type': 'WebSite',
     name: 'Halir',
-    url: 'https://halirperfumerypk.com',
+    url: BASE_URL,
   },
   breadcrumb: breadcrumbSchema,
   dateModified: new Date().toISOString().split('T')[0],
@@ -67,13 +69,13 @@ const TermsAndConditions = () => {
         id="schema-breadcrumb-terms"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-webpage-terms"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
 
       <main className="bg-light text-zinc-900 py-10 px-6">
@@ -82,8 +84,8 @@ const TermsAndConditions = () => {
           {/* Semantic breadcrumb — visible to crawlers, hidden visually */}
           <nav aria-label="Breadcrumb" className="sr-only">
             <ol>
-              <li><a href="https://halirperfumerypk.com">Home</a></li>
-              <li><a href="https://halirperfumerypk.com/terms-and-conditions">Terms &amp; Conditions</a></li>
+              <li><a href="https://www.halirperfumerypk.com">Home</a></li>
+              <li><a href="https://www.halirperfumerypk.com/terms-and-conditions">Terms &amp; Conditions</a></li>
             </ol>
           </nav>
 

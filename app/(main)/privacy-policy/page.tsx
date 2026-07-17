@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { ekate, magdaLig } from '@/lib/font'
 
-const BASE_URL = 'https://halirperfumerypk.com'
+const BASE_URL = 'https://www.halirperfumerypk.com'
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
@@ -72,13 +72,13 @@ const PrivacyPolicy = () => {
         id="schema-breadcrumb-privacy"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-webpage-privacy"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
 
       <main className="bg-light text-zinc-900 py-10 px-6">

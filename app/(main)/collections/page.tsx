@@ -6,7 +6,7 @@ import React from 'react'
 import { magdaLig } from '@/lib/font'
 import { COLLECTIONS } from '@/lib/constants'
 
-const BASE_URL = 'https://halirperfumerypk.com'
+const BASE_URL = 'https://www.halirperfumerypk.com'
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
@@ -97,19 +97,19 @@ const CollectionsPage = () => {
         id="schema-breadcrumb-collections"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-collectionpage"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id="schema-itemlist-collections"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
 
       <main className="bg-white min-h-screen py-14 px-6 md:px-12">

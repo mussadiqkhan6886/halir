@@ -239,13 +239,13 @@ const Page = async ({
         id={`schema-breadcrumb-${slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id={`schema-product-${slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
 
       <main className="bg-light min-h-screen border-x border-zinc-200 max-w-8xl mx-auto w-full">

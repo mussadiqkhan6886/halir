@@ -9,7 +9,7 @@ import { PerfumeType } from '@/type'
 import Link from 'next/link'
 import React from 'react'
 
-const BASE_URL = 'https://halirperfumerypk.com'
+const BASE_URL = 'https://www.halirperfumerypk.com'
 
 export const revalidate = 60
 
@@ -133,20 +133,20 @@ const Page = async ({ params }: { params: Promise<{ category: string }> }) => {
         id={`schema-breadcrumb-${category}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id={`schema-collectionpage-${category}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       {itemListSchema && (
         <Script
           id={`schema-itemlist-${category}`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
       )}
 

@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-const BASE_URL = 'https://halirperfumerypk.com'
+const BASE_URL = 'https://www.halirperfumerypk.com'
 
 export const revalidate = 60
 
@@ -191,13 +191,13 @@ const Page = async ({
         id={`schema-breadcrumb-${perfume}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <Script
         id={`schema-product-${perfume}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
 
       <main className="max-w-6xl pb-3 mx-auto">

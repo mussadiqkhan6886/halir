@@ -8,13 +8,13 @@ export const generateMetadata = (): Metadata => {
     description:
       "Get in touch with Halir Perfumes. Contact our customer support for orders, queries, and assistance. We respond in English, Urdu, and Pashto.",
     alternates: {
-      canonical: "https://halirperfumerypk.com/contact-us",
+      canonical: "https://www.halirperfumerypk.com/contact-us",
     },
     openGraph: {
       title: "Contact Halir Perfumes",
       description:
         "Reach out to Halir Perfumes Pakistan for support, orders, and inquiries.",
-      url: "https://halirperfumerypk.com/contact-us",
+      url: "https://www.halirperfumerypk.com/contact-us",
       type: "website",
     },
   }
