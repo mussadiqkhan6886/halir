@@ -158,12 +158,12 @@ export const POST = async (req: NextRequest) => {
             <div style="max-width:600px;margin:auto;background:#fff;border-radius:10px;overflow:hidden;">
             
             <div style="background:#111;color:#fff;padding:20px;text-align:center;">
-                <h2>✅ Order Confirmed</h2>
+                <h2>Order Confirmed</h2>
             </div>
 
             <div style="padding:20px;">
                 <p>Hi ${newOrder.userDetails.fullName},</p>
-                <p>Your order has been placed successfully 🎉</p>
+                <p>Your order has been placed successfully</p>
 
                 <p><strong>Order ID:</strong> ${newOrder.orderId.slice(0,7)}</p>
 
@@ -183,9 +183,9 @@ export const POST = async (req: NextRequest) => {
 
                 <h3>Total: Rs ${newOrder.totalPrice}</h3>
 
-                <p>We will contact you soon for delivery 🚚</p>
+                <p>We will contact you soon for delivery</p>
 
-                <p style="margin-top:20px;">Thanks for shopping with us ❤️</p>
+                <p style="margin-top:20px;">Thanks for shopping with us</p>
             </div>
             </div>
         </div>
@@ -196,17 +196,17 @@ export const POST = async (req: NextRequest) => {
         try {
             // Admin email
             await transporter.sendMail({
-            from: `"Halir Store" <${process.env.EMAIL_USER}>`,
-            to: "mussadiqkhan6886@gmail.com",
-            subject: `🛒 New Order - ${newOrder.orderId}`,
+            from: `"Halir" <${process.env.EMAIL_USER}>`,
+            to: "halirperfumery@gmail.com",
+            subject: `New Order - ${newOrder.orderId.slice(0, 7)}`,
             html: generateAdminEmail(newOrder),
             });
 
             // Customer email
             await transporter.sendMail({
-            from: `"Halir Store" <${process.env.EMAIL_USER}>`,
+            from: `"Halir" <${process.env.EMAIL_USER}>`,
             to: newOrder.userDetails.email,
-            subject: `✅ Order Confirmed - ${newOrder.orderId}`,
+            subject: `Order Confirmed - ${newOrder.orderId.slice(0,7)}`,
             html: generateCustomerEmail(newOrder),
             });
 
